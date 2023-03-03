@@ -10,7 +10,7 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
-    DbSet<Category> categories { get; set; }
+    DbSet<Category> Categories { get; set; }
     DbSet<Client> Clients { get; set; }
     DbSet<Event> Events { get; set; }
     DbSet<Review> Reviews { get; set; }
