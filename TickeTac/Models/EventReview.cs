@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-
+using System.Collections.Generic;
 
 namespace TickeTac.Models
 {
-    [Table("Review")]
-    public class Review
+    [Table("EventReviews")]
+    public class EventReview
     {
         [Key]
         public uint Id { get; set; }
@@ -18,7 +18,7 @@ namespace TickeTac.Models
         public string ReviewText { get; set; }
         [Display(Name = "Data da Avaliação")]
         public DateTime ReviewDate { get; set; } = DateTime.Now;
-        
+    
         [Display(Name = "Usuario")]
         [Required]
         public uint ClientId { get; set; }

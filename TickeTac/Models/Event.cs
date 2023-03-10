@@ -85,6 +85,7 @@ namespace TickeTac.Models
         public uint StatusEventId { get; set; }
         [ForeignKey("StatusEventId")]
         public StatusEvent StatusEvent { get; set; }
-        
+
+        public ICollection<EventReview> ReviewReceived { get; set; }
     }
 }

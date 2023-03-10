@@ -12,7 +12,7 @@ namespace TickeTac.Models
         [Display(Name = "Nome do usuário")]
         [StringLength(30, ErrorMessage = "O nome deve possuir no máximo 30 caracteres!")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
-        public string Username { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "E-mail")]
         [Required(ErrorMessage = "O e-mail deve ser informado!")]
@@ -28,5 +28,7 @@ namespace TickeTac.Models
 
         [StringLength(400)]
         public string ProfilePicture { get; set; }
-    }
+
+        public ICollection<EventReview> ClientMadeReview { get; set; }
+}
 }
