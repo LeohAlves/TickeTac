@@ -1,0 +1,49 @@
+"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-TickeTac-9A7A2D84-12FD-40D3-897F-BCB7A3D03C99;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+
+dotnet new mvc -f net6.0 --auth Individual --use-local-db
+
+dotnet add package Pomelo.EntityFrameworkCore.MySql --version 6.0.2
+
+- EntityFrameworkCore - Banco de Dados
+- Identity - Identicação e Autorização de Usuário
+
+Para testar se tem a ferramenta de migração:
+    dotnet ef
+
+Para instalar a ferramenta de migração:
+    dotnet tool install --global dotnet-ef
+
+Para criar uma migração:
+1º - No terminal executar um: dotnet build
+2º - Usar comando para criar a migração:
+    dotnet ef migrations add NOME-DA-MIGRAÇÃO
+    dotnet ef migrations add Criar-Banco
+3º Usar o comando para atualizar o banco de dados
+    dotnet ef database update
+
+
+Para realizar um scaffolding do Identity
+-- Passos opcionais
+dotnet aspnet-codegenerator identity -h
+
+-- Instalar o pacote Design
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design;
+
+-- Extrair do pacote Identity as páginas
+dotnet aspnet-codegenerator identity -dc TickeTac.Data.ApplicationDbContext --files "Account.AccessDenied;Account.Login;Account.Logout;Account.Register"
+
+
+criar controllers
+CAtegorya
+dotnet-aspnet-codegenerator controller -name CategoryController -m Category -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name ProductController -m Product -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name ReservationController -m Reservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name ReviewController -m Review -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name SocialEventController -m SocialEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name StatusReservationController -m StatusReservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"

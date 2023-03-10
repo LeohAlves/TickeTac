@@ -76,7 +76,7 @@ namespace TickeTac.Models
 
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "Por favor, informe a categoria do evento")]
-        public uint CategoryID { get; set; }
+        public uint CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
