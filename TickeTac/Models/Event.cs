@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,9 +19,11 @@ namespace TickeTac.Models
         [Required(ErrorMessage = "É necessário informar um telefone!")]
         [StringLength(14, ErrorMessage = "Numero invalido")]
         public string ContactPhone { get; set; }
-
-        [Display(Name = "Preço dos ingressos")]
-        [Required(ErrorMessage = "O evento deve possuir um preço!")]
+        
+        [Display(Name = "Preço")]
+        [Column(TypeName = "decimal(10,2)")]
+        [Required(ErrorMessage = "Informe o {0}")]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Price { get; set; }
 
         [Display(Name = " Data e horário de entrada do evento")]
