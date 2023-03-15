@@ -25,20 +25,22 @@ Para criar uma migração:
 
 Para realizar um scaffolding do Identity
 -- Passos opcionais
+
+-- lista comandos 
 dotnet aspnet-codegenerator identity -h
 
 -- Instalar o pacote Design
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design;
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.0.2
 
 -- Extrair do pacote Identity as páginas
 dotnet aspnet-codegenerator identity -dc TickeTac.Data.ApplicationDbContext --files "Account.AccessDenied;Account.Login;Account.Logout;Account.Register"
 
 
 criar controllers
-CAtegorya
+
 dotnet-aspnet-codegenerator controller -name CategoryController -m Category -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name ProductController -m Product -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name ClientController -m Product -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
 dotnet-aspnet-codegenerator controller -name ReservationController -m Reservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
