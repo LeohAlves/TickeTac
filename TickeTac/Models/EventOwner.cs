@@ -7,7 +7,7 @@ namespace TickeTac.Models
     public class EventOwner
     {
         [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
 
         [Display(Name = "Nome do organizador ou razao social da empresa")]
         [StringLength(50, ErrorMessage = "O {0} deve possuir no máximo {1} caracteres!")]

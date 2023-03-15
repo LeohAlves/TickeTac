@@ -7,7 +7,7 @@ namespace TickeTac.Models
     public class StatusEvent
     {
         [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
         [Required]
         [Display(Name = "Status do evento")]
         [StringLength(30)]

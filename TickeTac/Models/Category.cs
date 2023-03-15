@@ -8,7 +8,7 @@ namespace TickeTac.Models
     public class Category
     {
         [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
 
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]

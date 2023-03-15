@@ -8,7 +8,7 @@ namespace TickeTac.Models
     public class EventReview
     {
         [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
 
         [Display(Name = "Nota")]
         public Byte Rating { get; set; }

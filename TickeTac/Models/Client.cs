@@ -8,7 +8,7 @@ namespace TickeTac.Models
     public class Client
     {
         [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
 
         [Display(Name = "Nome do usuário")]
         [StringLength(30, ErrorMessage = "O nome deve possuir no máximo 30 caracteres!")]

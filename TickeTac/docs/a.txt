@@ -36,6 +36,7 @@ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 6.
 dotnet aspnet-codegenerator identity -dc TickeTac.Data.ApplicationDbContext --files "Account.AccessDenied;Account.Login;Account.Logout;Account.Register"
 
 
+
 criar controllers
 
 dotnet-aspnet-codegenerator controller -name CategoryController -m Category -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"

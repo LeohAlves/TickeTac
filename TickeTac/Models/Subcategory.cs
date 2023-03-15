@@ -7,7 +7,7 @@ namespace TickeTac.Models
     public class SubCategory
     {
        [Key]
-        public uint Id { get; set; }
+        public UInt16 Id { get; set; }
 
         [Display(Name = "Subcategoria")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
