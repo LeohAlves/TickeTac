@@ -10,13 +10,13 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
-    DbSet<Category> Categories { get; set; }
-    DbSet<Client> Clients { get; set; }
-    DbSet<Event> Events { get; set; }
-    DbSet<EventOwner> EventOwners { get; set; }
-    DbSet<EventReview> EventReviews { get; set; }
-    DbSet<StatusEvent> StatusEvents { get; set; }
-    DbSet<SubCategory> SubCategories { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Client> Clients { get; set; }
+    public DbSet<Event> Events { get; set; }
+    public DbSet<EventOwner> EventOwners { get; set; }
+    public DbSet<EventReview> EventReviews { get; set; }
+    public DbSet<StatusEvent> StatusEvents { get; set; }
+    public DbSet<SubCategory> SubCategories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

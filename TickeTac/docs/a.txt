@@ -50,3 +50,5 @@ dotnet-aspnet-codegenerator controller -name ReviewController -m Review -dc Appl
 dotnet-aspnet-codegenerator controller -name SocialEventController -m SocialEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
 dotnet-aspnet-codegenerator controller -name StatusReservationController -m StatusReservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
+dotnet-aspnet-codegenerator controller -name StatusEventController -m StatusEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"

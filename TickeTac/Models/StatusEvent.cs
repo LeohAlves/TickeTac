@@ -8,6 +8,7 @@ namespace TickeTac.Models
     {
         [Key]
         public UInt16 Id { get; set; }
+        
         [Required]
         [Display(Name = "Status do evento")]
         [StringLength(30)]

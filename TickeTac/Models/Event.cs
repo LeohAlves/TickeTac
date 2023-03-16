@@ -79,13 +79,13 @@ namespace TickeTac.Models
 
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "Por favor, informe a categoria do evento")]
-        public uint CategoryId { get; set; }
+        public UInt16 CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
         [Required]
         [Display(Name = " Status do evento")]
-        public uint StatusEventId { get; set; }
+        public UInt16 StatusEventId { get; set; }
         [ForeignKey("StatusEventId")]
         public StatusEvent StatusEvent { get; set; }
 

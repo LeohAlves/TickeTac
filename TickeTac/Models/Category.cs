@@ -17,7 +17,7 @@ namespace TickeTac.Models
 
         [Display(Name ="Sub Categoria")]
         [Required]
-        public uint SubCategoryId { get; set; }
+        public UInt16 SubCategoryId { get; set; }
         [ForeignKey ("SubCategoryId")]
         public SubCategory SubCategory { get; set; }
     }

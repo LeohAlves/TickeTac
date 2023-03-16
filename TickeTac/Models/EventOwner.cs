@@ -21,12 +21,12 @@ namespace TickeTac.Models
         
         [Required]
         [Display(Name = " Evento")]
-        public uint EventId { get; set; }
+        public UInt16 EventId { get; set; }
         [ForeignKey("EventId")]
         public Event Event { get; set; }
 
         [ForeignKey("Client")]
         [Required]
-        public uint ClientId { get; set; }
+        public UInt16 ClientId { get; set; }
     }
 }
