@@ -39,16 +39,16 @@ dotnet aspnet-codegenerator identity -dc TickeTac.Data.ApplicationDbContext --fi
 
 criar controllers
 
+dotnet-aspnet-codegenerator controller -name StatusEventController -m StatusEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+
 dotnet-aspnet-codegenerator controller -name CategoryController -m Category -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name ClientController -m Product -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name EventController -m Event -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name ReservationController -m Reservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name EventOwnerController -m EventOwner -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name ReviewController -m Review -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name EventReviewController -m EventReview -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name SocialEventController -m SocialEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name SubcategoryController -m Subcategory -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name StatusReservationController -m StatusReservation -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
-
-dotnet-aspnet-codegenerator controller -name StatusEventController -m StatusEvent -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
+dotnet-aspnet-codegenerator controller -name ClientController -m Client -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
