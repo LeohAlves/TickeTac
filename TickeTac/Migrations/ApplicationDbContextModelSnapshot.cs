@@ -217,17 +217,17 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.Category", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<uint>("SubCategoryId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("SubCategoryId")
+                        .HasColumnType("smallint unsigned");
 
                     b.HasKey("Id");
 
@@ -238,9 +238,9 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.Client", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -268,12 +268,12 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.Event", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
-                    b.Property<uint>("CategoryId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("CategoryId")
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Cep")
                         .IsRequired()
@@ -336,8 +336,8 @@ namespace TickeTac.Migrations
                         .HasMaxLength(2)
                         .HasColumnType("varchar(2)");
 
-                    b.Property<uint>("StatusEventId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("StatusEventId")
+                        .HasColumnType("smallint unsigned");
 
                     b.HasKey("Id");
 
@@ -350,20 +350,20 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.EventOwner", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
-                    b.Property<uint>("ClientId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("ClientId")
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("CpfCnpj")
                         .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 
-                    b.Property<uint>("EventId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("EventId")
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -379,14 +379,14 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.EventReview", b =>
                 {
-                    b.Property<uint>("EventId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("EventId")
+                        .HasColumnType("smallint unsigned");
 
-                    b.Property<uint>("ClientId")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("ClientId")
+                        .HasColumnType("smallint unsigned");
 
-                    b.Property<uint>("Id")
-                        .HasColumnType("int unsigned");
+                    b.Property<ushort>("Id")
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<byte>("Rating")
                         .HasColumnType("tinyint unsigned");
@@ -407,9 +407,9 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.StatusEvent", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -423,9 +423,9 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.SubCategory", b =>
                 {
-                    b.Property<uint>("Id")
+                    b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int unsigned");
+                        .HasColumnType("smallint unsigned");
 
                     b.Property<string>("Name")
                         .IsRequired()
