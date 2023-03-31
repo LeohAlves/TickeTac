@@ -101,10 +101,10 @@ public class ApplicationDbContext : IdentityDbContext
                 Id =2,
                 Name = "Sertanejo"
             },
-            new SubCategory
+            new SubCategory()
             {
                 Id =3,
-                Name = "F"
+                Name = "Funk"
             },
 
         };
