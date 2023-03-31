@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TickeTac.Models;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace TickeTac.Data;
 
@@ -11,7 +13,7 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<Category> Categories { get; set; }
-    public DbSet<Client> Clients { get; set; }
+    public DbSet<AppUser> AppUsers { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
@@ -24,13 +26,13 @@ public class ApplicationDbContext : IdentityDbContext
 
         #region Many-to-many EventReview
         builder.Entity<EventReview>().HasKey(
-            r => new { r.EventId, r.ClientId }
+            r => new { r.EventId, r.UserId }
         );
 
         builder.Entity<EventReview>()
-            .HasOne(er => er.Client)
-            .WithMany(c => c.ClientMadeReview)
-            .HasForeignKey(er => er.ClientId);
+            .HasOne(er => er.User)
+            .WithMany(c => c.UserMadeReview)
+            .HasForeignKey(er => er.UserId);
             
         builder.Entity<EventReview>()
             .HasOne(er => er.Event)
@@ -38,4 +40,26 @@ public class ApplicationDbContext : IdentityDbContext
             .HasForeignKey(er => er.EventId);
         #endregion
     }
+    
+    #region Seed Roles
+
+        List<IdentityRole> listRoles = new()
+        {
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString() ,
+                Name="Administrador",
+                NormalizedName= "ADMINISTRADOR"
+
+            },
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString() ,
+                Name="Usuário",
+                NormalizedName= "USUÁRIO"
+
+            }
+        };
+        
+        #endregion
 }

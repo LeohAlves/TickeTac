@@ -18,15 +18,15 @@ namespace TickeTac.Models
         [Required(ErrorMessage = "Por favor, informe um CPF ou CNPJ válido.")]
         [StringLength(14)]
         public string CpfCnpj { get; set; }
-        
+
         [Required]
         [Display(Name = " Evento")]
         public UInt16 EventId { get; set; }
         [ForeignKey("EventId")]
         public Event Event { get; set; }
 
-        [ForeignKey("Client")]
-        [Required]
-        public UInt16 ClientId { get; set; }
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+        public AppUser User { get; set; }
     }
 }

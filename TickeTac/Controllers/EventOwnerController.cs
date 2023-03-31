@@ -22,7 +22,7 @@ namespace TickeTac.Controllers
         // GET: EventOwner
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.EventOwners.Include(e => e.Event);
+            var applicationDbContext = _context.EventOwners.Include(e => e.Event).Include(e => e.User);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace TickeTac.Controllers
 
             var eventOwner = await _context.EventOwners
                 .Include(e => e.Event)
+                .Include(e => e.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (eventOwner == null)
             {
@@ -49,6 +50,7 @@ namespace TickeTac.Controllers
         public IActionResult Create()
         {
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep");
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id");
             return View();
         }
 
@@ -57,7 +59,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CpfCnpj,EventId,ClientId")] EventOwner eventOwner)
+        public async Task<IActionResult> Create([Bind("Id,Name,CpfCnpj,EventId,UserId")] EventOwner eventOwner)
         {
             if (ModelState.IsValid)
             {
@@ -66,6 +68,7 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventOwner.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventOwner.UserId);
             return View(eventOwner);
         }
 
@@ -83,6 +86,7 @@ namespace TickeTac.Controllers
                 return NotFound();
             }
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventOwner.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventOwner.UserId);
             return View(eventOwner);
         }
 
@@ -91,7 +95,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,CpfCnpj,EventId,ClientId")] EventOwner eventOwner)
+        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,CpfCnpj,EventId,UserId")] EventOwner eventOwner)
         {
             if (id != eventOwner.Id)
             {
@@ -119,6 +123,7 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventOwner.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventOwner.UserId);
             return View(eventOwner);
         }
 
@@ -132,6 +137,7 @@ namespace TickeTac.Controllers
 
             var eventOwner = await _context.EventOwners
                 .Include(e => e.Event)
+                .Include(e => e.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (eventOwner == null)
             {

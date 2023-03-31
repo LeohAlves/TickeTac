@@ -22,7 +22,7 @@ namespace TickeTac.Controllers
         // GET: EventReview
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.EventReviews.Include(e => e.Client).Include(e => e.Event);
+            var applicationDbContext = _context.EventReviews.Include(e => e.Event).Include(e => e.User);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,8 +35,8 @@ namespace TickeTac.Controllers
             }
 
             var eventReview = await _context.EventReviews
-                .Include(e => e.Client)
                 .Include(e => e.Event)
+                .Include(e => e.User)
                 .FirstOrDefaultAsync(m => m.EventId == id);
             if (eventReview == null)
             {
@@ -49,8 +49,8 @@ namespace TickeTac.Controllers
         // GET: EventReview/Create
         public IActionResult Create()
         {
-            ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email");
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep");
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id");
             return View();
         }
 
@@ -59,7 +59,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rating,ReviewText,ReviewDate,ClientId,EventId")] EventReview eventReview)
+        public async Task<IActionResult> Create([Bind("EventId,UserId,Rating,ReviewText,ReviewDate")] EventReview eventReview)
         {
             if (ModelState.IsValid)
             {
@@ -67,8 +67,8 @@ namespace TickeTac.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email", eventReview.ClientId);
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventReview.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventReview.UserId);
             return View(eventReview);
         }
 
@@ -85,8 +85,8 @@ namespace TickeTac.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email", eventReview.ClientId);
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventReview.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventReview.UserId);
             return View(eventReview);
         }
 
@@ -95,7 +95,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Rating,ReviewText,ReviewDate,ClientId,EventId")] EventReview eventReview)
+        public async Task<IActionResult> Edit(ushort id, [Bind("EventId,UserId,Rating,ReviewText,ReviewDate")] EventReview eventReview)
         {
             if (id != eventReview.EventId)
             {
@@ -122,8 +122,8 @@ namespace TickeTac.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "Id", "Email", eventReview.ClientId);
             ViewData["EventId"] = new SelectList(_context.Events, "Id", "Cep", eventReview.EventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Id", eventReview.UserId);
             return View(eventReview);
         }
 
@@ -136,8 +136,8 @@ namespace TickeTac.Controllers
             }
 
             var eventReview = await _context.EventReviews
-                .Include(e => e.Client)
                 .Include(e => e.Event)
+                .Include(e => e.User)
                 .FirstOrDefaultAsync(m => m.EventId == id);
             if (eventReview == null)
             {

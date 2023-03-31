@@ -236,36 +236,6 @@ namespace TickeTac.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("TickeTac.Models.Client", b =>
-                {
-                    b.Property<ushort>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("smallint unsigned");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("varchar(70)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("varchar(25)");
-
-                    b.Property<string>("ProfilePicture")
-                        .HasMaxLength(400)
-                        .HasColumnType("varchar(400)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Client");
-                });
-
             modelBuilder.Entity("TickeTac.Models.Event", b =>
                 {
                     b.Property<ushort>("Id")
@@ -354,9 +324,6 @@ namespace TickeTac.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("smallint unsigned");
 
-                    b.Property<ushort>("ClientId")
-                        .HasColumnType("smallint unsigned");
-
                     b.Property<string>("CpfCnpj")
                         .IsRequired()
                         .HasMaxLength(14)
@@ -370,9 +337,14 @@ namespace TickeTac.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("EventId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("EventManager");
                 });
@@ -380,13 +352,12 @@ namespace TickeTac.Migrations
             modelBuilder.Entity("TickeTac.Models.EventReview", b =>
                 {
                     b.Property<ushort>("EventId")
-                        .HasColumnType("smallint unsigned");
+                        .HasColumnType("smallint unsigned")
+                        .HasColumnOrder(1);
 
-                    b.Property<ushort>("ClientId")
-                        .HasColumnType("smallint unsigned");
-
-                    b.Property<ushort>("Id")
-                        .HasColumnType("smallint unsigned");
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)")
+                        .HasColumnOrder(2);
 
                     b.Property<byte>("Rating")
                         .HasColumnType("tinyint unsigned");
@@ -398,9 +369,9 @@ namespace TickeTac.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("varchar(2000)");
 
-                    b.HasKey("EventId", "ClientId");
+                    b.HasKey("EventId", "UserId");
 
-                    b.HasIndex("ClientId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("EventReviews");
                 });
@@ -435,6 +406,27 @@ namespace TickeTac.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SubCategory");
+                });
+
+            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("varchar(25)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasMaxLength(400)
+                        .HasColumnType("varchar(400)");
+
+                    b.ToTable("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -526,36 +518,51 @@ namespace TickeTac.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("TickeTac.Models.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Event");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("TickeTac.Models.EventReview", b =>
                 {
-                    b.HasOne("TickeTac.Models.Client", "Client")
-                        .WithMany("ClientMadeReview")
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("TickeTac.Models.Event", "Event")
                         .WithMany("ReviewReceived")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Client");
+                    b.HasOne("TickeTac.Models.AppUser", "User")
+                        .WithMany("UserMadeReview")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Event");
+
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("TickeTac.Models.Client", b =>
+            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
                 {
-                    b.Navigation("ClientMadeReview");
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithOne()
+                        .HasForeignKey("TickeTac.Models.AppUser", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("TickeTac.Models.Event", b =>
                 {
                     b.Navigation("ReviewReceived");
+                });
+
+            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
+                {
+                    b.Navigation("UserMadeReview");
                 });
 #pragma warning restore 612, 618
         }
