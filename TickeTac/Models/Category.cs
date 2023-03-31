@@ -13,7 +13,10 @@ namespace TickeTac.Models
         [Display(Name = "Categoria")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
         [StringLength(20)]
-        public string Name { get; set; } 
+        public string Name { get; set; }
+        
+        [StringLength(400)]
+        public string Img { get; set; } 
 
         [Display(Name ="Sub Categoria")]
         [Required]

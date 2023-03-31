@@ -11,7 +11,7 @@ using TickeTac.Data;
 namespace TickeTac.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230331192101_Criar-Banco")]
+    [Migration("20230331223750_Criar-Banco")]
     partial class CriarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
