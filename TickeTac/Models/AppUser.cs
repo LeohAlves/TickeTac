@@ -14,11 +14,7 @@ namespace TickeTac.Models
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
         public string Name { get; set; }
 
-        [Display(Name = "Senha")]
-        [Required(ErrorMessage = "O campo não pode ser vazio!")]
-        [StringLength(25, ErrorMessage = "A senha deve possuir no máximo 25 caracteres!")]
-        [MinLength(8, ErrorMessage = "A senha deve possuir no mínimo 8 caracteres!")]
-        public string Password { get; set; }
+
 
         [StringLength(400)]
         public string ProfilePicture { get; set; }

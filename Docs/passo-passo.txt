@@ -1,5 +1,5 @@
-"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-TickeTac-9A7A2D84-12FD-40D3-897F-BCB7A3D03C99;Trusted_Connection=True;MultipleActiveResultSets=true"
-
+- caso de erro de licenca
+dotnet dev-certs https --trust
 
 dotnet new mvc -f net6.0 --auth Individual --use-local-db
 
