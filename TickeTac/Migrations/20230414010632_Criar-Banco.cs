@@ -130,8 +130,6 @@ namespace TickeTac.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Password = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ProfilePicture = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -256,6 +254,8 @@ namespace TickeTac.Migrations
                     Id = table.Column<ushort>(type: "smallint unsigned", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Img = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     SubCategoryId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
                 },
@@ -383,6 +383,39 @@ namespace TickeTac.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "1680b657-d881-44d8-889d-17b2ff68d5bc", "04c24264-77f9-4058-b898-92c4773de5cf", "Usuario", "USUÁRIO" },
+                    { "664c6ff6-3d67-4bf5-9c91-395752d88fbf", "f40d733c-5b0d-4e4a-b6ae-aece08422ad5", "Administrador", "ADMINISTRADOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "56bfb7b5-a123-4dbf-a88c-ce80697679ad", 0, "ed8b985b-fe9b-4da4-bf7f-383ce4f9bfbb", "Leonardo@TickeTac.com", true, false, null, "LEONARDO@TICKETAC.COM", "LEO@TICKETAC.COM", "AQAAAAEAACcQAAAAEOQyUHCtNdpyYezcv9UCUxsYCmig/cobvc11Lu0wZ0ZYjuMGkv8fPTUzrI7cII4Tvw==", null, false, "43909159", false, "Leo@TickeTac.com" },
+                    { "57c2d123-c160-4ec1-b1b5-669f20e42040", 0, "c1653aab-d90f-42b5-90a5-479f7cf5a383", "Kaka@TickeTac.com", true, false, null, "KAKA@TICKETAC.COM", "KAIQUE@TICKETAC.COM", "AQAAAAEAACcQAAAAEDPEiMB5UTTMtZOmLEbPnME0aC6xh6ZCnXCW/XGF8hnk/qKwmaeKuth1Anhvr9MIBg==", null, false, "43909159", false, "Kaique@TickeTac.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AppUser",
+                columns: new[] { "Id", "Name", "ProfilePicture" },
+                values: new object[] { "56bfb7b5-a123-4dbf-a88c-ce80697679ad", "Leonardo", "" });
+
+            migrationBuilder.InsertData(
+                table: "AppUser",
+                columns: new[] { "Id", "Name", "ProfilePicture" },
+                values: new object[] { "57c2d123-c160-4ec1-b1b5-669f20e42040", "Kaique", "" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "664c6ff6-3d67-4bf5-9c91-395752d88fbf", "56bfb7b5-a123-4dbf-a88c-ce80697679ad" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

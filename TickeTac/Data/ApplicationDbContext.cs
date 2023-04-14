@@ -6,7 +6,7 @@ using TickeTac.Models;
 
 namespace TickeTac.Data;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<AppUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
@@ -69,15 +69,15 @@ public class ApplicationDbContext : IdentityDbContext
                 {
                     Id = userId,
                     Name = "Leonardo",
-                    UserName = "Admin@TickeTac.com",
-                    NormalizedUserName = "ADMIN@TICKETAC.COM",
+                    UserName = "Leo@TickeTac.com",
+                    NormalizedUserName = "LEO@TICKETAC.COM",
                     Email = "Leonardo@TickeTac.com",
-                    NormalizedEmail = "ADMIN@TICKETAC.COM",
+                    NormalizedEmail = "LEONARDO@TICKETAC.COM",
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
                     ProfilePicture = ""
-                }
+                }     
         );
         builder.Entity<IdentityUserRole<string>>().HasData(
          new IdentityUserRole<string>()
@@ -92,8 +92,8 @@ public class ApplicationDbContext : IdentityDbContext
         List<SubCategory> listSubCategory = new List<SubCategory>()
         {
             new SubCategory()
-            {
-                Id =1,
+            {   
+                Id = 1,
                 Name = "Rock"
             },
             new SubCategory()
@@ -104,13 +104,10 @@ public class ApplicationDbContext : IdentityDbContext
             new SubCategory()
             {
                 Id =3,
-                Name = "Funk"
+                Name = "Educativo"
             },
-
         };
-
-
-
+        builder.Entity<SubCategory>().HasData(listSubCategory);
         #endregion
 
     }

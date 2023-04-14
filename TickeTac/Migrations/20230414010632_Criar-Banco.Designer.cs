@@ -11,7 +11,7 @@ using TickeTac.Data;
 namespace TickeTac.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230331223750_Criar-Banco")]
+    [Migration("20230414010632_Criar-Banco")]
     partial class CriarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,6 +45,22 @@ namespace TickeTac.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "664c6ff6-3d67-4bf5-9c91-395752d88fbf",
+                            ConcurrencyStamp = "f40d733c-5b0d-4e4a-b6ae-aece08422ad5",
+                            Name = "Administrador",
+                            NormalizedName = "ADMINISTRADOR"
+                        },
+                        new
+                        {
+                            Id = "1680b657-d881-44d8-889d-17b2ff68d5bc",
+                            ConcurrencyStamp = "04c24264-77f9-4058-b898-92c4773de5cf",
+                            Name = "Usuario",
+                            NormalizedName = "USUÁRIO"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -194,6 +210,13 @@ namespace TickeTac.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "56bfb7b5-a123-4dbf-a88c-ce80697679ad",
+                            RoleId = "664c6ff6-3d67-4bf5-9c91-395752d88fbf"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -222,6 +245,10 @@ namespace TickeTac.Migrations
                     b.Property<ushort>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("smallint unsigned");
+
+                    b.Property<string>("Img")
+                        .HasMaxLength(400)
+                        .HasColumnType("varchar(400)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -419,16 +446,49 @@ namespace TickeTac.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("varchar(25)");
-
                     b.Property<string>("ProfilePicture")
                         .HasMaxLength(400)
                         .HasColumnType("varchar(400)");
 
                     b.ToTable("AppUser");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "56bfb7b5-a123-4dbf-a88c-ce80697679ad",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ed8b985b-fe9b-4da4-bf7f-383ce4f9bfbb",
+                            Email = "Leonardo@TickeTac.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "LEONARDO@TICKETAC.COM",
+                            NormalizedUserName = "LEO@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOQyUHCtNdpyYezcv9UCUxsYCmig/cobvc11Lu0wZ0ZYjuMGkv8fPTUzrI7cII4Tvw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "43909159",
+                            TwoFactorEnabled = false,
+                            UserName = "Leo@TickeTac.com",
+                            Name = "Leonardo",
+                            ProfilePicture = ""
+                        },
+                        new
+                        {
+                            Id = "57c2d123-c160-4ec1-b1b5-669f20e42040",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c1653aab-d90f-42b5-90a5-479f7cf5a383",
+                            Email = "Kaka@TickeTac.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "KAKA@TICKETAC.COM",
+                            NormalizedUserName = "KAIQUE@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDPEiMB5UTTMtZOmLEbPnME0aC6xh6ZCnXCW/XGF8hnk/qKwmaeKuth1Anhvr9MIBg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "43909159",
+                            TwoFactorEnabled = false,
+                            UserName = "Kaique@TickeTac.com",
+                            Name = "Kaique",
+                            ProfilePicture = ""
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

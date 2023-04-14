@@ -981,7 +981,6 @@ ol {
   font-size: 35px;
   margin-bottom: 20px;
   line-height: 45px;
-  text-transform: capitalize;
   position: relative;
   font-weight: 600;
   padding-bottom: 20px;
@@ -1927,7 +1926,7 @@ ol {
     Hero Area CSS
 ========================================*/
 .hero-area {
-  background-image: url("../images/hero/hero-bg.jpg");
+  background-image: url("../images/fundo-evento.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

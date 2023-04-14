@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N0IH8UD2SGalIz1xkADpzGTNPeyA6U6yDP6JpaMB/64=",
+  "Hash": "mtCfCp2gHBX9Dzqkqv9w4iNAbwDds6f6KR8U/Rk7IM0=",
   "Source": "TickeTac",
   "BasePath": "_content/TickeTac",
   "Mode": "Default",
@@ -1630,6 +1630,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\favicon.svg"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\fundo-evento.jpg",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/fundo-evento.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fundo-evento.jpg"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\hero\\hero-bg.jpg",
