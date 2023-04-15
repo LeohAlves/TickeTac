@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace TickeTac.Controllers
-{
+{  
     [Authorize(Roles = "Administrador")]
     public class AdminController : Controller
     {

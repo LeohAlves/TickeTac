@@ -7,6 +7,7 @@ using TickeTac.Models;
 namespace TickeTac.Data;
 
 public class ApplicationDbContext : IdentityDbContext<AppUser>
+
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
@@ -19,6 +20,8 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
     public DbSet<EventReview> EventReviews { get; set; }
     public DbSet<StatusEvent> StatusEvents { get; set; }
     public DbSet<SubCategory> SubCategories { get; set; }
+
+    
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -16508,6 +16508,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
