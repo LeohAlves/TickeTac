@@ -12,8 +12,8 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
     }
 
-    public DbSet<Category> Categories { get; set; }
     public DbSet<AppUser> AppUsers { get; set; }
+    public DbSet<Category> Categories { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
@@ -76,7 +76,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
-                    ProfilePicture = ""
+                    ProfilePicture = @"\images\fundo-evento.jpg"
                 }     
         );
         builder.Entity<IdentityUserRole<string>>().HasData(
