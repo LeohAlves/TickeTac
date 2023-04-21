@@ -10,7 +10,7 @@ namespace TickeTac.Models
        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte Id { get; set; }
 
-        [Display(Name = "Subcategoria")]
+        [Display(Name = "Sub Categoria")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
         [StringLength(20)]
         public string Name { get; set; }  

@@ -6,21 +6,18 @@ using TickeTac.Models;
 
 namespace TickeTac.Data;
 
-public class ApplicationDbContext : IdentityDbContext<AppUser>
-
+public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
-
-    public DbSet<Category> Categories { get; set; }
     public DbSet<AppUser> AppUsers { get; set; }
+    public DbSet<Category> Categories { get; set; }
     public DbSet<Event> Events { get; set; }
     public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
     public DbSet<StatusEvent> StatusEvents { get; set; }
     public DbSet<SubCategory> SubCategories { get; set; }
-
     
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -44,8 +41,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         #endregion
 
 
-        #region Seed Roles
-
+        #region Seed Roles  
         List<IdentityRole> listRoles = new()
         {
             new IdentityRole()
@@ -101,17 +97,16 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             },
             new SubCategory()
             {
-                Id =2,
+                Id = 2,
                 Name = "Sertanejo"
             },
             new SubCategory()
             {
-                Id =3,
+                Id = 3,
                 Name = "Educativo"
             },
         };
         builder.Entity<SubCategory>().HasData(listSubCategory);
         #endregion
-
     }
 }

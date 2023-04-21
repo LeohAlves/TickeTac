@@ -47,15 +47,15 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "664c6ff6-3d67-4bf5-9c91-395752d88fbf",
-                            ConcurrencyStamp = "f40d733c-5b0d-4e4a-b6ae-aece08422ad5",
+                            Id = "c9f6c292-4faf-4efd-8719-72b93f976d4c",
+                            ConcurrencyStamp = "d9d97e15-e58c-4b74-8c3f-85e9b0a73c87",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "1680b657-d881-44d8-889d-17b2ff68d5bc",
-                            ConcurrencyStamp = "04c24264-77f9-4058-b898-92c4773de5cf",
+                            Id = "d676db68-b442-4efd-b914-e8b8634324bc",
+                            ConcurrencyStamp = "b419ef34-86d0-4cf3-ba9f-ff392f865e0d",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         });
@@ -94,6 +94,10 @@ namespace TickeTac.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
@@ -146,6 +150,8 @@ namespace TickeTac.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -174,12 +180,10 @@ namespace TickeTac.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
@@ -212,8 +216,8 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "56bfb7b5-a123-4dbf-a88c-ce80697679ad",
-                            RoleId = "664c6ff6-3d67-4bf5-9c91-395752d88fbf"
+                            UserId = "c6fe96c1-ee0e-4e76-8d66-ca44c7b14c46",
+                            RoleId = "c9f6c292-4faf-4efd-8719-72b93f976d4c"
                         });
                 });
 
@@ -223,12 +227,10 @@ namespace TickeTac.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");
@@ -253,8 +255,8 @@ namespace TickeTac.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<ushort>("SubCategoryId")
-                        .HasColumnType("smallint unsigned");
+                    b.Property<byte>("SubCategoryId")
+                        .HasColumnType("tinyint unsigned");
 
                     b.HasKey("Id");
 
@@ -421,9 +423,9 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("TickeTac.Models.SubCategory", b =>
                 {
-                    b.Property<ushort>("Id")
+                    b.Property<byte>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("smallint unsigned");
+                        .HasColumnType("tinyint unsigned");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -433,6 +435,23 @@ namespace TickeTac.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SubCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = (byte)1,
+                            Name = "Rock"
+                        },
+                        new
+                        {
+                            Id = (byte)2,
+                            Name = "Sertanejo"
+                        },
+                        new
+                        {
+                            Id = (byte)3,
+                            Name = "Educativo"
+                        });
                 });
 
             modelBuilder.Entity("TickeTac.Models.AppUser", b =>
@@ -448,43 +467,25 @@ namespace TickeTac.Migrations
                         .HasMaxLength(400)
                         .HasColumnType("varchar(400)");
 
-                    b.ToTable("AppUser");
+                    b.HasDiscriminator().HasValue("AppUser");
 
                     b.HasData(
                         new
                         {
-                            Id = "56bfb7b5-a123-4dbf-a88c-ce80697679ad",
+                            Id = "c6fe96c1-ee0e-4e76-8d66-ca44c7b14c46",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed8b985b-fe9b-4da4-bf7f-383ce4f9bfbb",
+                            ConcurrencyStamp = "29f68177-3663-4862-a7d1-747ca2dc799e",
                             Email = "Leonardo@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "LEONARDO@TICKETAC.COM",
                             NormalizedUserName = "LEO@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOQyUHCtNdpyYezcv9UCUxsYCmig/cobvc11Lu0wZ0ZYjuMGkv8fPTUzrI7cII4Tvw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH0X7mlC4cN9CJkfvflAWYdkZMYaZ8fvkV1qEo/bsMrX9Mil9h9ACTStdgExHbx5aQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "43909159",
+                            SecurityStamp = "60720217",
                             TwoFactorEnabled = false,
                             UserName = "Leo@TickeTac.com",
                             Name = "Leonardo",
-                            ProfilePicture = ""
-                        },
-                        new
-                        {
-                            Id = "57c2d123-c160-4ec1-b1b5-669f20e42040",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c1653aab-d90f-42b5-90a5-479f7cf5a383",
-                            Email = "Kaka@TickeTac.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "KAKA@TICKETAC.COM",
-                            NormalizedUserName = "KAIQUE@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDPEiMB5UTTMtZOmLEbPnME0aC6xh6ZCnXCW/XGF8hnk/qKwmaeKuth1Anhvr9MIBg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "43909159",
-                            TwoFactorEnabled = false,
-                            UserName = "Kaique@TickeTac.com",
-                            Name = "Kaique",
                             ProfilePicture = ""
                         });
                 });
@@ -604,15 +605,6 @@ namespace TickeTac.Migrations
                     b.Navigation("Event");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithOne()
-                        .HasForeignKey("TickeTac.Models.AppUser", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("TickeTac.Models.Event", b =>

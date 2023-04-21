@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TickeTac.Models
 {
-    [Table("AppUser")]
     public class AppUser : IdentityUser
     {
 
@@ -13,8 +12,6 @@ namespace TickeTac.Models
         [StringLength(30, ErrorMessage = "O nome deve possuir no máximo 30 caracteres!")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
         public string Name { get; set; }
-
-
 
         [StringLength(400)]
         public string ProfilePicture { get; set; }

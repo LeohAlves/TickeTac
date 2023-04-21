@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class CriarBanco : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,6 +37,12 @@ namespace TickeTac.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Discriminator = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProfilePicture = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -86,7 +92,7 @@ namespace TickeTac.Migrations
                 name: "SubCategory",
                 columns: table => new
                 {
-                    Id = table.Column<ushort>(type: "smallint unsigned", nullable: false)
+                    Id = table.Column<byte>(type: "tinyint unsigned", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -123,29 +129,6 @@ namespace TickeTac.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "AppUser",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProfilePicture = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AppUser", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_AppUser_AspNetUsers_Id",
-                        column: x => x.Id,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
@@ -174,9 +157,9 @@ namespace TickeTac.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
+                    LoginProvider = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ProviderKey = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
+                    ProviderKey = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProviderDisplayName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -228,9 +211,9 @@ namespace TickeTac.Migrations
                 {
                     UserId = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LoginProvider = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
+                    LoginProvider = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "varchar(128)", maxLength: 128, nullable: false)
+                    Name = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Value = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -257,7 +240,7 @@ namespace TickeTac.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Img = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    SubCategoryId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
+                    SubCategoryId = table.Column<byte>(type: "tinyint unsigned", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -341,9 +324,9 @@ namespace TickeTac.Migrations
                 {
                     table.PrimaryKey("PK_EventManager", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_EventManager_AppUser_UserId",
+                        name: "FK_EventManager_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AppUser",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_EventManager_Event_EventId",
@@ -370,9 +353,9 @@ namespace TickeTac.Migrations
                 {
                     table.PrimaryKey("PK_EventReviews", x => new { x.EventId, x.UserId });
                     table.ForeignKey(
-                        name: "FK_EventReviews_AppUser_UserId",
+                        name: "FK_EventReviews_AspNetUsers_UserId",
                         column: x => x.UserId,
-                        principalTable: "AppUser",
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -389,33 +372,29 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1680b657-d881-44d8-889d-17b2ff68d5bc", "04c24264-77f9-4058-b898-92c4773de5cf", "Usuario", "USUÁRIO" },
-                    { "664c6ff6-3d67-4bf5-9c91-395752d88fbf", "f40d733c-5b0d-4e4a-b6ae-aece08422ad5", "Administrador", "ADMINISTRADOR" }
+                    { "c9f6c292-4faf-4efd-8719-72b93f976d4c", "d9d97e15-e58c-4b74-8c3f-85e9b0a73c87", "Administrador", "ADMINISTRADOR" },
+                    { "d676db68-b442-4efd-b914-e8b8634324bc", "b419ef34-86d0-4cf3-ba9f-ff392f865e0d", "Usuario", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "c6fe96c1-ee0e-4e76-8d66-ca44c7b14c46", 0, "29f68177-3663-4862-a7d1-747ca2dc799e", "AppUser", "Leonardo@TickeTac.com", true, false, null, "Leonardo", "LEONARDO@TICKETAC.COM", "LEO@TICKETAC.COM", "AQAAAAEAACcQAAAAEH0X7mlC4cN9CJkfvflAWYdkZMYaZ8fvkV1qEo/bsMrX9Mil9h9ACTStdgExHbx5aQ==", null, false, "", "60720217", false, "Leo@TickeTac.com" });
+
+            migrationBuilder.InsertData(
+                table: "SubCategory",
+                columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { "56bfb7b5-a123-4dbf-a88c-ce80697679ad", 0, "ed8b985b-fe9b-4da4-bf7f-383ce4f9bfbb", "Leonardo@TickeTac.com", true, false, null, "LEONARDO@TICKETAC.COM", "LEO@TICKETAC.COM", "AQAAAAEAACcQAAAAEOQyUHCtNdpyYezcv9UCUxsYCmig/cobvc11Lu0wZ0ZYjuMGkv8fPTUzrI7cII4Tvw==", null, false, "43909159", false, "Leo@TickeTac.com" },
-                    { "57c2d123-c160-4ec1-b1b5-669f20e42040", 0, "c1653aab-d90f-42b5-90a5-479f7cf5a383", "Kaka@TickeTac.com", true, false, null, "KAKA@TICKETAC.COM", "KAIQUE@TICKETAC.COM", "AQAAAAEAACcQAAAAEDPEiMB5UTTMtZOmLEbPnME0aC6xh6ZCnXCW/XGF8hnk/qKwmaeKuth1Anhvr9MIBg==", null, false, "43909159", false, "Kaique@TickeTac.com" }
+                    { (byte)1, "Rock" },
+                    { (byte)2, "Sertanejo" },
+                    { (byte)3, "Educativo" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "AppUser",
-                columns: new[] { "Id", "Name", "ProfilePicture" },
-                values: new object[] { "56bfb7b5-a123-4dbf-a88c-ce80697679ad", "Leonardo", "" });
-
-            migrationBuilder.InsertData(
-                table: "AppUser",
-                columns: new[] { "Id", "Name", "ProfilePicture" },
-                values: new object[] { "57c2d123-c160-4ec1-b1b5-669f20e42040", "Kaique", "" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "664c6ff6-3d67-4bf5-9c91-395752d88fbf", "56bfb7b5-a123-4dbf-a88c-ce80697679ad" });
+                values: new object[] { "c9f6c292-4faf-4efd-8719-72b93f976d4c", "c6fe96c1-ee0e-4e76-8d66-ca44c7b14c46" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -512,13 +491,10 @@ namespace TickeTac.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AppUser");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Event");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Category");

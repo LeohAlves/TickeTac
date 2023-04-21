@@ -1936,6 +1936,11 @@ ol {
   z-index: 2;
 }
 
+.seila{
+  padding-top: 250px;
+  padding-bottom: 300px;
+}
+
 .hero-area.overlay::before {
   z-index: -1;
   background: #081828;
