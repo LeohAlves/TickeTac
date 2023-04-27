@@ -33,7 +33,7 @@
                 <div class="col-lg-12">
                     <div class="nav-inner">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="/index.html">
+                            <a class="navbar-brand"  asp-action="Index" asp-controller="Home">
                                 <img src="~/images/logo/logo.svg" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
@@ -81,7 +81,7 @@
                             <div class="login-button">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)"><i class="lni lni-enter"></i> Entrar</a>
+                                        <a asp-action="Index" asp-controller="Admin"><i class="lni lni-enter"></i>Login</a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)"><i class="lni lni-user"></i> Registrar</a>

@@ -17,9 +17,7 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
     public DbSet<StatusEvent> StatusEvents { get; set; }
-    public DbSet<SubCategory> SubCategories { get; set; }
     
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -87,26 +85,6 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
         );
         #endregion
 
-        #region Seed SubCategory
-        List<SubCategory> listSubCategory = new List<SubCategory>()
-        {
-            new SubCategory()
-            {   
-                Id = 1,
-                Name = "Rock"
-            },
-            new SubCategory()
-            {
-                Id = 2,
-                Name = "Sertanejo"
-            },
-            new SubCategory()
-            {
-                Id = 3,
-                Name = "Educativo"
-            },
-        };
-        builder.Entity<SubCategory>().HasData(listSubCategory);
-        #endregion
+        
     }
 }

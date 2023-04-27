@@ -17,11 +17,5 @@ namespace TickeTac.Models
         
         [StringLength(400)]
         public string Img { get; set; } 
-
-        [Display(Name ="Sub Categoria")]
-        [Required]
-        public byte SubCategoryId { get; set; }
-        [ForeignKey ("SubCategoryId")]
-        public SubCategory SubCategory { get; set; }
     }
 }

@@ -22,8 +22,7 @@ namespace TickeTac.Controllers
         // GET: Category
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Categories.Include(c => c.SubCategory);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Categories.ToListAsync());
         }
 
         // GET: Category/Details/5
@@ -35,7 +34,6 @@ namespace TickeTac.Controllers
             }
 
             var category = await _context.Categories
-                .Include(c => c.SubCategory)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
@@ -48,7 +46,6 @@ namespace TickeTac.Controllers
         // GET: Category/Create
         public IActionResult Create()
         {
-            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "Id", "Name");
             return View();
         }
 
@@ -57,7 +54,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,SubCategoryId")] Category category)
+        public async Task<IActionResult> Create([Bind("Id,Name,Img")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +62,6 @@ namespace TickeTac.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "Id", "Name", category.SubCategoryId);
             return View(category);
         }
 
@@ -82,7 +78,6 @@ namespace TickeTac.Controllers
             {
                 return NotFound();
             }
-            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "Id", "Name", category.SubCategoryId);
             return View(category);
         }
 
@@ -91,7 +86,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,SubCategoryId")] Category category)
+        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,Img")] Category category)
         {
             if (id != category.Id)
             {
@@ -118,7 +113,6 @@ namespace TickeTac.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "Id", "Name", category.SubCategoryId);
             return View(category);
         }
 
@@ -131,7 +125,6 @@ namespace TickeTac.Controllers
             }
 
             var category = await _context.Categories
-                .Include(c => c.SubCategory)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (category == null)
             {
