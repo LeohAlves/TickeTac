@@ -15,7 +15,7 @@ namespace TickeTac.Models
         [StringLength(20)]
         public string Name { get; set; }
         
-        [StringLength(400)]
+        [StringLength(600)]
         public string Img { get; set; } 
     }
 }
