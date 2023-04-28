@@ -85,6 +85,32 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
         );
         #endregion
 
+        #region seed user usuario
+        var usuarioId = Guid.NewGuid().ToString();
+        builder.Entity<AppUser>().HasData(
+                new AppUser()
+                {
+                    Id = usuarioId,
+                    Name = "Kaique",
+                    UserName = "Kaka@TickeTac.com",
+                    NormalizedUserName = "KAKA@TICKETAC.COM",
+                    Email = "Kaique@TickeTac.com",
+                    NormalizedEmail = "KAIQUE@TICKETAC.COM",
+                    EmailConfirmed = true,
+                    PasswordHash = hash.HashPassword(null, "123456"),
+                    SecurityStamp = hash.GetHashCode().ToString(),
+                    ProfilePicture = ""
+                }
+        );
+        builder.Entity<IdentityUserRole<string>>().HasData(
+         new IdentityUserRole<string>()
+         {
+             UserId = usuarioId,
+             RoleId = listRoles[1].Id
+         }
+        );
+        #endregion
+
         #region seed category
 
         List<Category> listCategory = new List<Category>()
@@ -135,7 +161,6 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
         #endregion
 
         #region seed status event
-
         List<StatusEvent> listStatusEvent = new List<StatusEvent>()
         {
                 new StatusEvent()  
@@ -163,6 +188,53 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 
         };
         builder.Entity<StatusEvent>().HasData(listStatusEvent);
+
+        #endregion
+
+        #region seed events 
+
+        List<Event> listEvent = new List<Event>()
+        {
+            new Event()
+            {
+                Id = 1,
+                Name = "Show de Rock do Gallo",
+                ContactPhone = "14991115478",
+                Price = 150,
+                EventDateBegin = DateTime.Parse("28/12/2023 12:00"),
+                EventDateEnd = DateTime.Parse("01/01/2024 18:00"),
+                Description = "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano",
+                Image = "",
+                ContactEmail = "gallo@email.com",
+                MoreInfo = "",
+                State = "São Paulo",
+                City = "Barra Bonita",
+                District = "Nova Barra",
+                PublicSpace = "Nem lembro o que é",
+                Cep = "1234567891234",
+                CategoryId = 4,
+                StatusEventId = 2
+            }
+        };
+        builder.Entity<Event>().HasData(listEvent);
+
+        #endregion
+
+        #region seed eventowner
+
+        List<EventOwner> listEventOwner = new List<EventOwner>()
+        {
+            new EventOwner()
+            {
+                Id = 1,
+                Name = "José Gallo",
+                CpfCnpj = "00100200304",
+                EventId = 1,
+                UserId = usuarioId
+            }
+        };
+
+        builder.Entity<EventOwner>().HasData(listEventOwner);
 
         #endregion
     }

@@ -47,15 +47,15 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2b4860ee-26a6-4716-bfd4-c1c2b37da9eb",
-                            ConcurrencyStamp = "c82e973e-7c96-4d3d-809a-9889beb834ed",
+                            Id = "e662c287-120f-4732-85a6-13dde26e268d",
+                            ConcurrencyStamp = "0935c953-c4e8-4250-921c-95b0a27dc5a8",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "5fb96902-0147-4ab3-a6e8-2f02ddc85d01",
-                            ConcurrencyStamp = "c28906da-46f5-4781-bbde-f20b4b68e36a",
+                            Id = "e9021b4d-05b1-4b4f-857f-db6d9cfce3db",
+                            ConcurrencyStamp = "19eb9e8b-11e6-4697-bbac-34ac2a396d2b",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         });
@@ -216,8 +216,13 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "4187b97e-b8f9-43ff-927c-2180601cda18",
-                            RoleId = "2b4860ee-26a6-4716-bfd4-c1c2b37da9eb"
+                            UserId = "764a3c42-e4fa-42a7-a2b3-fb892577abfc",
+                            RoleId = "e662c287-120f-4732-85a6-13dde26e268d"
+                        },
+                        new
+                        {
+                            UserId = "56435dff-d5ad-45a1-8243-b0c3655098c0",
+                            RoleId = "e9021b4d-05b1-4b4f-857f-db6d9cfce3db"
                         });
                 });
 
@@ -378,6 +383,28 @@ namespace TickeTac.Migrations
                     b.HasIndex("StatusEventId");
 
                     b.ToTable("Event");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = (ushort)1,
+                            CategoryId = (ushort)4,
+                            Cep = "1234567891234",
+                            City = "Barra Bonita",
+                            ContactEmail = "gallo@email.com",
+                            ContactPhone = "14991115478",
+                            Description = "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano",
+                            District = "Nova Barra",
+                            EventDateBegin = new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventDateEnd = new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            Image = "",
+                            MoreInfo = "",
+                            Name = "Show de Rock do Gallo",
+                            Price = 150m,
+                            PublicSpace = "Nem lembro o que é",
+                            State = "São Paulo",
+                            StatusEventId = (ushort)2
+                        });
                 });
 
             modelBuilder.Entity("TickeTac.Models.EventOwner", b =>
@@ -409,6 +436,16 @@ namespace TickeTac.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("EventManager");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = (ushort)1,
+                            CpfCnpj = "00100200304",
+                            EventId = (ushort)1,
+                            Name = "José Gallo",
+                            UserId = "56435dff-d5ad-45a1-8243-b0c3655098c0"
+                        });
                 });
 
             modelBuilder.Entity("TickeTac.Models.EventReview", b =>
@@ -452,6 +489,28 @@ namespace TickeTac.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("StatusEvent");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = (ushort)1,
+                            Name = "Concluido"
+                        },
+                        new
+                        {
+                            Id = (ushort)2,
+                            Name = "Em andamento"
+                        },
+                        new
+                        {
+                            Id = (ushort)3,
+                            Name = "Confirmado"
+                        },
+                        new
+                        {
+                            Id = (ushort)4,
+                            Name = "Cancelado"
+                        });
                 });
 
             modelBuilder.Entity("TickeTac.Models.AppUser", b =>
@@ -472,20 +531,38 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4187b97e-b8f9-43ff-927c-2180601cda18",
+                            Id = "764a3c42-e4fa-42a7-a2b3-fb892577abfc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eb9fc0ad-0637-4d63-839d-fb61ef30d8e3",
+                            ConcurrencyStamp = "e63c42bb-e58e-460e-999b-5df543b106e1",
                             Email = "Leonardo@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "LEONARDO@TICKETAC.COM",
                             NormalizedUserName = "LEO@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJrEk2yPLocenWol72kynvyetWV4OTQjXJyUGDgJbYST8JagCM7AsJizPIBOUCZIIA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECyNqpkkg4NGU+CclsXLup3dqqAtxaSSKodPpnA/gmKxR5tGYxrzLs8bYoYg1irNFQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "22613965",
+                            SecurityStamp = "33650236",
                             TwoFactorEnabled = false,
                             UserName = "Leo@TickeTac.com",
                             Name = "Leonardo",
+                            ProfilePicture = ""
+                        },
+                        new
+                        {
+                            Id = "56435dff-d5ad-45a1-8243-b0c3655098c0",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "bd8d31c9-4561-4dc6-8a45-af5635c2013f",
+                            Email = "Kaique@TickeTac.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "KAIQUE@TICKETAC.COM",
+                            NormalizedUserName = "KAKA@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHmHarBI7DnwJ7GGyX3rjcXxOYSa/DcLmL+INKV4E0t2kSxH+5W+/YT7263DJmOEjw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "33650236",
+                            TwoFactorEnabled = false,
+                            UserName = "Kaka@TickeTac.com",
+                            Name = "Kaique",
                             ProfilePicture = ""
                         });
                 });
