@@ -53,6 +53,12 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
                 Id = Guid.NewGuid().ToString() ,
                 Name="Usuario",
                 NormalizedName= "USUÁRIO"
+            },
+            new IdentityRole()
+            {
+                Id = Guid.NewGuid().ToString() ,
+                Name="Organizador",
+                NormalizedName= "ORGANIZADOR"
             }
         };
         builder.Entity<IdentityRole>().HasData(listRoles);
