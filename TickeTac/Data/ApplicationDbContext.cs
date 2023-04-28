@@ -133,5 +133,37 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 
 
         #endregion
+
+        #region seed status event
+
+        List<StatusEvent> listStatusEvent = new List<StatusEvent>()
+        {
+                new StatusEvent()  
+            {
+                Id = 1,
+                Name =  "Concluido"
+            },
+
+                new StatusEvent()  
+            {
+                Id = 2,
+                Name =  "Em andamento"
+            },            
+                new StatusEvent()  
+            {
+                Id = 3,
+                Name =  "Confirmado"
+            },
+                new StatusEvent()  
+            {
+                Id = 4,
+                Name =  "Cancelado"
+            },
+
+
+        };
+        builder.Entity<StatusEvent>().HasData(listStatusEvent);
+
+        #endregion
     }
 }
