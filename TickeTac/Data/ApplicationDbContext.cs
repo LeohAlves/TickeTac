@@ -84,7 +84,6 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
          }
         );
         #endregion
-
-        
+ 
     }
 }
