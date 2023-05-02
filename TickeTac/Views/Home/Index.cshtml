@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<TickeTac.Models.Category>
+@{
     ViewData["Title"] = "Home";
 }
 <body>
@@ -28,16 +29,10 @@
                                         <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
                                         <select name="category" id="category">
                                             <option value="none" selected disabled>Categorias</option>
-                                            <option value="none">Shows</option>
-                                            <option value="none">Electronics</option>
-                                            <option value="none">Mobiles</option>
-                                            <option value="none">Furniture</option>
-                                            <option value="none">Fashion</option>
-                                            <option value="none">Jobs</option>
-                                            <option value="none">Real Estate</option>
-                                            <option value="none">Animals</option>
-                                            <option value="none">Education</option>
-                                            <option value="none">Matrimony</option>
+                                            @foreach (var category in ViewBag.Category)
+                                         {
+                                             <option value="@category.Id">@category.Name</option>
+                                             }
                                         </select>
                                     </div>
                                 </div>
