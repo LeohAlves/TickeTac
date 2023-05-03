@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class=no-js lang=zxx>
+
+<!-- Mirrored from demo.graygrids.com/themes/classigrids-demo/coming-soon.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 May 2023 23:10:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset=utf-8 />
+<meta http-equiv=x-ua-compatible content="ie=edge" />
+<title>Comming Soon - ClassiGrids Classified Ads and Listing Website Template.</title>
+<meta name=description content="" />
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel=stylesheet>
+<link href="https://fonts.googleapis.com/css2?family=Lato&amp;display=swap" rel=stylesheet>
+
+<link rel=stylesheet href="assets/css/A.bootstrap.min.css%2bLineIcons.2.0.css%2banimate.css%2btiny-slider.css%2bglightbox.min.css%2cMcc.4RKRGkT2S5.css.pagespeed.cf.tPexlwcGLm.css" />
+<link rel=stylesheet href="assets/css/A.main.css.pagespeed.cf.65XS99l10B.css" />
+</head>
+<body>
+<!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+<div class=preloader>
+<div class=preloader-inner>
+<div class=preloader-icon>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
+
+
+<div class=coming-soon>
+<div class=verticle-lines>
+<div class="vlines one"></div>
+<div class="vlines two"></div>
+<div class="vlines three"></div>
+<div class="vlines four"></div>
+</div>
+<div class=d-table>
+<div class=d-table-cell>
+<div class=container>
+<div class=soon-content>
+<div class=text>
+<h2>We are coming soon</h2>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem
+Ipsum has been the industry's standard dummy text</p>
+</div>
+<div class=inner-content>
+<div class=box>
+<h1 id=days>000</h1>
+<h2 id=daystxt>Days</h2>
+</div>
+<div class=box>
+<h1 id=hours>00</h1>
+<h2 id=hourstxt>Hours</h2>
+</div>
+<div class=box>
+<h1 id=minutes>00</h1>
+<h2 id=minutestxt>Minutes</h2>
+</div>
+<div class=box>
+<h1 id=seconds>00</h1>
+<h2 id=secondstxt>Secondes</h2>
+</div>
+</div>
+<div style="background: rgb(204, 24, 24);" class=alert>
+<h1 style="padding: 50px 80px;color: white;">We are sorry, Event ended ! </h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/count-up.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/tiny-slider.js"></script>
+<script src="assets/js/glightbox.min.js"></script>
+<script>window.onload=function(){window.setTimeout(fadeout,500);}
+function fadeout(){document.querySelector('.preloader').style.opacity='0';document.querySelector('.preloader').style.display='none';}</script>
+<script>
+        const finaleDate = new Date("February 15, 2023 00:00:00").getTime();
+
+        const timer = () => {
+            const now = new Date().getTime();
+            let diff = finaleDate - now;
+            if (diff < 0) {
+                document.querySelector('.alert').style.display = 'block';
+                document.querySelector('.container').style.display = 'none';
+            }
+
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            let hours = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+            let minutes = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+            let seconds = Math.floor(diff % (1000 * 60) / 1000);
+
+            days <= 99 ? days = `0${days}` : days;
+            days <= 9 ? days = `00${days}` : days;
+            hours <= 9 ? hours = `0${hours}` : hours;
+            minutes <= 9 ? minutes = `0${minutes}` : minutes;
+            seconds <= 9 ? seconds = `0${seconds}` : seconds;
+
+            document.querySelector('#days').textContent = days;
+            document.querySelector('#hours').textContent = hours;
+            document.querySelector('#minutes').textContent = minutes;
+            document.querySelector('#seconds').textContent = seconds;
+
+        }
+        timer();
+        setInterval(timer, 1000);
+    </script>
+</body>
+
+<!-- Mirrored from demo.graygrids.com/themes/classigrids-demo/coming-soon.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 May 2023 23:10:38 GMT -->
+</html>
