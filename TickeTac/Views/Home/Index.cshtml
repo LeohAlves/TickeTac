@@ -30,9 +30,9 @@
                                         <select name="category" id="category">
                                             <option value="none" selected disabled>Categorias</option>
                                             @foreach (var category in ViewBag.Category)
-                                         {
-                                             <option value="@category.Id">@category.Name</option>
-                                             }
+                                            {
+                                                 <option value="@category.Id">@category.Name</option>
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -73,13 +73,15 @@
                     <div class="col-12 p-0">
                         <div class="category-slider">
                             <!-- Start Single Category -->
-                            <a href="category.html" class="single-cat">
-                                <div class="icon">
-                                    <img src="~/images/categories/car.svg" alt="#">
-                                </div>
-                                <h3>Vehicle</h3>
-                                <h5 class="total">35</h5>
-                            </a>
+                            @foreach (var category in ViewBag.Category)
+                            {
+                                <a href="#" class="single-cat">
+                                    <div class="icon">
+                                        <img src="@category.Img" alt="#">
+                                    </div>
+                                    <h3>@category.Name</h3>
+                                </a>
+                            }
                             <!-- End Single Category -->
                             <!-- Start Single Category -->
                             <a href="category.html" class="single-cat">

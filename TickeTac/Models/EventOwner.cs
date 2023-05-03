@@ -19,7 +19,7 @@ namespace TickeTac.Models
         [StringLength(14)]
         public string CpfCnpj { get; set; }
 
-        [Required]
+        
         [Display(Name = "Evento")]
         public UInt16 EventId { get; set; }
         [ForeignKey("EventId")]
