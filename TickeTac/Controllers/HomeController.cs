@@ -24,6 +24,7 @@ public class HomeController : Controller
 
     public IActionResult Eventos()
     {
+        ViewData["Category"] = _context.Categories.ToList();
         return View();
     }
 

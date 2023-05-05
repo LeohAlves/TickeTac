@@ -46,7 +46,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class=" active dd-menu collapsed" href="javascript:void(0)"
+                                        <a class="  @(ViewBag.Title == "Home" ? "active" : "") dd-menu collapsed"  asp-action="Index" asp-controller="home"
                                             data-bs-toggle="collapse" data-bs-target="#submenu-1-1"
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
                                             aria-label="Toggle navigation">Home</a>
