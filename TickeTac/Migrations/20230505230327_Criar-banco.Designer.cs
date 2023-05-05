@@ -11,8 +11,8 @@ using TickeTac.Data;
 namespace TickeTac.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230503223816_Criar-Banco")]
-    partial class CriarBanco
+    [Migration("20230505230327_Criar-banco")]
+    partial class Criarbanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,22 +49,22 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3d479e95-570c-42be-a4b7-f7a47b5d75e6",
-                            ConcurrencyStamp = "e5e0e132-5b57-4a1b-8f72-8dcc456d0f94",
+                            Id = "1609395f-5467-4b4b-8c05-3683b177745c",
+                            ConcurrencyStamp = "9946b9cd-5c72-4d09-990e-f0e854641a4f",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "b567c3fc-afab-4d27-a34c-c049c5fdd343",
-                            ConcurrencyStamp = "962df764-f56a-48b6-a858-00da397d1c3f",
+                            Id = "bab9c5c8-08b8-4fbc-8f62-02b8dabed67e",
+                            ConcurrencyStamp = "011f2a5d-4c1c-4fbb-a7c0-41cf5155f3c8",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         },
                         new
                         {
-                            Id = "7d4c3ada-93f4-4670-9c9d-03d4928ca37f",
-                            ConcurrencyStamp = "8389b0d0-7e35-413b-8597-2ffe2ecfadc9",
+                            Id = "33c4aa03-0576-4325-a4cc-cb1e450f34d4",
+                            ConcurrencyStamp = "a714a558-3b3f-4ee4-a1b2-036ac317167b",
                             Name = "Organizador",
                             NormalizedName = "ORGANIZADOR"
                         });
@@ -225,13 +225,13 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "7261bd28-3f2a-4132-8006-dcb4da9bf3c2",
-                            RoleId = "3d479e95-570c-42be-a4b7-f7a47b5d75e6"
+                            UserId = "16b54999-0766-44cc-b02b-9f4c46861a28",
+                            RoleId = "1609395f-5467-4b4b-8c05-3683b177745c"
                         },
                         new
                         {
-                            UserId = "43ea7b13-9b56-4792-8776-57b6a011bde5",
-                            RoleId = "b567c3fc-afab-4d27-a34c-c049c5fdd343"
+                            UserId = "89016a8d-74ef-4b43-86ec-1cfa864ec8c9",
+                            RoleId = "bab9c5c8-08b8-4fbc-8f62-02b8dabed67e"
                         });
                 });
 
@@ -465,7 +465,7 @@ namespace TickeTac.Migrations
                             CpfCnpj = "00100200304",
                             EventId = (ushort)1,
                             Name = "José Gallo",
-                            UserId = "43ea7b13-9b56-4792-8776-57b6a011bde5"
+                            UserId = "89016a8d-74ef-4b43-86ec-1cfa864ec8c9"
                         });
                 });
 
@@ -552,35 +552,35 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7261bd28-3f2a-4132-8006-dcb4da9bf3c2",
+                            Id = "16b54999-0766-44cc-b02b-9f4c46861a28",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cfa7d538-fe62-4078-a783-b99fb566444d",
-                            Email = "Leonardo@TickeTac.com",
+                            ConcurrencyStamp = "70752f0a-e69c-41e8-bea5-d1bce097fea6",
+                            Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "LEONARDO@TICKETAC.COM",
-                            NormalizedUserName = "LEO@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENri1Hp/BX7Mewsu/tMRQMtwLL2dnffeVZrtYqBH0IgbR1+i5/zAhWwjv2pvc+XrnQ==",
+                            NormalizedEmail = "ADMIN@TICKETAC.COM",
+                            NormalizedUserName = "ADMIN@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFztEROpFoKeGNeSUEL5sU45DyrPXb+/h/kqAqK57kG+GmYwZivRzgK+XbCaEnZXZw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "34416674",
+                            SecurityStamp = "41314614",
                             TwoFactorEnabled = false,
-                            UserName = "Leo@TickeTac.com",
+                            UserName = "Admin@TickeTac.com",
                             Name = "Leonardo",
                             ProfilePicture = ""
                         },
                         new
                         {
-                            Id = "43ea7b13-9b56-4792-8776-57b6a011bde5",
+                            Id = "89016a8d-74ef-4b43-86ec-1cfa864ec8c9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a5cfe759-4771-489d-9d62-79dd42cf8e54",
+                            ConcurrencyStamp = "1420e017-1732-45db-9987-5dc69e4c5b06",
                             Email = "Kaique@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "KAIQUE@TICKETAC.COM",
                             NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMTWoifEWIYeFHGnYke+k5zCqjIVtXWwoL2dDzbuTjyXgQHli5Ixg2QHPuuRt7LZvQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIESvv+SknjOZIGbSGKzwjx3ho7BB9G8FJf4gaYap0rmj0VWavEuyqSdQPMBJfSbVw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "34416674",
+                            SecurityStamp = "41314614",
                             TwoFactorEnabled = false,
                             UserName = "Kaka@TickeTac.com",
                             Name = "Kaique",

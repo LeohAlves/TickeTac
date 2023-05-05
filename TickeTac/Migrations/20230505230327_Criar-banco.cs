@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class CriarBanco : Migration
+    public partial class Criarbanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -350,9 +350,9 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "3d479e95-570c-42be-a4b7-f7a47b5d75e6", "e5e0e132-5b57-4a1b-8f72-8dcc456d0f94", "Administrador", "ADMINISTRADOR" },
-                    { "7d4c3ada-93f4-4670-9c9d-03d4928ca37f", "8389b0d0-7e35-413b-8597-2ffe2ecfadc9", "Organizador", "ORGANIZADOR" },
-                    { "b567c3fc-afab-4d27-a34c-c049c5fdd343", "962df764-f56a-48b6-a858-00da397d1c3f", "Usuario", "USUÁRIO" }
+                    { "1609395f-5467-4b4b-8c05-3683b177745c", "9946b9cd-5c72-4d09-990e-f0e854641a4f", "Administrador", "ADMINISTRADOR" },
+                    { "33c4aa03-0576-4325-a4cc-cb1e450f34d4", "a714a558-3b3f-4ee4-a1b2-036ac317167b", "Organizador", "ORGANIZADOR" },
+                    { "bab9c5c8-08b8-4fbc-8f62-02b8dabed67e", "011f2a5d-4c1c-4fbb-a7c0-41cf5155f3c8", "Usuario", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
@@ -360,8 +360,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "43ea7b13-9b56-4792-8776-57b6a011bde5", 0, "a5cfe759-4771-489d-9d62-79dd42cf8e54", "AppUser", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEMTWoifEWIYeFHGnYke+k5zCqjIVtXWwoL2dDzbuTjyXgQHli5Ixg2QHPuuRt7LZvQ==", null, false, "", "34416674", false, "Kaka@TickeTac.com" },
-                    { "7261bd28-3f2a-4132-8006-dcb4da9bf3c2", 0, "cfa7d538-fe62-4078-a783-b99fb566444d", "AppUser", "Leonardo@TickeTac.com", true, false, null, "Leonardo", "LEONARDO@TICKETAC.COM", "LEO@TICKETAC.COM", "AQAAAAEAACcQAAAAENri1Hp/BX7Mewsu/tMRQMtwLL2dnffeVZrtYqBH0IgbR1+i5/zAhWwjv2pvc+XrnQ==", null, false, "", "34416674", false, "Leo@TickeTac.com" }
+                    { "16b54999-0766-44cc-b02b-9f4c46861a28", 0, "70752f0a-e69c-41e8-bea5-d1bce097fea6", "AppUser", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEFztEROpFoKeGNeSUEL5sU45DyrPXb+/h/kqAqK57kG+GmYwZivRzgK+XbCaEnZXZw==", null, false, "", "41314614", false, "Admin@TickeTac.com" },
+                    { "89016a8d-74ef-4b43-86ec-1cfa864ec8c9", 0, "1420e017-1732-45db-9987-5dc69e4c5b06", "AppUser", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEIESvv+SknjOZIGbSGKzwjx3ho7BB9G8FJf4gaYap0rmj0VWavEuyqSdQPMBJfSbVw==", null, false, "", "41314614", false, "Kaka@TickeTac.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -393,12 +393,12 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "b567c3fc-afab-4d27-a34c-c049c5fdd343", "43ea7b13-9b56-4792-8776-57b6a011bde5" });
+                values: new object[] { "1609395f-5467-4b4b-8c05-3683b177745c", "16b54999-0766-44cc-b02b-9f4c46861a28" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "3d479e95-570c-42be-a4b7-f7a47b5d75e6", "7261bd28-3f2a-4132-8006-dcb4da9bf3c2" });
+                values: new object[] { "bab9c5c8-08b8-4fbc-8f62-02b8dabed67e", "89016a8d-74ef-4b43-86ec-1cfa864ec8c9" });
 
             migrationBuilder.InsertData(
                 table: "Event",
@@ -408,7 +408,7 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "EventManager",
                 columns: new[] { "Id", "CpfCnpj", "EventId", "Name", "UserId" },
-                values: new object[] { (ushort)1, "00100200304", (ushort)1, "José Gallo", "43ea7b13-9b56-4792-8776-57b6a011bde5" });
+                values: new object[] { (ushort)1, "00100200304", (ushort)1, "José Gallo", "89016a8d-74ef-4b43-86ec-1cfa864ec8c9" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
