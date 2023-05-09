@@ -7,10 +7,9 @@ namespace TickeTac.Models
 {
     public class AppUser : IdentityUser
     {
-
+        [Required(ErrorMessage = "O campo não pode ser vazio!")]   
         [Display(Name = "Nome do usuário")]
         [StringLength(30, ErrorMessage = "O nome deve possuir no máximo 30 caracteres!")]
-        [Required(ErrorMessage = "O campo não pode ser vazio!")]
         public string Name { get; set; }
 
         [StringLength(400)]

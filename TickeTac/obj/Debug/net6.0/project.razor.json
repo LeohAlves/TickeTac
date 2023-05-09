@@ -16338,6 +16338,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Eventos.cshtml",
+      "TargetPath": "Views\\Home\\Eventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReview\\Index.cshtml",
       "TargetPath": "Views\\EventReview\\Index.cshtml",
       "FileKind": "mvc"
@@ -16360,11 +16365,6 @@
     {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReview\\Details.cshtml",
       "TargetPath": "Views\\EventReview\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\SubCategory\\Edit.cshtml",
-      "TargetPath": "Views\\SubCategory\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16433,11 +16433,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\SubCategory\\Details.cshtml",
-      "TargetPath": "Views\\SubCategory\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Delete.cshtml",
       "TargetPath": "Views\\Category\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16468,8 +16463,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_LayoutAdmin.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutAdmin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16488,23 +16483,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\SubCategory\\Index.cshtml",
-      "TargetPath": "Views\\SubCategory\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Index.cshtml",
       "TargetPath": "Views\\Event\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\SubCategory\\Create.cshtml",
-      "TargetPath": "Views\\SubCategory\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\SubCategory\\Delete.cshtml",
-      "TargetPath": "Views\\SubCategory\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

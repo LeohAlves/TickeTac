@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gGyrCenQu0QIpO6ndnsgSjwVg23bmuzfOPfBQlCFhMs=",
+  "Hash": "LthQZgVQB8PULn7ScrWJ9+uRUrMMPagvQ2Hzle/0g5c=",
   "Source": "TickeTac",
   "BasePath": "_content/TickeTac",
   "Mode": "Default",
@@ -6951,6 +6951,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\hero\\hero-bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\icons\\icon-esportes.png",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/icons/icon-esportes.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\icons\\icon-esportes.png"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\icons\\icon-microfone.png",
