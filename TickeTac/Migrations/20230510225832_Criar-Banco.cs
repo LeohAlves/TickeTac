@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class criarbanco : Migration
+    public partial class CriarBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,9 +38,7 @@ namespace TickeTac.Migrations
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Discriminator = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: true)
+                    Name = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ProfilePicture = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -233,6 +231,30 @@ namespace TickeTac.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "EventOwner",
+                columns: table => new
+                {
+                    Id = table.Column<ushort>(type: "smallint unsigned", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CpfCnpj = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EventOwner", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EventOwner_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Event",
                 columns: table => new
                 {
@@ -264,7 +286,8 @@ namespace TickeTac.Migrations
                     Cep = table.Column<string>(type: "varchar(13)", maxLength: 13, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CategoryId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
-                    StatusEventId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
+                    StatusEventId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
+                    EventOwnerId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -276,40 +299,15 @@ namespace TickeTac.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
+                        name: "FK_Event_EventOwner_EventOwnerId",
+                        column: x => x.EventOwnerId,
+                        principalTable: "EventOwner",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Event_StatusEvent_StatusEventId",
                         column: x => x.StatusEventId,
                         principalTable: "StatusEvent",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "EventManager",
-                columns: table => new
-                {
-                    Id = table.Column<ushort>(type: "smallint unsigned", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CpfCnpj = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    EventId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventManager", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EventManager_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_EventManager_Event_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Event",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -350,18 +348,18 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "37e86ad5-93ea-4ae1-a3ce-9948b6fb5953", "fb3cd118-0102-4733-aa72-550c3ffc042c", "Organizador", "ORGANIZADOR" },
-                    { "91fe25cd-5a34-4ed7-9710-0d41615ed33f", "68ff9b06-6234-41c1-a48d-400710b009a8", "Usuario", "USUÁRIO" },
-                    { "9d5356f2-5847-459b-8901-dabeb5419d34", "44a4f50b-10ac-4982-b95a-f86cf31f540f", "Administrador", "ADMINISTRADOR" }
+                    { "e62e542a-8d52-43ac-a4e8-26a35d993835", "63103683-4bf7-4f49-aefd-7319aa7bf11e", "Administrador", "ADMINISTRADOR" },
+                    { "ee5c2163-6e18-4055-a5a2-fad70904a9a2", "74912cb8-7139-41dd-9536-19340e145709", "Organizador", "ORGANIZADOR" },
+                    { "fdaeca36-729d-4243-aff4-19174aa0edd8", "76adc9a1-288b-4449-9fd1-aa68b2158d86", "Usuario", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "80afedbc-2d14-4366-9a75-d707740253fe", 0, "aff969fa-ffb1-4519-8009-aa5729fc417e", "AppUser", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEJx18o/+AUWantv4z6QGzEqOChiDiqcWSTjfb0+/vu9tFRcqKH8vcXpjurFjzC8SLA==", null, false, "", "61724767", false, "Admin@TickeTac.com" },
-                    { "b589e0e9-8e8e-4e27-9752-fbd393720e65", 0, "98e673ed-c785-4c48-909b-d0b1b592effe", "AppUser", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEL6AGMYmrsXIxv8K0YnhRvEFpsduef6w8lqpRtu2cVM6mS9JsZdLSQU9Tcbr2MvHTQ==", null, false, "", "61724767", false, "Kaka@TickeTac.com" }
+                    { "8e060a43-23a1-4a34-8f11-9ac36b390467", 0, "e17b43fc-1d46-403c-b54c-432273d3f4d3", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEGQ4nDFDBrQA0YCPePlsO6JoIUU+cInMIfj8s0xbz3SZE6t0u1wzmm/OFqF6xOAr1A==", null, false, "", "1854355", false, "Admin@TickeTac.com" },
+                    { "e2ba6cc4-92d4-4b11-b4d4-2b471495779f", 0, "afd6fc68-d94d-40de-9587-ab0048ea74c3", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEHV4S0ScoPvw3ahRIWLcnP+1bXbrp4s8wzT4zD0EYE1lVm0mx4NC680wJkeriJissQ==", null, false, "", "1854355", false, "Kaka@TickeTac.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -393,22 +391,22 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "9d5356f2-5847-459b-8901-dabeb5419d34", "80afedbc-2d14-4366-9a75-d707740253fe" });
+                values: new object[] { "e62e542a-8d52-43ac-a4e8-26a35d993835", "8e060a43-23a1-4a34-8f11-9ac36b390467" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "91fe25cd-5a34-4ed7-9710-0d41615ed33f", "b589e0e9-8e8e-4e27-9752-fbd393720e65" });
+                values: new object[] { "fdaeca36-729d-4243-aff4-19174aa0edd8", "e2ba6cc4-92d4-4b11-b4d4-2b471495779f" });
+
+            migrationBuilder.InsertData(
+                table: "EventOwner",
+                columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
+                values: new object[] { (ushort)1, "00100200304", "José Gallo", "e2ba6cc4-92d4-4b11-b4d4-2b471495779f" });
 
             migrationBuilder.InsertData(
                 table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "City", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "State", "StatusEventId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", "Barra Bonita", "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", "São Paulo", (ushort)2 });
-
-            migrationBuilder.InsertData(
-                table: "EventManager",
-                columns: new[] { "Id", "CpfCnpj", "EventId", "Name", "UserId" },
-                values: new object[] { (ushort)1, "00100200304", (ushort)1, "José Gallo", "b589e0e9-8e8e-4e27-9752-fbd393720e65" });
+                columns: new[] { "Id", "CategoryId", "Cep", "City", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "State", "StatusEventId" },
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", "Barra Bonita", "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", "São Paulo", (ushort)2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -453,18 +451,18 @@ namespace TickeTac.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Event_EventOwnerId",
+                table: "Event",
+                column: "EventOwnerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Event_StatusEventId",
                 table: "Event",
                 column: "StatusEventId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventManager_EventId",
-                table: "EventManager",
-                column: "EventId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventManager_UserId",
-                table: "EventManager",
+                name: "IX_EventOwner_UserId",
+                table: "EventOwner",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -491,16 +489,10 @@ namespace TickeTac.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "EventManager");
-
-            migrationBuilder.DropTable(
                 name: "EventReviews");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Event");
@@ -509,7 +501,13 @@ namespace TickeTac.Migrations
                 name: "Category");
 
             migrationBuilder.DropTable(
+                name: "EventOwner");
+
+            migrationBuilder.DropTable(
                 name: "StatusEvent");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
         }
     }
 }

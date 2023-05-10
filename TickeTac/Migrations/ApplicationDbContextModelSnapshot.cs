@@ -47,22 +47,22 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9d5356f2-5847-459b-8901-dabeb5419d34",
-                            ConcurrencyStamp = "44a4f50b-10ac-4982-b95a-f86cf31f540f",
+                            Id = "e62e542a-8d52-43ac-a4e8-26a35d993835",
+                            ConcurrencyStamp = "63103683-4bf7-4f49-aefd-7319aa7bf11e",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "91fe25cd-5a34-4ed7-9710-0d41615ed33f",
-                            ConcurrencyStamp = "68ff9b06-6234-41c1-a48d-400710b009a8",
+                            Id = "fdaeca36-729d-4243-aff4-19174aa0edd8",
+                            ConcurrencyStamp = "76adc9a1-288b-4449-9fd1-aa68b2158d86",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         },
                         new
                         {
-                            Id = "37e86ad5-93ea-4ae1-a3ce-9948b6fb5953",
-                            ConcurrencyStamp = "fb3cd118-0102-4733-aa72-550c3ffc042c",
+                            Id = "ee5c2163-6e18-4055-a5a2-fad70904a9a2",
+                            ConcurrencyStamp = "74912cb8-7139-41dd-9536-19340e145709",
                             Name = "Organizador",
                             NormalizedName = "ORGANIZADOR"
                         });
@@ -89,76 +89,6 @@ namespace TickeTac.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -223,13 +153,13 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "80afedbc-2d14-4366-9a75-d707740253fe",
-                            RoleId = "9d5356f2-5847-459b-8901-dabeb5419d34"
+                            UserId = "8e060a43-23a1-4a34-8f11-9ac36b390467",
+                            RoleId = "e62e542a-8d52-43ac-a4e8-26a35d993835"
                         },
                         new
                         {
-                            UserId = "b589e0e9-8e8e-4e27-9752-fbd393720e65",
-                            RoleId = "91fe25cd-5a34-4ed7-9710-0d41615ed33f"
+                            UserId = "e2ba6cc4-92d4-4b11-b4d4-2b471495779f",
+                            RoleId = "fdaeca36-729d-4243-aff4-19174aa0edd8"
                         });
                 });
 
@@ -250,6 +180,117 @@ namespace TickeTac.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("ProfilePicture")
+                        .HasMaxLength(400)
+                        .HasColumnType("varchar(400)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "8e060a43-23a1-4a34-8f11-9ac36b390467",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e17b43fc-1d46-403c-b54c-432273d3f4d3",
+                            Email = "Admin@TickeTac.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Leonardo",
+                            NormalizedEmail = "ADMIN@TICKETAC.COM",
+                            NormalizedUserName = "ADMIN@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGQ4nDFDBrQA0YCPePlsO6JoIUU+cInMIfj8s0xbz3SZE6t0u1wzmm/OFqF6xOAr1A==",
+                            PhoneNumberConfirmed = false,
+                            ProfilePicture = "",
+                            SecurityStamp = "1854355",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin@TickeTac.com"
+                        },
+                        new
+                        {
+                            Id = "e2ba6cc4-92d4-4b11-b4d4-2b471495779f",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "afd6fc68-d94d-40de-9587-ab0048ea74c3",
+                            Email = "Kaique@TickeTac.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Kaique",
+                            NormalizedEmail = "KAIQUE@TICKETAC.COM",
+                            NormalizedUserName = "KAKA@TICKETAC.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHV4S0ScoPvw3ahRIWLcnP+1bXbrp4s8wzT4zD0EYE1lVm0mx4NC680wJkeriJissQ==",
+                            PhoneNumberConfirmed = false,
+                            ProfilePicture = "",
+                            SecurityStamp = "1854355",
+                            TwoFactorEnabled = false,
+                            UserName = "Kaka@TickeTac.com"
+                        });
                 });
 
             modelBuilder.Entity("TickeTac.Models.Category", b =>
@@ -366,6 +407,9 @@ namespace TickeTac.Migrations
                     b.Property<DateTime>("EventDateEnd")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<ushort>("EventOwnerId")
+                        .HasColumnType("smallint unsigned");
+
                     b.Property<string>("Image")
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
@@ -399,6 +443,8 @@ namespace TickeTac.Migrations
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("EventOwnerId");
+
                     b.HasIndex("StatusEventId");
 
                     b.ToTable("Event");
@@ -416,6 +462,7 @@ namespace TickeTac.Migrations
                             District = "Nova Barra",
                             EventDateBegin = new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EventDateEnd = new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventOwnerId = (ushort)1,
                             Image = "",
                             MoreInfo = "",
                             Name = "Show de Rock do Gallo",
@@ -437,9 +484,6 @@ namespace TickeTac.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
 
-                    b.Property<ushort>("EventId")
-                        .HasColumnType("smallint unsigned");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -450,20 +494,17 @@ namespace TickeTac.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId");
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("EventManager");
+                    b.ToTable("EventOwner");
 
                     b.HasData(
                         new
                         {
                             Id = (ushort)1,
                             CpfCnpj = "00100200304",
-                            EventId = (ushort)1,
                             Name = "José Gallo",
-                            UserId = "b589e0e9-8e8e-4e27-9752-fbd393720e65"
+                            UserId = "e2ba6cc4-92d4-4b11-b4d4-2b471495779f"
                         });
                 });
 
@@ -532,60 +573,6 @@ namespace TickeTac.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TickeTac.Models.AppUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("varchar(30)");
-
-                    b.Property<string>("ProfilePicture")
-                        .HasMaxLength(400)
-                        .HasColumnType("varchar(400)");
-
-                    b.HasDiscriminator().HasValue("AppUser");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "80afedbc-2d14-4366-9a75-d707740253fe",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "aff969fa-ffb1-4519-8009-aa5729fc417e",
-                            Email = "Admin@TickeTac.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@TICKETAC.COM",
-                            NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJx18o/+AUWantv4z6QGzEqOChiDiqcWSTjfb0+/vu9tFRcqKH8vcXpjurFjzC8SLA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "61724767",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin@TickeTac.com",
-                            Name = "Leonardo",
-                            ProfilePicture = ""
-                        },
-                        new
-                        {
-                            Id = "b589e0e9-8e8e-4e27-9752-fbd393720e65",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "98e673ed-c785-4c48-909b-d0b1b592effe",
-                            Email = "Kaique@TickeTac.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "KAIQUE@TICKETAC.COM",
-                            NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL6AGMYmrsXIxv8K0YnhRvEFpsduef6w8lqpRtu2cVM6mS9JsZdLSQU9Tcbr2MvHTQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "61724767",
-                            TwoFactorEnabled = false,
-                            UserName = "Kaka@TickeTac.com",
-                            Name = "Kaique",
-                            ProfilePicture = ""
-                        });
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -597,7 +584,7 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("TickeTac.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -606,7 +593,7 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("TickeTac.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -621,7 +608,7 @@ namespace TickeTac.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("TickeTac.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -630,7 +617,7 @@ namespace TickeTac.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("TickeTac.Models.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -645,6 +632,12 @@ namespace TickeTac.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("TickeTac.Models.EventOwner", "EventOwner")
+                        .WithMany()
+                        .HasForeignKey("EventOwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TickeTac.Models.StatusEvent", "StatusEvent")
                         .WithMany()
                         .HasForeignKey("StatusEventId")
@@ -653,22 +646,16 @@ namespace TickeTac.Migrations
 
                     b.Navigation("Category");
 
+                    b.Navigation("EventOwner");
+
                     b.Navigation("StatusEvent");
                 });
 
             modelBuilder.Entity("TickeTac.Models.EventOwner", b =>
                 {
-                    b.HasOne("TickeTac.Models.Event", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("TickeTac.Models.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
-
-                    b.Navigation("Event");
 
                     b.Navigation("User");
                 });
@@ -692,14 +679,14 @@ namespace TickeTac.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("TickeTac.Models.Event", b =>
-                {
-                    b.Navigation("ReviewReceived");
-                });
-
             modelBuilder.Entity("TickeTac.Models.AppUser", b =>
                 {
                     b.Navigation("UserMadeReview");
+                });
+
+            modelBuilder.Entity("TickeTac.Models.Event", b =>
+                {
+                    b.Navigation("ReviewReceived");
                 });
 #pragma warning restore 612, 618
         }

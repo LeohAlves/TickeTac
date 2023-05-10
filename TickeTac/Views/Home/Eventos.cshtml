@@ -86,9 +86,9 @@
               <ul class=list>
                 @foreach (var category in ViewBag.Category)
                 {
-                <li>
-                  <a href="javascript:void(0)">@category.Name<span>@category.Id</span></a>
-                </li>
+                  <li>
+                    <a href="javascript:void(0)">@category.Name<span>@category.Id</span></a>
+                  </li>
                 }
               </ul>
             </div>
@@ -107,15 +107,14 @@
 
             <div class="single-widget condition">
               <h3>Status</h3>
-             @foreach (var statusEvent in ViewBag.StatusEvent)
-                {
+
               <div class=form-check>
                 <input class=form-check-input type=checkbox value="" id=flexCheckDefault1>
                 <label class=form-check-label for=flexCheckDefault1>
-                  @statusEvent.Name
+
                 </label>
               </div>
-                }
+
 
               <div class=form-check>
                 <input class=form-check-input type=checkbox value="" id=flexCheckDefault2>

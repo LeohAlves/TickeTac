@@ -231,6 +231,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 PublicSpace = "Nem lembro o que é",
                 Cep = "1234567891234",
                 CategoryId = 4,
+                EventOwnerId = 1,
                 StatusEventId = 2
             }
         };
@@ -247,7 +248,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Id = 1,
                 Name = "José Gallo",
                 CpfCnpj = "00100200304",
-                EventId = 1,
                 UserId = usuarioId
             }
         };

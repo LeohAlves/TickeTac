@@ -46,10 +46,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a class="  @(ViewBag.Title == "Home" ? "active" : "") dd-menu collapsed"  asp-action="Index" asp-controller="home"
-                                            data-bs-toggle="collapse" data-bs-target="#submenu-1-1"
-                                            aria-controls="navbarSupportedContent" aria-expanded="false"
-                                            aria-label="Toggle navigation">Home</a>
+                                        <a asp-action="Index" asp-controller="Home">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a asp-action="Eventos" asp-controller="Home" aria-label="Toggle navigation">Eventos</a>
@@ -60,15 +57,6 @@
                                             data-bs-toggle="collapse" data-bs-target="#submenu-1-4"
                                             aria-controls="navbarSupportedContent" aria-expanded="false"
                                             aria-label="Toggle navigation">Páginas</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-5">       
-                                                  <li class="tituloMenu">Páginas Essenciais</li>
-                                                  <li></li>
-                                                    <li class="nav-item"><a href="about-us.html">Sobre nós</a></li>
-                                                    <li class="nav-item"><a asp-action="Eventos" asp-controller="Home">Eventos</a></li>
-                                                    <li class="nav-item"><a href="javascript:void(0)">Meu perfil</a></li>
-                                                
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a class=" dd-menu collapsed" href="javascript:void(0)"

@@ -84,10 +84,16 @@ namespace TickeTac.Models
         public Category Category { get; set; }
 
         [Required]
-        [Display(Name = " Status do evento")]
+        [Display(Name = "Status do evento")]
         public UInt16 StatusEventId { get; set; }
         [ForeignKey("StatusEventId")]
         public StatusEvent StatusEvent { get; set; }
+
+        [Required]
+        [Display(Name = "Organizador")]
+        public UInt16 EventOwnerId { get; set; }
+        [ForeignKey("EventOwnerId")]
+        public EventOwner EventOwner { get; set; }
 
         public ICollection<EventReview> ReviewReceived { get; set; }
     }

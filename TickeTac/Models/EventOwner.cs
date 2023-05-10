@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TickeTac.Models
 {
-    [Table("EventManager")]
+    [Table("EventOwner")]
     public class EventOwner
     {
         [Key]
@@ -18,12 +18,6 @@ namespace TickeTac.Models
         [Required(ErrorMessage = "Por favor, informe um CPF ou CNPJ válido.")]
         [StringLength(14)]
         public string CpfCnpj { get; set; }
-
-        [Required]
-        [Display(Name = "Evento")]
-        public UInt16 EventId { get; set; }
-        [ForeignKey("EventId")]
-        public Event Event { get; set; }
 
         public string UserId { get; set; }
         [ForeignKey("UserId")]
