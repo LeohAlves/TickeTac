@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\UserPage.cshtml",
+      "TargetPath": "Views\\Home\\UserPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReview\\Edit.cshtml",
       "TargetPath": "Views\\EventReview\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16378,6 +16383,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Publicar.cshtml",
+      "TargetPath": "Views\\Home\\Publicar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Delete.cshtml",
       "TargetPath": "Views\\StatusEvent\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16393,18 +16403,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventOwner\\Create.cshtml",
-      "TargetPath": "Views\\EventOwner\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventOwner\\Index.cshtml",
-      "TargetPath": "Views\\EventOwner\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16418,18 +16418,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventOwner\\Delete.cshtml",
-      "TargetPath": "Views\\EventOwner\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventOwner\\Details.cshtml",
-      "TargetPath": "Views\\EventOwner\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16448,11 +16438,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventOwner\\Edit.cshtml",
-      "TargetPath": "Views\\EventOwner\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Create.cshtml",
       "TargetPath": "Views\\Category\\Create.cshtml",
       "FileKind": "mvc"
@@ -16460,6 +16445,11 @@
     {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Edit.cshtml",
       "TargetPath": "Views\\Category\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\MeusEventos.cshtml",
+      "TargetPath": "Views\\Home\\MeusEventos.cshtml",
       "FileKind": "mvc"
     },
     {

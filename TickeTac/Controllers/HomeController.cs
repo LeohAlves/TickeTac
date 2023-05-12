@@ -21,14 +21,23 @@ public class HomeController : Controller
         ViewData["Category"] = _context.Categories.ToList();
         return View();
     }
-      public IActionResult UserPage()
-    {
-        return View();
-    }
 
     public IActionResult Eventos()
     {
         ViewData["Category"] = _context.Categories.ToList();
+        return View();
+    }
+          public IActionResult UserPage()
+    {
+        return View();
+    }
+
+        public IActionResult MeusEventos()
+    {
+        return View();
+    }
+         public IActionResult Publicar()
+    {
         return View();
     }
 
