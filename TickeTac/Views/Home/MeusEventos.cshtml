@@ -28,17 +28,15 @@
                 <div class=dashboard-sidebar>
                     <div class=user-image>
                         <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
-                        <h3>Steve Aldridge
-                            <span><a href="javascript:void(0)">username</a></span>
-                        </h3>
+                        <h3>Steve Aldridge</h3>
                     </div>
                     <div class=dashboard-menu>
                         <ul>
-                            <li><a href=profile-settings.html><i class="lni lni-pencil-alt"></i> Edit Profile</a>
+                            <li><a asp-action="UserPage" asp-controller="Home" ><i class="lni lni-pencil-alt"></i> Editar Perfil</a>
                             </li>
-                            <li><a class=active href=my-items.html><i class="lni lni-bolt-alt"></i> My Ads</a>
+                            <li><a class=active  asp-action="MeusEventos" asp-controller="Home"><i class="lni lni-bolt-alt"></i> Meus eventos</a>
                             </li>
-                            <li><a href=post-item.html><i class="lni lni-circle-plus"></i> Post An Ad</a></li>
+                            <li><a  asp-action="Publicar" asp-controller="Home"><i class="lni lni-circle-plus"></i> Publicar evento</a></li>
                         </ul>
                         <div class=button>
                             <a class=btn href="javascript:void(0)">Logout</a>
