@@ -71,26 +71,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/EventReview/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRSZXZpZXdcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/EventReview/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRSZXZpZXdcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/EventReview/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRSZXZpZXdcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/EventReview/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRSZXZpZXdcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/EventReview/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRSZXZpZXdcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/etec/Desktop/TickeTac/TickeTac/Views/Event/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +89,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/etec/Desktop/TickeTac/TickeTac/Views/Event/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/TickeTac/TickeTac/Views/Home/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhbGhlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/etec/Desktop/TickeTac/TickeTac/Views/Home/Eventos.cshtml]

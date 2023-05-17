@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LthQZgVQB8PULn7ScrWJ9+uRUrMMPagvQ2Hzle/0g5c=",
+  "Hash": "WQK96u+e4pnCaZf3AdZrKcqnVdQpnLkVYjaYrdRQiNE=",
   "Source": "TickeTac",
   "BasePath": "_content/TickeTac",
   "Mode": "Default",
@@ -7208,12 +7208,12 @@
       "OriginalItemSpec": "wwwroot\\images\\items-grid\\img6.jpg"
     },
     {
-      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\logo\\logo.svg",
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\logo\\Logo.png",
       "SourceId": "TickeTac",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
       "BasePath": "_content/TickeTac",
-      "RelativePath": "images/logo/logo.svg",
+      "RelativePath": "images/logo/Logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7222,7 +7222,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\logo\\logo.svg"
+      "OriginalItemSpec": "wwwroot\\images\\logo\\Logo.png"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\newsletter\\newsletter-bg.png",
@@ -7240,6 +7240,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\newsletter\\newsletter-bg.png"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\testimonial\\xtesti1.jpg.pagespeed.ic.r_3IlxKsAJ.jpg",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/testimonial/xtesti1.jpg.pagespeed.ic.r_3IlxKsAJ.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\testimonial\\xtesti1.jpg.pagespeed.ic.r_3IlxKsAJ.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\testimonial\\xtesti2.jpg.pagespeed.ic.x-z5bUxtkQ.jpg",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/testimonial/xtesti2.jpg.pagespeed.ic.x-z5bUxtkQ.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\testimonial\\xtesti2.jpg.pagespeed.ic.x-z5bUxtkQ.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\testimonial\\xtesti3.jpg.pagespeed.ic.m-IHPK3x81.jpg",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/testimonial/xtesti3.jpg.pagespeed.ic.m-IHPK3x81.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\testimonial\\xtesti3.jpg.pagespeed.ic.m-IHPK3x81.jpg"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\js\\bootstrap.min.js",

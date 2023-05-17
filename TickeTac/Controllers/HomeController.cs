@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TickeTac.Models;
 using TickeTac.Data;
@@ -27,16 +28,21 @@ public class HomeController : Controller
         ViewData["Category"] = _context.Categories.ToList();
         return View();
     }
-          public IActionResult UserPage()
+
+    public IActionResult Detalhes()
+    {
+        return View();
+    }
+    public IActionResult UserPage()
     {
         return View();
     }
 
-        public IActionResult MeusEventos()
+    public IActionResult MeusEventos()
     {
         return View();
     }
-         public IActionResult Publicar()
+    public IActionResult Publicar()
     {
         return View();
     }
