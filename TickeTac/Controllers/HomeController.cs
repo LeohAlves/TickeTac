@@ -20,17 +20,13 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewData["Category"] = _context.Categories.ToList();
+
         return View();
     }
 
     public IActionResult Eventos()
     {
         ViewData["Category"] = _context.Categories.ToList();
-        return View();
-    }
-
-    public IActionResult Detalhes()
-    {
         return View();
     }
     public IActionResult UserPage()
