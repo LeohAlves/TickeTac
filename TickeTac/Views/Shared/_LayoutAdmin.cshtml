@@ -4,9 +4,9 @@
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Streamit - Responsive Bootstrap 4 Admin Dashboard Template</title>
+   <title>TickeTac | @ViewData["Title"]</title>
    <!-- Favicon -->
-   <link rel="shortcut icon" href="~/Admin/assets/images/favicon.ico" />
+   <link rel="shortcut icon" href="~/images/favicon.png" />
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="~/Admin/assets/css/bootstrap.min.css">
    <!--datatable CSS -->
@@ -28,12 +28,13 @@
    <!-- Wrapper Start -->
    <div class="wrapper">
       <!-- Sidebar-->
+     
       <div class="iq-sidebar">
          <div class="iq-sidebar-logo d-flex justify-content-between">
-            <a href="index.html" class="header-logo">
-               <img src="~/Admin/assets/images/logo.png" class="img-fluid rounded-normal" alt="">
+            <a asp-action="Index" asp-controller="Admin"class="header-logo">
+               <img src="~/Admin/assets/images/AdminLogo.png" class="img-fluid rounded-normal" alt="">
                <div class="logo-title">
-                  <span class="text-primary text-uppercase">Streamit</span>
+                  <span class="text-primary text-uppercase">TickeTac</span>
                </div>
             </a>
             <div class="iq-menu-bt-sidebar">
@@ -44,6 +45,7 @@
                </div>
             </div>
          </div>
+
          <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                <ul id="iq-sidebar-toggle" class="iq-menu">
@@ -55,6 +57,7 @@
                      <a href="#ui-elements" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="lab la-elementor iq-arrow-left"></i><span>UI Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                      <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="elements">
+                           
                            <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-play-circle-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                            <ul id="sub-menu" class="iq-submenu collapse" data-parent="#ui-elements">
                               <li><a href="ui-colors.html"><i class="las la-palette"></i>colors</a></li>
@@ -159,10 +162,10 @@
                      <div class="Admin-circle"><i class="las la-bars"></i></div>
                   </div>
                   <div class="iq-navbar-logo d-flex justify-content-between">
-                     <a href="index.html" class="header-logo">
-                        <img src="~/Admin/assets/images/logo.png" class="img-fluid rounded-normal" alt="">
+                     <a asp-action="Index" asp-controller="Admin" class="header-logo">
+                        <img src="~/Admin/assets/images/AdminLogo.png" class="img-fluid rounded-normal" alt="">
                         <div class="logo-title">
-                           <span class="text-primary text-uppercase">Streamit</span>
+                           <span class="text-primary text-uppercase">TickeTac</span>
                         </div>
                      </a>
                   </div>

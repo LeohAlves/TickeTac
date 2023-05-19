@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WQK96u+e4pnCaZf3AdZrKcqnVdQpnLkVYjaYrdRQiNE=",
+  "Hash": "R3OHa5vgvdEQpOdyBMd/OVKlemOXDXgZdYmD8Seooq8=",
   "Source": "TickeTac",
   "BasePath": "_content/TickeTac",
   "Mode": "Default",
@@ -2448,6 +2448,23 @@
       "OriginalItemSpec": "wwwroot\\Admin\\assets\\fonts\\slick.woff"
     },
     {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\Admin\\assets\\images\\AdminLogo.png",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "Admin/assets/images/AdminLogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Admin\\assets\\images\\AdminLogo.png"
+    },
+    {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\Admin\\assets\\images\\dashboard\\01.jpg",
       "SourceId": "TickeTac",
       "SourceType": "Discovered",
@@ -2684,23 +2701,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\assets\\images\\logo-full.png"
-    },
-    {
-      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\Admin\\assets\\images\\logo.png",
-      "SourceId": "TickeTac",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
-      "BasePath": "_content/TickeTac",
-      "RelativePath": "Admin/assets/images/logo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Admin\\assets\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\Admin\\assets\\images\\movie-thumb\\01.jpg",
@@ -6902,6 +6902,23 @@
       "OriginalItemSpec": "wwwroot\\images\\clients\\client5.svg"
     },
     {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\favicon.png",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\favicon.png"
+    },
+    {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\favicon.svg",
       "SourceId": "TickeTac",
       "SourceType": "Discovered",
@@ -7206,6 +7223,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\items-grid\\img6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\Logo.svg",
+      "SourceId": "TickeTac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\",
+      "BasePath": "_content/TickeTac",
+      "RelativePath": "images/Logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Logo.svg"
     },
     {
       "Identity": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\wwwroot\\images\\logo\\Logo.png",

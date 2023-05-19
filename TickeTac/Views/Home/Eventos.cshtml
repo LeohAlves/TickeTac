@@ -18,13 +18,13 @@
       <div class="row align-items-center">
         <div class="col-lg-6 col-md-6 col-12">
           <div class=breadcrumbs-content>
-            <h1 class=page-title>Ad Listings Grid</h1>
+            <h1 class=page-title>Listagem de Eventos</h1>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-12">
           <ul class=breadcrumb-nav>
             <li><a asp-action="Index" asp-controller="Home">Home</a></li>
-            <li>Listings Grid</li>
+            <li>Eventos</li>
           </ul>
         </div>
       </div>
@@ -39,16 +39,16 @@
           <div class=category-sidebar>
 
             <div class="single-widget search">
-              <h3>Search Ads</h3>
+              <h3>Procurar Eventos</h3>
               <form action="#">
-                <input type=text placeholder="Search Here...">
+                <input type=text placeholder="Procure aqui">
                 <button type=submit><i class="lni lni-search-alt"></i></button>
               </form>
             </div>
 
 
             <div class=single-widget>
-              <h3>All Categories</h3>
+              <h3>Todas as categorias</h3>
               <ul class=list>
                 @foreach (var category in ViewBag.Category)
                 {
@@ -61,7 +61,7 @@
 
 
             <div class="single-widget range">
-              <h3>Price Range</h3>
+              <h3>Faixa de preço</h3>
               <input type=range class=form-range name=range step=1 min=100 max=10000 value=10
                 onchange="rangePrimary.value=value">
               <div class=range-inner>
@@ -88,12 +88,14 @@
                   New
                 </label>
               </div>
+
               <div class=form-check>
                 <input class=form-check-input type=checkbox value="" id=flexCheckDefault3>
                 <label class=form-check-label for=flexCheckDefault3>
                   Used
                 </label>
               </div>
+
             </div>
           </div>
         </div>
@@ -104,7 +106,7 @@
                 <div class=category-grid-topbar>
                   <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-12">
-                      <h3 class=title>Showing 1-12 of 21 ads found</h3>
+                      <h3 class=title>Exibindo "alterar dps para mostrar a quantidade de eventos exibidos na page" Eventos encontrados</h3>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                       <nav>
