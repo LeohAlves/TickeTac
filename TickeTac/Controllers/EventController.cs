@@ -22,7 +22,7 @@ namespace TickeTac.Controllers
         // GET: Event
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Events.Include(e => e.Category).Include(e => e.EventOwner).Include(e => e.StatusEvent);
+            var applicationDbContext = _context.Events.Include(e => e.Category).Include(e => e.City).Include(e => e.EventOwner).Include(e => e.StatusEvent);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace TickeTac.Controllers
 
             var @event = await _context.Events
                 .Include(e => e.Category)
+                .Include(e => e.City)
                 .Include(e => e.EventOwner)
                 .Include(e => e.StatusEvent)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -51,6 +52,7 @@ namespace TickeTac.Controllers
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id");
             ViewData["EventOwnerId"] = new SelectList(_context.EventOwners, "Id", "CpfCnpj");
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name");
             return View();
@@ -61,7 +63,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,State,City,District,PublicSpace,Cep,CategoryId,StatusEventId,EventOwnerId")] Event @event)
+        public async Task<IActionResult> Create([Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,CityId,District,PublicSpace,Cep,CategoryId,StatusEventId,EventOwnerId")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +72,7 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
             ViewData["EventOwnerId"] = new SelectList(_context.EventOwners, "Id", "CpfCnpj", @event.EventOwnerId);
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
             return View(@event);
@@ -89,6 +92,7 @@ namespace TickeTac.Controllers
                 return NotFound();
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
             ViewData["EventOwnerId"] = new SelectList(_context.EventOwners, "Id", "CpfCnpj", @event.EventOwnerId);
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
             return View(@event);
@@ -99,7 +103,7 @@ namespace TickeTac.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,State,City,District,PublicSpace,Cep,CategoryId,StatusEventId,EventOwnerId")] Event @event)
+        public async Task<IActionResult> Edit(ushort id, [Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,CityId,District,PublicSpace,Cep,CategoryId,StatusEventId,EventOwnerId")] Event @event)
         {
             if (id != @event.Id)
             {
@@ -127,6 +131,7 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
             ViewData["EventOwnerId"] = new SelectList(_context.EventOwners, "Id", "CpfCnpj", @event.EventOwnerId);
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
             return View(@event);
@@ -142,6 +147,7 @@ namespace TickeTac.Controllers
 
             var @event = await _context.Events
                 .Include(e => e.Category)
+                .Include(e => e.City)
                 .Include(e => e.EventOwner)
                 .Include(e => e.StatusEvent)
                 .FirstOrDefaultAsync(m => m.Id == id);

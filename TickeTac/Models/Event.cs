@@ -52,15 +52,11 @@ namespace TickeTac.Models
         [StringLength(300)]
         public string MoreInfo { get; set; }
 
-        [Display(Name = "Estado")]
-        [Required(ErrorMessage = "É necessário especificar um estado.")]
-        [StringLength(2)]
-        public string State { get; set; }
-
         [Display(Name = "Cidade")]
         [Required(ErrorMessage = "É necessário especificar uma cidade.")]
-        [StringLength(50)]
-        public string City { get; set; }
+        public int CityId { get; set; }
+        [ForeignKey("CityId")]
+        public City City { get; set; }
 
         [Display(Name = "Bairro")]
         [Required(ErrorMessage = "É necessário especificar um bairro.")]
@@ -83,11 +79,13 @@ namespace TickeTac.Models
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
 
+
         [Required]
         [Display(Name = "Status do evento")]
         public UInt16 StatusEventId { get; set; }
         [ForeignKey("StatusEventId")]
         public StatusEvent StatusEvent { get; set; }
+
 
         [Required]
         [Display(Name = "Organizador")]

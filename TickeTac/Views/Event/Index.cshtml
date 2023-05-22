@@ -41,9 +41,6 @@
                 @Html.DisplayNameFor(model => model.MoreInfo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
@@ -98,10 +95,7 @@
                 @Html.DisplayFor(modelItem => item.MoreInfo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
+                @Html.DisplayFor(modelItem => item.City.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.District)

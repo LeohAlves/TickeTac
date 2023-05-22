@@ -14,6 +14,8 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
     public DbSet<AppUser> AppUsers { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Event> Events { get; set; }
+    public DbSet<State> States { get; set; }
+    public DbSet<City> Cities { get; set; }
     public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
     public DbSet<StatusEvent> StatusEvents { get; set; }
@@ -181,23 +183,23 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         #region seed status event
         List<StatusEvent> listStatusEvent = new List<StatusEvent>()
         {
-                new StatusEvent()  
+                new StatusEvent()
             {
                 Id = 1,
                 Name =  "Concluido"
             },
 
-                new StatusEvent()  
+                new StatusEvent()
             {
                 Id = 2,
                 Name =  "Em andamento"
-            },            
-                new StatusEvent()  
+            },
+                new StatusEvent()
             {
                 Id = 3,
                 Name =  "Confirmado"
             },
-                new StatusEvent()  
+                new StatusEvent()
             {
                 Id = 4,
                 Name =  "Cancelado"
@@ -225,14 +227,14 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Image = "",
                 ContactEmail = "gallo@email.com",
                 MoreInfo = "",
-                State = "São Paulo",
-                City = "Barra Bonita",
                 District = "Nova Barra",
                 PublicSpace = "Nem lembro o que é",
                 Cep = "1234567891234",
                 CategoryId = 4,
                 EventOwnerId = 1,
-                StatusEventId = 2
+                StatusEventId = 2,
+                CityId = 1
+
             }
         };
         builder.Entity<Event>().HasData(listEvent);
