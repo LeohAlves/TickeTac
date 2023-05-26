@@ -211,6 +211,27 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
 
         #endregion
 
+        #region seed state
+        List<State> listState = new List<State>(){
+            new State() {
+                Id = 1,
+                Name = "SP"
+            }
+        };
+        builder.Entity<State>().HasData(listState);
+        #endregion
+
+        #region seed City
+        List<City> listCity = new List<City>(){
+            new City() {
+                Id = 1,
+                Name = "Barra Bonita",
+                StateId = 1
+            }
+        };
+        builder.Entity<City>().HasData(listCity);
+        #endregion
+
         #region seed events 
 
         List<Event> listEvent = new List<Event>()

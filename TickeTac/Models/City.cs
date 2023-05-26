@@ -9,8 +9,12 @@ namespace TickeTac.Models
 {
     public class City
     {
+        [Key]
         public int Id { get; set; }
 
+        [Display(Name = "Cidade")]
+        [Required(ErrorMessage = "É necessário especificar uma cidade.")]
+        [StringLength(70)]
         public string Name { get; set; }
 
         [Required]

@@ -54,6 +54,7 @@ namespace TickeTac.Models
 
         [Display(Name = "Cidade")]
         [Required(ErrorMessage = "É necessário especificar uma cidade.")]
+        [StringLength(70)]
         public int CityId { get; set; }
         [ForeignKey("CityId")]
         public City City { get; set; }
