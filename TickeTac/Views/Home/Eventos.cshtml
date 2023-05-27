@@ -1,4 +1,4 @@
-@model List<TickeTac.Models.Category>
+@model TickeTac.ViewModels.EventsViewModel
 
 @{
   ViewData["Title"] = "Eventos";
@@ -50,7 +50,7 @@
             <div class=single-widget>
               <h3>Todas as categorias</h3>
               <ul class=list>
-                @foreach (var category in ViewBag.Category)
+                @foreach (var category in Model.Categories)
                 {
                   <li>
                     <a href="javascript:void(0)">@category.Name<span>@category.Id</span></a>
@@ -126,30 +126,34 @@
                   <div class="tab-pane fade show active" id=nav-grid role=tabpanel aria-labelledby=nav-grid-tab>
                     <div class=row>
                       <div class="col-lg-4 col-md-6 col-12">
-
-                        <div class=single-item-grid>
+                        @foreach (var events in Model.Events)
+                        {
+                        <div class="single-item-grid wow fadeInUp" data-wow-delay=".2s">
                           <div class=image>
-                            <a href=item-details.html><img
-                                src="~/assets/images/items-tab/xitem-1.jpg.pagespeed.ic.gcns1mv0jC.jpg" alt="#"></a>
-                            <i class=" cross-badge lni lni-bolt"></i>
+                            <a href=item-details.html class="thumbnail"><img src="@events.Image" alt="Imagem do evento"></a>
+                            
+                            <i class="cross-badge lni lni-bolt"></i>
                             <span class="flat-badge sale">Sale</span>
+                            
                           </div>
                           <div class=content>
-                            <a href="javascript:void(0)" class=tag>Mobile</a>
+                            <a href="javascript:void(0)" class=tag>@events.Category.Name</a>
                             <h3 class=title>
-                              <a href=item-details.html>Apple Iphone X</a>
+                              <a href=item-details.html>@events.Name</a>
                             </h3>
-                            <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker">
-                                </i>Boston</a></p>
+                            <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>@events.City.Name</a></p>
+                            <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Início: @events.EventDateBegin</a></p>
+                            <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Fim: @events.EventDateEnd</a></p>
                             <ul class=info>
-                              <li class=price>$890.00</li>
+                              <li class=price>$<span>@events.Price</span></li>
                               <li class=like><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
                               </li>
                             </ul>
                           </div>
                         </div>
-
+                        }
                       </div>
+                      
                       <div class="col-lg-4 col-md-6 col-12">
 
                         <div class=single-item-grid>
@@ -367,30 +371,33 @@
                       </div>
                     </div>
                   </div>
+                  <!-- FOREACH da listagem dos eventos  -->
+                  
                   <div class="tab-pane fade" id=nav-list role=tabpanel aria-labelledby=nav-list-tab>
                     <div class=row>
                       <div class="col-lg-12 col-md-12 col-12">
-
+                        @foreach (var events in Model.Events){
                         <div class=single-item-grid>
                           <div class="row align-items-center">
                             <div class="col-lg-5 col-md-7 col-12">
                               <div class=image>
                                 <a href=item-details.html><img
-                                    src="~/assets/images/items-tab/xitem-2.jpg.pagespeed.ic.ohjl98-itv.jpg" alt="#"></a>
+                                    src="@events.Image" alt="#"></a>
                                 <i class=" cross-badge lni lni-bolt"></i>
                                 <span class="flat-badge sale">Sale</span>
                               </div>
                             </div>
                             <div class="col-lg-7 col-md-5 col-12">
                               <div class=content>
-                                <a href="javascript:void(0)" class=tag>Others</a>
+                                <a href="javascript:void(0)" class=tag>@events.Category.Name</a>
                                 <h3 class=title>
-                                  <a href=item-details.html>Travel Kit</a>
+                                  <a href=item-details.html>@events.Name</a>
                                 </h3>
-                                <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker">
-                                    </i>San Francisco</a></p>
+                                <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>@events.City.Name</a></p>
+                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Início: @events.EventDateBegin</a></p>
+                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim: @events.EventDateEnd</a></p>
                                 <ul class=info>
-                                  <li class=price>$580.00</li>
+                                  <li class=price>$@events.Price</li>
                                   <li class=like><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
                                   </li>
                                 </ul>
@@ -398,6 +405,9 @@
                             </div>
                           </div>
                         </div>
+                        }
+
+                    <!-- Fim do FOREACH -->
 
                       </div>
                       <div class="col-lg-12 col-md-12 col-12">

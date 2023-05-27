@@ -245,7 +245,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 EventDateBegin = DateTime.Parse("28/12/2023 12:00"),
                 EventDateEnd = DateTime.Parse("01/01/2024 18:00"),
                 Description = "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano",
-                Image = "",
+                Image = "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg",
                 ContactEmail = "gallo@email.com",
                 MoreInfo = "",
                 District = "Nova Barra",

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class Criarbanco : Migration
+    public partial class CriarBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -388,9 +388,9 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "10a7476a-251d-44bb-904a-90d8e216b260", "465a9d1e-2cdc-4a6b-ad3b-542540de41b4", "Administrador", "ADMINISTRADOR" },
-                    { "307dbf7b-58d0-441e-9085-a928ad4bfc73", "b4840e5f-164d-4f2d-b9df-90189ce0e24c", "Organizador", "ORGANIZADOR" },
-                    { "6f86aa99-ca81-4616-a130-4dcbaeb406e0", "cfb67f89-8bd0-4a9d-8c63-e44d5ddcc960", "Usuario", "USUÁRIO" }
+                    { "107421d1-e710-45ff-b9e0-eded711d9a30", "e11e6027-641f-41f6-b3ef-2363de6568cd", "Organizador", "ORGANIZADOR" },
+                    { "1a089c8a-2680-4ee9-af54-38f607b53a01", "582b671d-ef9d-4239-80ea-a1a2161b7a72", "Usuario", "USUÁRIO" },
+                    { "298ef5c7-39df-4076-b374-eab0c06d9435", "369c7fbf-53ef-4ecf-b1a8-71bb9b17f344", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -398,8 +398,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "a32b202f-d0e4-4c61-b2e1-97881a3fcb0e", 0, "16cda2f7-7258-49a9-9fdb-720a4a5087be", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAECL6cwFYArO+ppLQIIVMw8k7aB9hj5ZfhrepUx1fDopEGE/Hjk3hFhmbucU8hOUwKg==", null, false, "", "8307988", false, "Admin@TickeTac.com" },
-                    { "be295dca-5824-4339-bfa2-4d0eeb18ad86", 0, "30e4a739-a836-47b5-a818-ebebf8591425", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEC1ZSpFiRX1+0S58/5dm/1nHQMt8+v2bKhyOEh63iiyb1zp0Q3wrd8weJpDXQKTy8Q==", null, false, "", "8307988", false, "Kaka@TickeTac.com" }
+                    { "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3", 0, "c3d8dd91-46b9-46bf-b659-6d8aa67e0b79", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEN7unB/fzLvQh44OfCc29fU/TFseZyM7v74SQmHSDfJL3SUh3Bb5wHVq6P4Q8AU7Og==", null, false, "", "28395444", false, "Admin@TickeTac.com" },
+                    { "bcff5602-b95a-42c1-af5d-70db67828b12", 0, "9839f3a2-280c-4002-9dae-6ff1ff1bb2cd", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEO6L1bRIna4+/qe5K7tDVtpFFlu9LKIiZeXQeUSNeVx5EN1cCqqeK1ccR60ahjKl9w==", null, false, "", "28395444", false, "Kaka@TickeTac.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -438,8 +438,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "10a7476a-251d-44bb-904a-90d8e216b260", "a32b202f-d0e4-4c61-b2e1-97881a3fcb0e" },
-                    { "6f86aa99-ca81-4616-a130-4dcbaeb406e0", "be295dca-5824-4339-bfa2-4d0eeb18ad86" }
+                    { "298ef5c7-39df-4076-b374-eab0c06d9435", "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3" },
+                    { "1a089c8a-2680-4ee9-af54-38f607b53a01", "bcff5602-b95a-42c1-af5d-70db67828b12" }
                 });
 
             migrationBuilder.InsertData(
@@ -450,12 +450,12 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "EventOwner",
                 columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
-                values: new object[] { (ushort)1, "00100200304", "José Gallo", "be295dca-5824-4339-bfa2-4d0eeb18ad86" });
+                values: new object[] { (ushort)1, "00100200304", "José Gallo", "bcff5602-b95a-42c1-af5d-70db67828b12" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StatusEventId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", (ushort)2 });
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", (ushort)2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

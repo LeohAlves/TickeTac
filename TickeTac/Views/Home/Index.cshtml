@@ -31,7 +31,7 @@
                                         <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
                                         <select name="category" id="category">
                                             <option value="none" selected disabled>Categorias</option>
-                                            @foreach (var category in )
+                                            @foreach (var category in Model.Categories)
                                             {
                                                 <option value="@category.Id">@category.Name</option>
                                             }
@@ -43,12 +43,10 @@
                                         <label for="location"><i class="lni lni-map-marker theme-color"></i></label>
                                         <select name="location" id="location">
                                             <option value="none" selected disabled>Locais</option>
-                                            <option value="none">New York</option>
-                                            <option value="none">California</option>
-                                            <option value="none">Washington</option>
-                                            <option value="none">Birmingham</option>
-                                            <option value="none">Chicago</option>
-                                            <option value="none">Phoenix</option>
+                                            @foreach (var cities in Model.Cities)
+                                            {
+                                                <option value="@cities.Id">@cities.Name</option>
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -75,7 +73,7 @@
                     <div class="col-12 p-0">
                         <div class="category-slider">
                             <!-- Start Single Category -->
-                            @foreach (var category in ViewBag.Category)
+                            @foreach (var category in Model.Categories)
                             {
                                 <a href="#" class="single-cat">
                                     <div class="icon">
@@ -110,37 +108,39 @@
 
                         
                         <!-- Start Single Grid -->
+                        @foreach (var events in Model.Events)
+                        {
                         <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
                             <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img1.jpg"
-                                        alt="#"></a>
+                                <a href="item-details.html" class="thumbnail"><img src="@events.Image" alt="Imagem do evento"></a>
                                 <div class="author">
                                     <div class="author-image">
                                         <a href="javascript:void(0)">
-                                            <span>Organizador: Smith jeko</span></a>
+                                            <span>Organizador: @events.EventOwner.Name</span></a>
                                     </div>
                                     <p class="sale">For Sale</p>
                                 </div>
                             </div>
                             <div class="content">
                                 <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">categoria Mobile Phones</a>
+                                    <a href="javascript:void(0)" class="tag">@events.Category.Name</a>
                                     <h3 class="title">
-                                        <a asp-action="Detalhes" asp-controller="Home"> name Apple Iphone X</a>
+                                        <a asp-action="Detalhes" asp-controller="Home">@events.Name</a>
                                     </h3>
                                     <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>Cidade New York</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>Cidade: @events.City.Name</a></li>
                                         <li><br></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Inicio: Fev 18, 2023</a></li>
-                                         <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim: Jun 31, 2023</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Inicio: @events.EventDateBegin</a></li>
+                                         <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim: @events.EventDateEnd</a></li>
                                     </ul>
                                 </div>
                                 <div class="bottom-content">
-                                    <p class="price">Preço<span>$200.00</span></p>
+                                    <p class="price">Preço: <span>$@events.Price</span></p>
                                     <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
                                 </div>
                             </div>
                         </div>
+                        }
                         <!-- End Single Grid -->
 
                     </div>
@@ -383,9 +383,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Por que utilizar o nosso site?</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">POR QUE UTILIZAR O NOSSO SITE?</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Há varios motivos para o incentivo do uso do nosso
-                            website, entre por dentro deles</p>
+                            website, entre por dentro deles:</p>
                     </div>
                 </div>
             </div>
@@ -467,7 +467,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Como funciona?</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">COMO FUNCIONA?</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Não é muito complicado para entender como se usa o
                             nosso site <br> mas caso precise, siga as instruções</p>
                     </div>

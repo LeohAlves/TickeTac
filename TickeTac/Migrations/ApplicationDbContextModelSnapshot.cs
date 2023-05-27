@@ -47,22 +47,22 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "10a7476a-251d-44bb-904a-90d8e216b260",
-                            ConcurrencyStamp = "465a9d1e-2cdc-4a6b-ad3b-542540de41b4",
+                            Id = "298ef5c7-39df-4076-b374-eab0c06d9435",
+                            ConcurrencyStamp = "369c7fbf-53ef-4ecf-b1a8-71bb9b17f344",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "6f86aa99-ca81-4616-a130-4dcbaeb406e0",
-                            ConcurrencyStamp = "cfb67f89-8bd0-4a9d-8c63-e44d5ddcc960",
+                            Id = "1a089c8a-2680-4ee9-af54-38f607b53a01",
+                            ConcurrencyStamp = "582b671d-ef9d-4239-80ea-a1a2161b7a72",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         },
                         new
                         {
-                            Id = "307dbf7b-58d0-441e-9085-a928ad4bfc73",
-                            ConcurrencyStamp = "b4840e5f-164d-4f2d-b9df-90189ce0e24c",
+                            Id = "107421d1-e710-45ff-b9e0-eded711d9a30",
+                            ConcurrencyStamp = "e11e6027-641f-41f6-b3ef-2363de6568cd",
                             Name = "Organizador",
                             NormalizedName = "ORGANIZADOR"
                         });
@@ -153,13 +153,13 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "a32b202f-d0e4-4c61-b2e1-97881a3fcb0e",
-                            RoleId = "10a7476a-251d-44bb-904a-90d8e216b260"
+                            UserId = "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3",
+                            RoleId = "298ef5c7-39df-4076-b374-eab0c06d9435"
                         },
                         new
                         {
-                            UserId = "be295dca-5824-4339-bfa2-4d0eeb18ad86",
-                            RoleId = "6f86aa99-ca81-4616-a130-4dcbaeb406e0"
+                            UserId = "bcff5602-b95a-42c1-af5d-70db67828b12",
+                            RoleId = "1a089c8a-2680-4ee9-af54-38f607b53a01"
                         });
                 });
 
@@ -257,37 +257,37 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a32b202f-d0e4-4c61-b2e1-97881a3fcb0e",
+                            Id = "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "16cda2f7-7258-49a9-9fdb-720a4a5087be",
+                            ConcurrencyStamp = "c3d8dd91-46b9-46bf-b659-6d8aa67e0b79",
                             Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Leonardo",
                             NormalizedEmail = "ADMIN@TICKETAC.COM",
                             NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAECL6cwFYArO+ppLQIIVMw8k7aB9hj5ZfhrepUx1fDopEGE/Hjk3hFhmbucU8hOUwKg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN7unB/fzLvQh44OfCc29fU/TFseZyM7v74SQmHSDfJL3SUh3Bb5wHVq6P4Q8AU7Og==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "8307988",
+                            SecurityStamp = "28395444",
                             TwoFactorEnabled = false,
                             UserName = "Admin@TickeTac.com"
                         },
                         new
                         {
-                            Id = "be295dca-5824-4339-bfa2-4d0eeb18ad86",
+                            Id = "bcff5602-b95a-42c1-af5d-70db67828b12",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "30e4a739-a836-47b5-a818-ebebf8591425",
+                            ConcurrencyStamp = "9839f3a2-280c-4002-9dae-6ff1ff1bb2cd",
                             Email = "Kaique@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Kaique",
                             NormalizedEmail = "KAIQUE@TICKETAC.COM",
                             NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC1ZSpFiRX1+0S58/5dm/1nHQMt8+v2bKhyOEh63iiyb1zp0Q3wrd8weJpDXQKTy8Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO6L1bRIna4+/qe5K7tDVtpFFlu9LKIiZeXQeUSNeVx5EN1cCqqeK1ccR60ahjKl9w==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "8307988",
+                            SecurityStamp = "28395444",
                             TwoFactorEnabled = false,
                             UserName = "Kaka@TickeTac.com"
                         });
@@ -488,7 +488,7 @@ namespace TickeTac.Migrations
                             EventDateBegin = new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EventDateEnd = new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventOwnerId = (ushort)1,
-                            Image = "",
+                            Image = "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg",
                             MoreInfo = "",
                             Name = "Show de Rock do Gallo",
                             Price = 150.99m,
@@ -528,7 +528,7 @@ namespace TickeTac.Migrations
                             Id = (ushort)1,
                             CpfCnpj = "00100200304",
                             Name = "José Gallo",
-                            UserId = "be295dca-5824-4339-bfa2-4d0eeb18ad86"
+                            UserId = "bcff5602-b95a-42c1-af5d-70db67828b12"
                         });
                 });
 
