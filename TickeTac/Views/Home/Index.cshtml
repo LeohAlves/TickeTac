@@ -1,4 +1,4 @@
-﻿@model List<TickeTac.Models.Category>
+﻿@model TickeTac.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Home";
 }
@@ -31,7 +31,7 @@
                                         <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
                                         <select name="category" id="category">
                                             <option value="none" selected disabled>Categorias</option>
-                                            @foreach (var category in ViewBag.Category)
+                                            @foreach (var category in )
                                             {
                                                 <option value="@category.Id">@category.Name</option>
                                             }

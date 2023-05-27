@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TickeTac.Models;
 using TickeTac.Data;
-
+using TickeTac.ViewModels;
 namespace TickeTac.Controllers;
 
 public class HomeController : Controller
@@ -19,9 +19,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewData["Category"] = _context.Categories.ToList();
-
-        return View();
+        HomeViewModel hvm = new(){
+            Categories = _context.Categories.ToList(),
+            Events = _context.Events.ToList(),
+        };
+        return View(hvm);
     }
 
     public IActionResult Eventos()

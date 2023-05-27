@@ -9,13 +9,7 @@ namespace TickeTac.ViewModels
 {
     public class HomeViewModel
     {
-        
-        
-        
-        
-        
         public List<Event> Events { get; set; }
-
-        public List<Category> categories { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }
