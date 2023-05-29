@@ -110,7 +110,7 @@
                         <!-- Start Single Grid -->
                         @foreach (var events in Model.Events)
                         {
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                        <div id="@events.Id" class="single-grid wow fadeInUp" data-wow-delay=".2s"> <!-- Pensar a respeito do ID para identificar cada um -->
                             <div class="image">
                                 <a href="item-details.html" class="thumbnail"><img src="@events.Image" alt="Imagem do evento"></a>
                                 <div class="author">
