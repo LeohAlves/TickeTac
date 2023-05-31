@@ -34,16 +34,29 @@
           </div>
           <div class=dashboard-menu>
             <ul>
-              <li><a class=active asp-action="UserPage" asp-controller="Home"><i class="lni lni-pencil-alt"></i> Editar Perfil</a>
+              <li><a class=active asp-action="UserPage" asp-controller="Home"><i class="lni lni-pencil-alt"></i> Editar
+                  Perfil</a>
               </li>
-              <li><a  asp-action="MeusEventos" asp-controller="Home"><i class="lni lni-bolt-alt"></i> Meus
+              <li><a asp-action="MeusEventos" asp-controller="Home"><i class="lni lni-bolt-alt"></i> Meus
                   eventos</a>
               </li>
               <li><a asp-action="Publicar" asp-controller="Home"><i class="lni lni-circle-plus"></i> Publicar evento</a>
               </li>
             </ul>
             <div class=button>
-              <a class=btn href="javascript:void(0)">Logout</a>
+              @{
+                if (User.Identity.IsAuthenticated)
+                {
+                  <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                  asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                  </form>
+                }
+                else
+                {
+                  <p>You have successfully logged out of the application.</p>
+                }
+              }
             </div>
           </div>
         </div>
@@ -88,7 +101,7 @@
             </div>
           </div>
 
-            <div class="dashboard-block mt-10 profile-settings-block">
+          <div class="dashboard-block mt-10 profile-settings-block">
             <h3 class=block-title>Configurações de Organizador</h3>
             <div class=inner-block>
               <form class=profile-setting-form method=post action="#">

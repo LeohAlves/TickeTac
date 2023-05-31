@@ -249,7 +249,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new City() {
                 Id = 1,
                 Name = "Barra Bonita",
-                StateId = 1
+                StateId = 25
             }
         };
         builder.Entity<City>().HasData(listCity);

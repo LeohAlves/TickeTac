@@ -388,9 +388,9 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "107421d1-e710-45ff-b9e0-eded711d9a30", "e11e6027-641f-41f6-b3ef-2363de6568cd", "Organizador", "ORGANIZADOR" },
-                    { "1a089c8a-2680-4ee9-af54-38f607b53a01", "582b671d-ef9d-4239-80ea-a1a2161b7a72", "Usuario", "USUÁRIO" },
-                    { "298ef5c7-39df-4076-b374-eab0c06d9435", "369c7fbf-53ef-4ecf-b1a8-71bb9b17f344", "Administrador", "ADMINISTRADOR" }
+                    { "268d6d40-e06f-4cfc-9641-d24fe1e3cae4", "ef93eb6d-6e77-4a98-a7ea-4c99342b3360", "Organizador", "ORGANIZADOR" },
+                    { "9b00989c-a770-4ef9-b5df-ef90adf697f0", "d4a98cef-2688-4231-a80a-d004076b866c", "Usuario", "USUÁRIO" },
+                    { "d3f9cf85-b0a6-4419-81ed-4610d0f4c467", "ac63bb3e-7a23-443c-ab8d-098105f1f935", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -398,8 +398,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3", 0, "c3d8dd91-46b9-46bf-b659-6d8aa67e0b79", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEN7unB/fzLvQh44OfCc29fU/TFseZyM7v74SQmHSDfJL3SUh3Bb5wHVq6P4Q8AU7Og==", null, false, "", "28395444", false, "Admin@TickeTac.com" },
-                    { "bcff5602-b95a-42c1-af5d-70db67828b12", 0, "9839f3a2-280c-4002-9dae-6ff1ff1bb2cd", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEO6L1bRIna4+/qe5K7tDVtpFFlu9LKIiZeXQeUSNeVx5EN1cCqqeK1ccR60ahjKl9w==", null, false, "", "28395444", false, "Kaka@TickeTac.com" }
+                    { "30cf60da-c234-48c7-8269-37cc4a08ad52", 0, "247ad17c-020e-46bd-a2f2-697a6943887b", "Kaique@TickeTac.com", true, false, null, "Kaique", "KAIQUE@TICKETAC.COM", "KAKA@TICKETAC.COM", "AQAAAAEAACcQAAAAEEP5JMXQVw4e6zSgl2umkq/PPMn01P0YlvCLEZeWYbZJAFCXBay0bvJzVMLcRIkQJA==", null, false, "", "54232412", false, "Kaka@TickeTac.com" },
+                    { "988d4894-1723-42bb-8a50-90b11b814b88", 0, "46b4c75a-6921-495c-a1ec-14c4ce1f3cd3", "Admin@TickeTac.com", true, false, null, "Leonardo", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEC2mO9DzCWYv6C9y1MQx1/XK4tS2pD36KZ2j5QnXpFwSBWWzCk0FgV3yzX0gtUTYpA==", null, false, "", "54232412", false, "Admin@TickeTac.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -420,7 +420,36 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "States",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "SP" });
+                values: new object[,]
+                {
+                    { 1, "AC" },
+                    { 2, "AL" },
+                    { 3, "AP" },
+                    { 4, "AM" },
+                    { 5, "BA" },
+                    { 6, "CE" },
+                    { 7, "DF" },
+                    { 8, "ES" },
+                    { 9, "GO" },
+                    { 10, "MA" },
+                    { 11, "MT" },
+                    { 12, "MS" },
+                    { 13, "MG" },
+                    { 14, "PA" },
+                    { 15, "PB" },
+                    { 16, "PR" },
+                    { 17, "PE" },
+                    { 18, "PI" },
+                    { 19, "RJ" },
+                    { 20, "RN" },
+                    { 21, "RS" },
+                    { 22, "RO" },
+                    { 23, "RR" },
+                    { 24, "SC" },
+                    { 25, "SP" },
+                    { 26, "SE" },
+                    { 27, "TO" }
+                });
 
             migrationBuilder.InsertData(
                 table: "StatusEvent",
@@ -438,19 +467,19 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "298ef5c7-39df-4076-b374-eab0c06d9435", "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3" },
-                    { "1a089c8a-2680-4ee9-af54-38f607b53a01", "bcff5602-b95a-42c1-af5d-70db67828b12" }
+                    { "9b00989c-a770-4ef9-b5df-ef90adf697f0", "30cf60da-c234-48c7-8269-37cc4a08ad52" },
+                    { "d3f9cf85-b0a6-4419-81ed-4610d0f4c467", "988d4894-1723-42bb-8a50-90b11b814b88" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Cities",
                 columns: new[] { "Id", "Name", "StateId" },
-                values: new object[] { 1, "Barra Bonita", 1 });
+                values: new object[] { 1, "Barra Bonita", 25 });
 
             migrationBuilder.InsertData(
                 table: "EventOwner",
                 columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
-                values: new object[] { (ushort)1, "00100200304", "José Gallo", "bcff5602-b95a-42c1-af5d-70db67828b12" });
+                values: new object[] { (ushort)1, "00100200304", "José Gallo", "30cf60da-c234-48c7-8269-37cc4a08ad52" });
 
             migrationBuilder.InsertData(
                 table: "Event",

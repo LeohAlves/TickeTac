@@ -47,22 +47,22 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "298ef5c7-39df-4076-b374-eab0c06d9435",
-                            ConcurrencyStamp = "369c7fbf-53ef-4ecf-b1a8-71bb9b17f344",
+                            Id = "d3f9cf85-b0a6-4419-81ed-4610d0f4c467",
+                            ConcurrencyStamp = "ac63bb3e-7a23-443c-ab8d-098105f1f935",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "1a089c8a-2680-4ee9-af54-38f607b53a01",
-                            ConcurrencyStamp = "582b671d-ef9d-4239-80ea-a1a2161b7a72",
+                            Id = "9b00989c-a770-4ef9-b5df-ef90adf697f0",
+                            ConcurrencyStamp = "d4a98cef-2688-4231-a80a-d004076b866c",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         },
                         new
                         {
-                            Id = "107421d1-e710-45ff-b9e0-eded711d9a30",
-                            ConcurrencyStamp = "e11e6027-641f-41f6-b3ef-2363de6568cd",
+                            Id = "268d6d40-e06f-4cfc-9641-d24fe1e3cae4",
+                            ConcurrencyStamp = "ef93eb6d-6e77-4a98-a7ea-4c99342b3360",
                             Name = "Organizador",
                             NormalizedName = "ORGANIZADOR"
                         });
@@ -153,13 +153,13 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3",
-                            RoleId = "298ef5c7-39df-4076-b374-eab0c06d9435"
+                            UserId = "988d4894-1723-42bb-8a50-90b11b814b88",
+                            RoleId = "d3f9cf85-b0a6-4419-81ed-4610d0f4c467"
                         },
                         new
                         {
-                            UserId = "bcff5602-b95a-42c1-af5d-70db67828b12",
-                            RoleId = "1a089c8a-2680-4ee9-af54-38f607b53a01"
+                            UserId = "30cf60da-c234-48c7-8269-37cc4a08ad52",
+                            RoleId = "9b00989c-a770-4ef9-b5df-ef90adf697f0"
                         });
                 });
 
@@ -257,37 +257,37 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "75aa8f3b-71ea-47fc-ab7e-6231e69ab8b3",
+                            Id = "988d4894-1723-42bb-8a50-90b11b814b88",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3d8dd91-46b9-46bf-b659-6d8aa67e0b79",
+                            ConcurrencyStamp = "46b4c75a-6921-495c-a1ec-14c4ce1f3cd3",
                             Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Leonardo",
                             NormalizedEmail = "ADMIN@TICKETAC.COM",
                             NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN7unB/fzLvQh44OfCc29fU/TFseZyM7v74SQmHSDfJL3SUh3Bb5wHVq6P4Q8AU7Og==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC2mO9DzCWYv6C9y1MQx1/XK4tS2pD36KZ2j5QnXpFwSBWWzCk0FgV3yzX0gtUTYpA==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "28395444",
+                            SecurityStamp = "54232412",
                             TwoFactorEnabled = false,
                             UserName = "Admin@TickeTac.com"
                         },
                         new
                         {
-                            Id = "bcff5602-b95a-42c1-af5d-70db67828b12",
+                            Id = "30cf60da-c234-48c7-8269-37cc4a08ad52",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9839f3a2-280c-4002-9dae-6ff1ff1bb2cd",
+                            ConcurrencyStamp = "247ad17c-020e-46bd-a2f2-697a6943887b",
                             Email = "Kaique@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Kaique",
                             NormalizedEmail = "KAIQUE@TICKETAC.COM",
                             NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEO6L1bRIna4+/qe5K7tDVtpFFlu9LKIiZeXQeUSNeVx5EN1cCqqeK1ccR60ahjKl9w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEP5JMXQVw4e6zSgl2umkq/PPMn01P0YlvCLEZeWYbZJAFCXBay0bvJzVMLcRIkQJA==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "28395444",
+                            SecurityStamp = "54232412",
                             TwoFactorEnabled = false,
                             UserName = "Kaka@TickeTac.com"
                         });
@@ -388,7 +388,7 @@ namespace TickeTac.Migrations
                         {
                             Id = 1,
                             Name = "Barra Bonita",
-                            StateId = 1
+                            StateId = 25
                         });
                 });
 
@@ -528,7 +528,7 @@ namespace TickeTac.Migrations
                             Id = (ushort)1,
                             CpfCnpj = "00100200304",
                             Name = "José Gallo",
-                            UserId = "bcff5602-b95a-42c1-af5d-70db67828b12"
+                            UserId = "30cf60da-c234-48c7-8269-37cc4a08ad52"
                         });
                 });
 
@@ -578,7 +578,137 @@ namespace TickeTac.Migrations
                         new
                         {
                             Id = 1,
+                            Name = "AC"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "AL"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "AP"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "AM"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "BA"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "CE"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "DF"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "ES"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "GO"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "MA"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "MT"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "MS"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "MG"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "PA"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "PB"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "PR"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "PE"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "PI"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "RJ"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "RN"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "RS"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "RO"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "RR"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "SC"
+                        },
+                        new
+                        {
+                            Id = 25,
                             Name = "SP"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "SE"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "TO"
                         });
                 });
 

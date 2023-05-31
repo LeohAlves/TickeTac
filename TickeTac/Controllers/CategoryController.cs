@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using TickeTac.Data;
 using TickeTac.Models;
 
 namespace TickeTac.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class CategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
