@@ -1,36 +1,53 @@
 @model TickeTac.Models.Category
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Adicionar";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h1>Create</h1>
-
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Adiconar nova Categoria</h4>
+                        </div>
+                    </div>
+                    <form asp-action="Create" class="pl-3 pr-4 text-center">
+                        <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card text-left">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="mb-4">Informações da Categoria</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                        <label asp-for="Name" class="control-label">Nome Categoria</label>
+                                        <input asp-for="Name" class="form-control" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                        <label asp-for="Img" class="control-label">Imagem</label>
+                                        <input asp-for="Img" class="form-control" />
+                                        <span asp-validation-for="Img" class="text-danger"></span>
+                                        </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Salvar" class="btn btn-primary" />
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Img" class="control-label"></label>
-                <input asp-for="Img" class="form-control" />
-                <span asp-validation-for="Img" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
-
+</div>
+</div>
+</div>
