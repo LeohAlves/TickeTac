@@ -41,11 +41,11 @@ namespace TickeTac.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage ="Obrigatorio")]
             [EmailAddress]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage ="senha e/ou email incorretos")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -57,7 +57,7 @@ namespace TickeTac.Areas.Identity.Pages.Account
         {
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
+                ModelState.AddModelError(string.Empty, ErrorMessage="EMail ou senha invalidos");
             }
 
             returnUrl ??= Url.Content("~/");
