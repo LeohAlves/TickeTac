@@ -19,7 +19,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        HomeViewModel hvm = new(){
+        HomeViewModel hvm = new()
+        {
             Categories = _context.Categories.ToList(),
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
@@ -30,13 +31,19 @@ public class HomeController : Controller
 
     public IActionResult Eventos()
     {
-        EventsViewModel evm = new(){
+        EventsViewModel evm = new()
+        {
             Categories = _context.Categories.ToList(),
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
             Owners = _context.EventOwners.ToList()
         };
         return View(evm);
+    }
+
+    public IActionResult Detalhes()
+    {
+        return View();
     }
     public IActionResult UserPage()
     {
@@ -48,11 +55,6 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Publicar()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
     {
         return View();
     }
