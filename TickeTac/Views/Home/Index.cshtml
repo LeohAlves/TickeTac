@@ -127,7 +127,7 @@
                                 <div class="top-content">
                                     <a href="javascript:void(0)" class="tag">@events.Category.Name</a>
                                     <h3 class="title">
-                                        <a onclick="GetInfo(@events.Id)">@events.Name</a>
+                                        <a asp-action="Details" asp-route-id="@events.Id">@events.Name</a>
                                     </h3>
                                     <ul class="info-list">
                                         <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>Cidade:
@@ -284,12 +284,3 @@
         </div>
     </div>
 </section>
-
-@section Scripts
-{
-<script>
-    function GetInfo(Id) {
-        window.location = '@Url.Action("Details", "Home")' + '?Id=' + id;
-    }
-</script>
-}
