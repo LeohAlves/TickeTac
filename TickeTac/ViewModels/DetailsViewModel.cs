@@ -12,7 +12,5 @@ namespace TickeTac.ViewModels
         public Category Categories { get; set; }
         public City Cities { get; set; }
         public EventOwner Owners { get; set; }
-        public List<EventReviews> Reviews { get; set; }
-
     }
 }

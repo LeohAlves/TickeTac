@@ -31,21 +31,21 @@
           <div class=product-images>
             <main id=gallery>
               <div class=main-img>
-                <img src="@Model.Event.Image" id=current alt="#">
+                <img src="Model.Events.Image" id=current alt="#">
               </div>
             </main>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 col-12">
           <div class=product-info>
-            <h2 class=title>@Model.Event.Name</h2>
-            <p class=location><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.Event.city.Name, @Model.Event.State.Name</a></p>
-            <h3 class=price>@Model.Event.Price</h3>
+            <h2 class=title>Model.Events.Name</h2>
+            <p class=location><i class="lni lni-map-marker"></i><a href="javascript:void(0)">Model.Events.city.Name, Model.Event.State.Name</a></p>
+            <h3 class=price>Model.Events.Price</h3>
             <div class=list-info>
               <h4>Informaçoes</h4>
               <ul>
-                <li><span>Status:</span>@model.Event.StatusEvent.Name </li>
-                <li><span>Categoria:</span>@Model.Event.Categories.Name </li>
+                <li><span>Status:</span>Events.StatusEvent.Name </li>
+                <li><span>Categoria:</span>Model.Events.Categories.Name </li>
               </ul>
             </div>
             <div class=contact-info>
@@ -75,7 +75,7 @@
           <div class="single-block description">
             <h3>Description</h3>
             <p>
-              @Model.Event.Description
+              Model.Event.Description
             </p>
             <ul>
               <li>Model: Apple MacBook Pro 13.3-Inch MYDA2</li>
@@ -140,9 +140,9 @@
           <div class=item-details-sidebar>
 
             <div class="single-block author">
-              <h3>@model.Event.Owners.Name</h3>
+              <h3>Model.EventsViewModel.Owners.Name</h3>
               <div class=content>
-                <img src="@model.Event.Owners.ProfilePicture" alt="#">
+                <img src="Model.Events.Owners.ProfilePicture" alt="#">
                 <h4>Miliya Jessy</h4>
                 <span>Member Since May 15,2023</span>
                 <a href="javascript:void(0)" class=see-all>See All Ads</a>
