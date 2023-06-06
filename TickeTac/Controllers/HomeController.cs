@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using TickeTac.Models;
 using TickeTac.Data;
 using TickeTac.ViewModels;
+using Microsoft.EntityFrameworkCore;
+
 namespace TickeTac.Controllers;
+
 
 public class HomeController : Controller
 {
@@ -41,15 +44,9 @@ public class HomeController : Controller
         return View(evm);
     }
 
-    public IActionResult Detalhes()
+    public IActionResult Details(UInt16 Id)
     {
-        DetailsViewModel dvm = new()
-        {
-            Categories = _context.Categories.ToList(),
-            Events = _context.Events.ToList(),
-            Cities = _context.Cities.ToList(),
-            Owners = _context.EventOwners.ToList()
-        };
+        var evento = _context.Events.Include(e => e.Category) ; 
         return View();
     }
     public IActionResult UserPage()

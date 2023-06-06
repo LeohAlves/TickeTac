@@ -1,118 +1,120 @@
 ﻿@model TickeTac.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<body>
-    <!-- Start Hero Area -->
-    <section class="hero-area overlay">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                    <div class="hero-text text-center">
-                        <!-- Start Hero Text -->
-                        <div class="section-heading">
-                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Bem-vindo ao TickeTac</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".5s">Crie ou procure por eventos <br> ao redor de
-                                sua cidade</p>
-                        </div>
-                        <!-- End Search Form -->
-                        <!-- Start Search Form -->
-                        <div class="search-form wow fadeInUp" data-wow-delay=".7s">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-12 p-0">
-                                    <div class="search-input">
-                                        <label for="keyword"><i class="lni lni-search-alt theme-color"></i></label>
-                                        <input type="text" name="keyword" id="keyword" placeholder="Procurar">
-                                    </div>
+<!-- Start Hero Area -->
+<section class="hero-area2 overlay">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="hero-text text-center">
+                    <!-- Start Hero Text -->
+                    <div class="section-heading">
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">Bem-vindo ao TickeTac</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".5s">Crie ou procure por eventos <br> ao redor de
+                            sua cidade</p>
+                    </div>
+                    <!-- End Search Form -->
+                    <!-- Start Search Form -->
+                    <div class="search-form wow fadeInUp" data-wow-delay=".7s">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12 p-0">
+                                <div class="search-input">
+                                    <label for="keyword"><i class="lni lni-search-alt theme-color"></i></label>
+                                    <input type="text" name="keyword" id="keyword" placeholder="Procurar">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-12 p-0">
-                                    <div class="search-input">
-                                        <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
-                                        <select name="category" id="category">
-                                            <option value="none" selected disabled>Categorias</option>
-                                            @foreach (var category in Model.Categories)
-                                            {
-                                                <option value="@category.Id">@category.Name</option>
-                                            }
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12 p-0">
+                                <div class="search-input">
+                                    <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
+                                    <select name="category" id="category">
+                                        <option value="none" selected disabled>Categorias</option>
+                                        @foreach (var category in Model.Categories)
+                                        {
+                                            <option value="@category.Id">@category.Name</option>
+                                        }
+                                    </select>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-12 p-0">
-                                    <div class="search-input">
-                                        <label for="location"><i class="lni lni-map-marker theme-color"></i></label>
-                                        <select name="location" id="location">
-                                            <option value="none" selected disabled>Locais</option>
-                                            @foreach (var cities in Model.Cities)
-                                            {
-                                                <option value="@cities.Id">@cities.Name</option>
-                                            }
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-12 p-0">
+                                <div class="search-input">
+                                    <label for="location"><i class="lni lni-map-marker theme-color"></i></label>
+                                    <select name="location" id="location">
+                                        <option value="none" selected disabled>Locais</option>
+                                        @foreach (var cities in Model.Cities)
+                                        {
+                                            <option value="@cities.Id">@cities.Name</option>
+                                        }
+                                    </select>
                                 </div>
-                                <div class="col-lg-2 col-md-2 col-12 p-0">
-                                    <div class="search-btn button">
-                                        <button class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
-                                    </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-12 p-0">
+                                <div class="search-btn button">
+                                    <button class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
                                 </div>
                             </div>
                         </div>
-                        <!-- End Search Form -->
                     </div>
+                    <!-- End Search Form -->
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Hero Area -->
+    </div>
+</section>
+<!-- End Hero Area -->
 
-    <!-- Start Categories Area -->
-    <section class="categories">
-        <div class="container">
-            <div class="cat-inner">
-                <div class="row">
-                    <div class="col-12 p-0">
-                        <div class="category-slider">
-                            <!-- Start Single Category -->
-                            @foreach (var category in Model.Categories)
-                            {
-                                <a href="#" class="single-cat">
-                                    <div class="icon">
-                                        <img src="@category.Img" alt="#">
-                                    </div>
-                                    <h3>@category.Name</h3>
-                                </a>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /End Categories Area -->
-
-    <!-- Start Items Grid Area -->
-    <section class="items-grid section custom-padding">
-        <div class="container">
+<!-- Start Categories Area -->
+<section class="categories">
+    <div class="container">
+        <div class="cat-inner">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Últimos Eventos</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Veja nossos últimos eventos cadastrados que estão
-                            acontecendo nesse momento.</p>
+                <div class="col-12 p-0">
+                    <div class="category-slider">
+                        <!-- Start Single Category -->
+                        @foreach (var category in Model.Categories)
+                        {
+                            <a href="#" class="single-cat">
+                                <div class="icon">
+                                    <img src="@category.Img" alt="#">
+                                </div>
+                                <h3>@category.Name</h3>
+                            </a>
+                        }
                     </div>
                 </div>
             </div>
-            <div class="single-head">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-12">
+        </div>
+    </div>
+</section>
+<!-- /End Categories Area -->
 
-                        
-                        <!-- Start Single Grid -->
-                        @foreach (var events in Model.Events)
-                        {
-                        <div id="@events.Id" class="single-grid wow fadeInUp" data-wow-delay=".2s"> <!-- Pensar a respeito do ID para identificar cada um -->
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="@events.Image" alt="Imagem do evento"></a>
+<!-- Start Items Grid Area -->
+<section class="items-grid section custom-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Últimos Eventos</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Veja nossos últimos eventos cadastrados que estão
+                        acontecendo nesse momento.</p>
+                </div>
+            </div>
+        </div>
+        <div class="single-head">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+
+
+                    <!-- Start Single Grid -->
+                    @foreach (var events in Model.Events)
+                    {
+                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
+                            <!-- Pensar a respeito do ID para identificar cada um -->
+                        <div class="image">
+                                <a class="thumbnail"><img src="@events.Image"
+                                    alt="Imagem do evento"></a>
                                 <div class="author">
                                     <div class="author-image">
                                         <a href="javascript:void(0)">
@@ -125,13 +127,16 @@
                                 <div class="top-content">
                                     <a href="javascript:void(0)" class="tag">@events.Category.Name</a>
                                     <h3 class="title">
-                                        <a asp-action="Detalhes" asp-controller="Home">@events.Name</a>
+                                        <a onclick="GetInfo(@events.Id)">@events.Name</a>
                                     </h3>
                                     <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>Cidade: @events.City.Name</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>Cidade:
+                                                @events.City.Name</a></li>
                                         <li><br></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Inicio: @events.EventDateBegin</a></li>
-                                         <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim: @events.EventDateEnd</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Inicio:
+                                                @events.EventDateBegin</a></li>
+                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim:
+                                                @events.EventDateEnd</a></li>
                                     </ul>
                                 </div>
                                 <div class="bottom-content">
@@ -140,372 +145,151 @@
                                 </div>
                             </div>
                         </div>
-                        }
-                        <!-- End Single Grid -->
+                    }
+                    <!-- End Single Grid -->
 
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Grid -->
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img2.jpg"
-                                        alt="#"></a>
-                                <div class="author">
-                                    <div class="author-image">
-                                        <a href="javascript:void(0)"><img src="~/images/items-grid/author-2.jpg"
-                                                alt="#">
-                                            <span>Alex Jui</span></a>
-                                    </div>
-                                    <p class="sale">For Sale</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">Real Estate</a>
-                                    <h3 class="title">
-                                        <a href="item-details.html">Amazing Room for Rent</a>
-                                    </h3>
-                                    <p class="update-time">Last Updated: 2 hours ago</p>
-                                    <ul class="rating">
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><a href="javascript:void(0)">(20)</a></li>
-                                    </ul>
-                                    <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Dallas,
-                                                Washington</a></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Jan 7, 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="bottom-content">
-                                    <p class="price">Start From: <span>$450.00</span></p>
-                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Grid -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Grid -->
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img3.jpg"
-                                        alt="#"></a>
-                                <div class="author">
-                                    <div class="author-image">
-                                        <a href="javascript:void(0)"><img src="~/images/items-grid/author-3.jpg"
-                                                alt="#">
-                                            <span>Devid Milan</span></a>
-                                    </div>
-                                    <p class="sale">For Sale</p>
-                                </div>
-                                <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                            </div>
-                            <div class="content">
-                                <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">Mobile Phones</a>
-                                    <h3 class="title">
-                                        <a href="item-details.html">Canon SX Powershot D-SLR</a>
-                                    </h3>
-                                    <p class="update-time">Last Updated: 3 hours ago</p>
-                                    <ul class="rating">
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><a href="javascript:void(0)">(55)</a></li>
-                                    </ul>
-                                    <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> New York,
-                                                US</a></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Mar 18, 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="bottom-content">
-                                    <p class="price">Start From: <span>$700.00</span></p>
-                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Grid -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Grid -->
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".2s">
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img4.jpg"
-                                        alt="#"></a>
-                                <div class="author">
-                                    <div class="author-image">
-                                        <a href="javascript:void(0)"><img src="~/images/items-grid/author-4.jpg"
-                                                alt="#">
-                                            <span>Jesia Jully</span></a>
-                                    </div>
-                                    <p class="sale">For Sale</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">Vehicles</a>
-                                    <h3 class="title">
-                                        <a href="item-details.html">BMW 5 Series GT Car</a>
-                                    </h3>
-                                    <p class="update-time">Last Updated: 4 hours ago</p>
-                                    <ul class="rating">
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><a href="javascript:void(0)">(35)</a></li>
-                                    </ul>
-                                    <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> New York,
-                                                US</a></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Apr 12, 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="bottom-content">
-                                    <p class="price">Start From: <span>$1000.00</span></p>
-                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Grid -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Grid -->
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".4s">
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img5.jpg"
-                                        alt="#"></a>
-                                <div class="author">
-                                    <div class="author-image">
-                                        <a href="javascript:void(0)"><img src="~/images/items-grid/author-5.jpg"
-                                                alt="#">
-                                            <span>Thomas Deco</span></a>
-                                    </div>
-                                    <p class="sale">For Sale</p>
-                                </div>
-                                <p class="item-position"><i class="lni lni-bolt"></i> Featured</p>
-                            </div>
-                            <div class="content">
-                                <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">Apple</a>
-                                    <h3 class="title">
-                                        <a href="item-details.html">Apple Macbook Pro 13 Inch</a>
-                                    </h3>
-                                    <p class="update-time">Last Updated: 5 hours ago</p>
-                                    <ul class="rating">
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><a href="javascript:void(0)">(35)</a></li>
-                                    </ul>
-                                    <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Louis,
-                                                Missouri, US</a></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> May 25, 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="bottom-content">
-                                    <p class="price">Start From: <span>$550.00</span></p>
-                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Grid -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Grid -->
-                        <div class="single-grid wow fadeInUp" data-wow-delay=".6s">
-                            <div class="image">
-                                <a href="item-details.html" class="thumbnail"><img src="~/images/items-grid/img6.jpg"
-                                        alt="#"></a>
-                                <div class="author">
-                                    <div class="author-image">
-                                        <a href="javascript:void(0)"><img src="~/images/items-grid/author-6.jpg"
-                                                alt="#">
-                                            <span>Jonson zack</span></a>
-                                    </div>
-                                    <p class="sale">For Sale</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div class="top-content">
-                                    <a href="javascript:void(0)" class="tag">Restaurant</a>
-                                    <h3 class="title">
-                                        <a href="item-details.html">Cream Restaurant</a>
-                                    </h3>
-                                    <p class="update-time">Last Updated: 7 hours ago</p>
-                                    <ul class="rating">
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><i class="lni lni-star-filled"></i></li>
-                                        <li><a href="javascript:void(0)">(20)</a></li>
-                                    </ul>
-                                    <ul class="info-list">
-                                        <li><a href="javascript:void(0)"><i class="lni lni-map-marker"></i> New York,
-                                                US</a></li>
-                                        <li><a href="javascript:void(0)"><i class="lni lni-timer"></i> Feb 18, 2023</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="bottom-content">
-                                    <p class="price">Start From: <span>$500.00</span></p>
-                                    <a href="javascript:void(0)" class="like"><i class="lni lni-heart"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Grid -->
-                    </div>
+
+                    <!-- End Single Grid -->
                 </div>
             </div>
         </div>
-    </section>
-    <!-- /End Items Grid Area -->
+    </div>
+</section>
+<!-- /End Items Grid Area -->
 
-    <!-- Start Why Choose Area -->
-    <section  class="why-choose section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">POR QUE UTILIZAR O NOSSO SITE?</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Há varios motivos para o incentivo do uso do nosso
-                            website, entre por dentro deles:</p>
-                    </div>
+<!-- Start Why Choose Area -->
+<section class="why-choose section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">POR QUE UTILIZAR O NOSSO SITE?</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Há varios motivos para o incentivo do uso do nosso
+                        website, entre por dentro deles:</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="choose-content">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".2s">
-                                    <i class="lni lni-book"></i>
-                                    <h4>Fully Documented</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="choose-content">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".2s">
+                                <i class="lni lni-book"></i>
+                                <h4>Fully Documented</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".4s">
-                                    <i class="lni lni-leaf"></i>
-                                    <h4>Clean & Modern Design</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+                            <!-- Start Single List -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".4s">
+                                <i class="lni lni-leaf"></i>
+                                <h4>Clean & Modern Design</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".6s">
-                                    <i class="lni lni-cog"></i>
-                                    <h4>Completely Customizable</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+                            <!-- Start Single List -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".6s">
+                                <i class="lni lni-cog"></i>
+                                <h4>Completely Customizable</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".2s">
-                                    <i class="lni lni-pointer-up"></i>
-                                    <h4>User Friendly</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+                            <!-- Start Single List -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".2s">
+                                <i class="lni lni-pointer-up"></i>
+                                <h4>User Friendly</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".4s">
-                                    <i class="lni lni-layout"></i>
-                                    <h4>Awesome Layout</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+                            <!-- Start Single List -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".4s">
+                                <i class="lni lni-layout"></i>
+                                <h4>Awesome Layout</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".6s">
-                                    <i class="lni lni-laptop-phone"></i>
-                                    <h4>Fully Responsive</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
+                            <!-- Start Single List -->
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <!-- Start Single List -->
+                            <div class="single-list wow fadeInUp" data-wow-delay=".6s">
+                                <i class="lni lni-laptop-phone"></i>
+                                <h4>Fully Responsive</h4>
+                                <p>Buy and sell everything from used cars to mobile phones and computer or search
+                                    for property.</p>
                             </div>
+                            <!-- Start Single List -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- /End Why Choose Area -->
+    </div>
+</section>
+<!-- /End Why Choose Area -->
 
-    <!-- Start How Works Area -->
-    <section class="how-works section" style="background-color: #fff;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">COMO FUNCIONA?</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Não é muito complicado para entender como se usa o
-                            nosso site <br> mas caso precise, siga as instruções</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12">
-                    <!-- Start Single Work -->
-                    <div class="single-work wow fadeInUp" data-wow-delay=".2s">
-                        <span class="serial">01</span>
-                        <h3>Crie a sua conta</h3>
-                        <p>Clique em "registrar" na parte superior direita do site e siga as intruções.</p>
-                    </div>
-                    <!-- End Single Work -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <!-- Start Single Work -->
-                    <div class="single-work wow fadeInUp" data-wow-delay=".4s">
-                        <span class="serial">02</span>
-                        <h3>Se torne um organizador</h3>
-                        <p>Clique no botão roxo de "Anunciar Evento" e insira as informações necessárias</p>
-                    </div>
-                    <!-- End Single Work -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-12">
-                    <!-- Start Single Work -->
-                    <div class="single-work wow fadeInUp" data-wow-delay=".6s">
-                        <span class="serial">03</span>
-                        <h3>Publique seu evento</h3>
-                        <p>Preencha os dados necessários para a publicação de um evento</p>
-                    </div>
-                    <!-- End Single Work -->
+<!-- Start How Works Area -->
+<section class="how-works section" style="background-color: #fff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">COMO FUNCIONA?</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Não é muito complicado para entender como se usa o
+                        nosso site <br> mas caso precise, siga as instruções</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End How Works Area -->
-    <!-- End Newsletter Area -->
-</body>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Start Single Work -->
+                <div class="single-work wow fadeInUp" data-wow-delay=".2s">
+                    <span class="serial">01</span>
+                    <h3>Crie a sua conta</h3>
+                    <p>Clique em "registrar" na parte superior direita do site e siga as intruções.</p>
+                </div>
+                <!-- End Single Work -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Start Single Work -->
+                <div class="single-work wow fadeInUp" data-wow-delay=".4s">
+                    <span class="serial">02</span>
+                    <h3>Se torne um organizador</h3>
+                    <p>Clique no botão roxo de "Anunciar Evento" e insira as informações necessárias</p>
+                </div>
+                <!-- End Single Work -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Start Single Work -->
+                <div class="single-work wow fadeInUp" data-wow-delay=".6s">
+                    <span class="serial">03</span>
+                    <h3>Publique seu evento</h3>
+                    <p>Preencha os dados necessários para a publicação de um evento</p>
+                </div>
+                <!-- End Single Work -->
+            </div>
+        </div>
+    </div>
+</section>
 
-</html>
+@section Scripts
+{
+<script>
+    function GetInfo(Id) {
+        window.location = '@Url.Action("Details", "Home")' + '?Id=' + id;
+    }
+</script>
+}
