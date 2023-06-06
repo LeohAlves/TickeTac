@@ -6,7 +6,7 @@ using TickeTac.Models;
 
 namespace TickeTac.ViewModels
 {
-    public class EventsViewModel
+    public class DetailsViewModel
     {
         public Event Events { get; set; }
         public Category Categories { get; set; }
