@@ -43,6 +43,13 @@ public class HomeController : Controller
 
     public IActionResult Detalhes()
     {
+        DetailsViewModel dvm = new()
+        {
+            Categories = _context.Categories.ToList(),
+            Events = _context.Events.ToList(),
+            Cities = _context.Cities.ToList(),
+            Owners = _context.EventOwners.ToList()
+        };
         return View();
     }
     public IActionResult UserPage()

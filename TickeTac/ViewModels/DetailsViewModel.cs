@@ -8,9 +8,9 @@ namespace TickeTac.ViewModels
 {
     public class DetailsViewModel
     {
-        public Event Events { get; set; }
-        public Category Categories { get; set; }
-        public City Cities { get; set; }
-        public EventOwner Owners { get; set; }
+        public List<Event> Events { get; set; }
+        public List<Category> Categories { get; set; }
+        public List<City> Cities { get; set; }
+        public List<EventOwner> Owners { get; set; }
     }
 }
