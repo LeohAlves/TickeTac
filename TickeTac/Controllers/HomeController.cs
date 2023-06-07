@@ -46,8 +46,8 @@ public class HomeController : Controller
 
     public IActionResult Details(UInt16 Id)
     {
-        var evento = _context.Events.Include(e => e.Category) ; 
-        return View();
+        var events = _context.Events.Include(e => e.Category) ; 
+        return View(events);
     }
     public IActionResult UserPage()
     {
