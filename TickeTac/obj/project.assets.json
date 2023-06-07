@@ -9935,11 +9935,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj",
+      "projectUniqueName": "C:\\Users\\etec\\Documents\\GitHub\\TickeTac\\TickeTac\\TickeTac.csproj",
       "projectName": "TickeTac",
-      "projectPath": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj",
+      "projectPath": "C:\\Users\\etec\\Documents\\GitHub\\TickeTac\\TickeTac\\TickeTac.csproj",
       "packagesPath": "C:\\Users\\etec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\obj\\",
+      "outputPath": "C:\\Users\\etec\\Documents\\GitHub\\TickeTac\\TickeTac\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\etec\\AppData\\Roaming\\NuGet\\NuGet.Config",
