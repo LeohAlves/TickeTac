@@ -46,9 +46,19 @@ public class HomeController : Controller
 
     public IActionResult Details(UInt16 Id)
     {
-        var events = _context.Events.Include(e => e.Category) ; 
-        return View(events);
+        var @event = _context.Events.Where(e => e.Id == Id)
+        .Include(e => e.Category)
+        .Include(e => e.StatusEvent)
+        .Include(e => e.City)
+        .Include(e => e.EventOwner)
+        .ThenInclude(e => e.User).FirstOrDefault();
+
+        if (@event == null)
+            return NotFound();
+
+        return View(@event);
     }
+
     public IActionResult UserPage()
     {
         return View();
@@ -58,6 +68,7 @@ public class HomeController : Controller
     {
         return View();
     }
+
     public IActionResult Publicar()
     {
         return View();

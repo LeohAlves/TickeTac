@@ -1,3 +1,5 @@
+@model TickeTac.Models.Event
+
 @{
   ViewData["Title"] = "Detalhes";
 }
@@ -7,13 +9,13 @@
     <div class="row align-items-center">
       <div class="col-lg-6 col-md-6 col-12">
         <div class=breadcrumbs-content>
-          <h1 class=page-title>Detalhes evento</h1>
+          <h1 class=page-title>Detalhes do evento</h1>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-12">
         <ul class=breadcrumb-nav>
           <li><a href=index.html>Home</a></li>
-          <li>Detalhes evento</li>
+          <li>Detalhes do evento</li>
         </ul>
       </div>
     </div>
@@ -29,21 +31,21 @@
           <div class=product-images>
             <main id=gallery>
               <div class=main-img>
-                <img src="Model.Events.Image" id=current alt="#">
+                <img src="@Model.Image" id=current alt="#">
               </div>
             </main>
           </div>
         </div>
         <div class="col-lg-6 col-md-12 col-12">
           <div class=product-info>
-            <h2 class=title>Model.Events.Name</h2>
-            <p class=location><i class="lni lni-map-marker"></i><a href="javascript:void(0)">Model.Events.city.Name, Model.Event.State.Name</a></p>
-            <h3 class=price>Model.Events.Price</h3>
+            <h2 class=title>@Model.Name</h2>
+            <p class=location><i class="lni lni-map-marker"></i><a href="javascript:void(0)">@Model.City.Name, Model.State.Name</a></p>
+            <h3 class=price>R$ @Model.Price</h3>
             <div class=list-info>
-              <h4>Informaçoes</h4>
+              <h4>Informações</h4>
               <ul>
-                <li><span>Status:</span>Events.StatusEvent.Name </li>
-                <li><span>Categoria:</span>Model.Events.Categories.Name </li>
+                <li><span>Status:</span>@Model.StatusEvent.Name </li>
+                <li><span>Categoria:</span>@Model.Category.Name </li>
               </ul>
             </div>
             <div class=contact-info>
@@ -51,8 +53,8 @@
                 <li>
                   <a href="tel:+002562352589" class=call>
                     <i class="lni lni-phone-set"></i>
-                    +00 256 235 2589
-                    <span>Ligue para mais Detalhes</span>
+                    @Model.ContactPhone
+                    <span>Ligue para mais detalhes</span>
                   </a>
                 </li>
                 <li>
@@ -71,19 +73,11 @@
         <div class="col-lg-8 col-md-7 col-12">
 
           <div class="single-block description">
-            <h3>Description</h3>
+            <h3>Descrição</h3>
             <p>
-              Model.Event.Description
+              @Model.Description
             </p>
-            <ul>
-              <li>Model: Apple MacBook Pro 13.3-Inch MYDA2</li>
-              <li>Apple M1 chip with 8-core CPU and 8-core GPU</li>
-              <li>8GB RAM</li>
-              <li>256GB SSD</li>
-              <li>13.3-inch 2560x1600 LED-backlit Retina Display</li>
-            </ul>
-            <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
-              non-characteristic words etc.</p>
+            <p>@Model.MoreInfo</p>
           </div>
           <div class="single-block comments">
             <h3></h3>
@@ -106,27 +100,27 @@
 
 
           <div class="single-block comment-form">
-            <h3>Post a comment</h3>
+            <h3>Publique um comentário</h3>
             <form action="#" method=POST>
               <div class=row>
                 <div class="col-lg-6 col-12">
                   <div class="form-box form-group">
-                    <input type=text name=name class="form-control form-control-custom" placeholder="Your Name" />
+                    <input type=text name=name class="form-control form-control-custom" placeholder="Seu nome" />
                   </div>
                 </div>
                 <div class="col-lg-6 col-12">
                   <div class="form-box form-group">
-                    <input type=email name=email class="form-control form-control-custom" placeholder="Your Email" />
+                    <input type=email name=email class="form-control form-control-custom" placeholder="Seu e-mail" />
                   </div>
                 </div>
                 <div class=col-12>
                   <div class="form-box form-group">
-                    <textarea name="#" class="form-control form-control-custom" placeholder="Your Comments"></textarea>
+                    <textarea name="#" class="form-control form-control-custom" placeholder="Seu comentário"></textarea>
                   </div>
                 </div>
                 <div class=col-12>
                   <div class=button>
-                    <button type=submit class=btn>Post Comment</button>
+                    <button type=submit class=btn>Publicar</button>
                   </div>
                 </div>
               </div>
@@ -138,38 +132,37 @@
           <div class=item-details-sidebar>
 
             <div class="single-block author">
-              <h3>Model.EventsViewModel.Owners.Name</h3>
+              <h3>Organizador</h3>
               <div class=content>
-                <img src="Model.Events.Owners.ProfilePicture" alt="#">
-                <h4>Miliya Jessy</h4>
-                <span>Member Since May 15,2023</span>
-                <a href="javascript:void(0)" class=see-all>See All Ads</a>
+                <img src="@Model.EventOwner.User.ProfilePicture" alt="#">
+                <h4>@Model.EventOwner.Name</h4>
+                <a href="javascript:void(0)" class=see-all>Ver outros eventos</a>
               </div>
             </div>
 
 
             <div class="single-block contant-seller comment-form ">
-              <h3>Contact Seller</h3>
+              <h3>Contate-me</h3>
               <form action="#" method=POST>
                 <div class=row>
                   <div class=col-12>
                     <div class="form-box form-group">
-                      <input type=text name=name class="form-control form-control-custom" placeholder="Your Name" />
+                      <input type=text name=name class="form-control form-control-custom" placeholder="Nome" />
                     </div>
                   </div>
                   <div class=col-12>
                     <div class="form-box form-group">
-                      <input type=email name=email class="form-control form-control-custom" placeholder="Your Email" />
+                      <input type=email name=email class="form-control form-control-custom" placeholder="E-mail" />
                     </div>
                   </div>
                   <div class=col-12>
                     <div class="form-box form-group">
-                      <textarea name="#" class="form-control form-control-custom" placeholder="Your Message"></textarea>
+                      <textarea name="#" class="form-control form-control-custom" placeholder="Mensagem"></textarea>
                     </div>
                   </div>
                   <div class=col-12>
                     <div class=button>
-                      <button type=submit class=btn>Send Message</button>
+                      <button type=submit class=btn>Enviar mensagem</button>
                     </div>
                   </div>
                 </div>
