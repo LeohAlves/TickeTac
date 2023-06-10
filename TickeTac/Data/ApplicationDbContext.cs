@@ -117,6 +117,52 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
              RoleId = listRoles[1].Id
          }
         );
+
+        var usuarioId2 = Guid.NewGuid().ToString();
+        builder.Entity<AppUser>().HasData(
+                new AppUser()
+                {
+                    Id = usuarioId2,
+                    Name = "carlos",
+                    UserName = "Carlos@Email.com",
+                    NormalizedUserName = "CARLOS@EMAIL.COM",
+                    Email = "Carlos@Email.com",
+                    NormalizedEmail = "CARLOS@EMAIL.COM",
+                    EmailConfirmed = true,
+                    PasswordHash = hash.HashPassword(null, "123456"),
+                    SecurityStamp = hash.GetHashCode().ToString(),
+                    ProfilePicture = ""
+                }
+        );
+        builder.Entity<IdentityUserRole<string>>().HasData(
+         new IdentityUserRole<string>()
+         {
+             UserId = usuarioId2,
+             RoleId = listRoles[1].Id
+         }
+        );
+        #endregion
+        #region seed eventowner
+
+        List<EventOwner> listEventOwner = new List<EventOwner>()
+        {
+            new EventOwner()
+            {
+                Id = 1,
+                Name = "José Gallo",
+                CpfCnpj = "00100200304",
+                UserId = usuarioId
+            },
+            new EventOwner()
+            {
+                Id = 2,
+                Name = "Carlos Eduardo",
+                CpfCnpj = "09876543211",
+                UserId = usuarioId2
+            }
+        };
+        builder.Entity<EventOwner>().HasData(listEventOwner);
+
         #endregion
 
         #region seed category
@@ -282,23 +328,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             }
         };
         builder.Entity<Event>().HasData(listEvent);
-
-        #endregion
-
-        #region seed eventowner
-
-        List<EventOwner> listEventOwner = new List<EventOwner>()
-        {
-            new EventOwner()
-            {
-                Id = 1,
-                Name = "José Gallo",
-                CpfCnpj = "00100200304",
-                UserId = usuarioId
-            }
-        };
-
-        builder.Entity<EventOwner>().HasData(listEventOwner);
 
         #endregion
     }

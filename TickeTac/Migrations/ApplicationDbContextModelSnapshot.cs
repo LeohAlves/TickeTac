@@ -47,22 +47,22 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d3f9cf85-b0a6-4419-81ed-4610d0f4c467",
-                            ConcurrencyStamp = "ac63bb3e-7a23-443c-ab8d-098105f1f935",
+                            Id = "7e18ae49-ed93-4d10-8c3b-04718052f21d",
+                            ConcurrencyStamp = "9304fd70-94a6-4563-aacf-d36b8c6e122a",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "9b00989c-a770-4ef9-b5df-ef90adf697f0",
-                            ConcurrencyStamp = "d4a98cef-2688-4231-a80a-d004076b866c",
+                            Id = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6",
+                            ConcurrencyStamp = "e8ac69a2-76e8-406b-b941-60e3008261da",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
                         },
                         new
                         {
-                            Id = "268d6d40-e06f-4cfc-9641-d24fe1e3cae4",
-                            ConcurrencyStamp = "ef93eb6d-6e77-4a98-a7ea-4c99342b3360",
+                            Id = "2747e6fd-ba95-40b3-bbb7-7ffe666c1ed4",
+                            ConcurrencyStamp = "130f7665-ee7f-4190-8526-5a7b81ec4438",
                             Name = "Organizador",
                             NormalizedName = "ORGANIZADOR"
                         });
@@ -153,13 +153,18 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "988d4894-1723-42bb-8a50-90b11b814b88",
-                            RoleId = "d3f9cf85-b0a6-4419-81ed-4610d0f4c467"
+                            UserId = "88f17fb3-53f4-40e1-99f2-3e463809767e",
+                            RoleId = "7e18ae49-ed93-4d10-8c3b-04718052f21d"
                         },
                         new
                         {
-                            UserId = "30cf60da-c234-48c7-8269-37cc4a08ad52",
-                            RoleId = "9b00989c-a770-4ef9-b5df-ef90adf697f0"
+                            UserId = "405efe08-0a26-4297-ab11-40c5ee4173fc",
+                            RoleId = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6"
+                        },
+                        new
+                        {
+                            UserId = "5230e13d-5027-4f7b-8054-9fa13dd41a4b",
+                            RoleId = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6"
                         });
                 });
 
@@ -257,16 +262,16 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "988d4894-1723-42bb-8a50-90b11b814b88",
+                            Id = "88f17fb3-53f4-40e1-99f2-3e463809767e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46b4c75a-6921-495c-a1ec-14c4ce1f3cd3",
+                            ConcurrencyStamp = "156411e8-7a66-4958-9c7a-0c9f5ed4448b",
                             Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Leonardo",
                             NormalizedEmail = "ADMIN@TICKETAC.COM",
                             NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC2mO9DzCWYv6C9y1MQx1/XK4tS2pD36KZ2j5QnXpFwSBWWzCk0FgV3yzX0gtUTYpA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEA/6MtZhtp8v3VvDTMu5Oe4RWTZ14O4FH5dxtsYULWly+hO1fikBb8zV+4bJZ67Ahw==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
                             SecurityStamp = "54232412",
@@ -275,21 +280,39 @@ namespace TickeTac.Migrations
                         },
                         new
                         {
-                            Id = "30cf60da-c234-48c7-8269-37cc4a08ad52",
+                            Id = "405efe08-0a26-4297-ab11-40c5ee4173fc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "247ad17c-020e-46bd-a2f2-697a6943887b",
+                            ConcurrencyStamp = "5358deca-1108-4b58-9ca3-8856fdbd9044",
                             Email = "Kaique@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Kaique",
                             NormalizedEmail = "KAIQUE@TICKETAC.COM",
                             NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEP5JMXQVw4e6zSgl2umkq/PPMn01P0YlvCLEZeWYbZJAFCXBay0bvJzVMLcRIkQJA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPI3u2mZwSZLOx6zZ8esbJrEC/KcSY9W9+WWvVXZ1fRe9bcglTlAxt1CWbMw/ShgfA==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
                             SecurityStamp = "54232412",
                             TwoFactorEnabled = false,
                             UserName = "Kaka@TickeTac.com"
+                        },
+                        new
+                        {
+                            Id = "5230e13d-5027-4f7b-8054-9fa13dd41a4b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "026c9a2a-79ef-4395-bb8d-b5be3b9b9dae",
+                            Email = "Carlos@Email.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "carlos",
+                            NormalizedEmail = "CARLOS@EMAIL.COM",
+                            NormalizedUserName = "CARLOS@EMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEI95zXlSrYcJTMIHdwgaBBcRtP9U5mGUXPlcGMJFcBRODZsMixFHrzZLXHiKCwZIQQ==",
+                            PhoneNumberConfirmed = false,
+                            ProfilePicture = "",
+                            SecurityStamp = "54232412",
+                            TwoFactorEnabled = false,
+                            UserName = "Carlos@Email.com"
                         });
                 });
 
@@ -528,7 +551,14 @@ namespace TickeTac.Migrations
                             Id = (ushort)1,
                             CpfCnpj = "00100200304",
                             Name = "José Gallo",
-                            UserId = "30cf60da-c234-48c7-8269-37cc4a08ad52"
+                            UserId = "405efe08-0a26-4297-ab11-40c5ee4173fc"
+                        },
+                        new
+                        {
+                            Id = (ushort)2,
+                            CpfCnpj = "09876543211",
+                            Name = "Carlos Eduardo",
+                            UserId = "5230e13d-5027-4f7b-8054-9fa13dd41a4b"
                         });
                 });
 
