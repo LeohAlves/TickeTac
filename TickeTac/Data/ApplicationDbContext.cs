@@ -56,12 +56,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Name="Usuario",
                 NormalizedName= "USUÁRIO"
             },
-            new IdentityRole()
-            {
-                Id = Guid.NewGuid().ToString() ,
-                Name="Organizador",
-                NormalizedName= "ORGANIZADOR"
-            }
         };
         builder.Entity<IdentityRole>().HasData(listRoles);
         #endregion
