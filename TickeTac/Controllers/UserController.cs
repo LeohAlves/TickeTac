@@ -10,11 +10,11 @@ using Microsoft.Extensions.Logging;
 namespace TickeTac.Controllers
 {  
     [Authorize(Roles = "Usuario")]
-    public class AdminController : Controller
+    public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
 
-        public AdminController(ILogger<UserController> logger)
+        public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }

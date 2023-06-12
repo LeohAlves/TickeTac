@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj",
+  "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\TickeTac.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16298,188 +16298,188 @@
   "RootNamespace": "TickeTac",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\UserPage.cshtml",
-      "TargetPath": "Views\\Home\\UserPage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Edit.cshtml",
-      "TargetPath": "Views\\StatusEvent\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Index.cshtml",
-      "TargetPath": "Views\\Category\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Eventos.cshtml",
-      "TargetPath": "Views\\Home\\Eventos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Create.cshtml",
-      "TargetPath": "Views\\StatusEvent\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Create.cshtml",
-      "TargetPath": "Views\\Event\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Publicar.cshtml",
-      "TargetPath": "Views\\Home\\Publicar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Delete.cshtml",
-      "TargetPath": "Views\\StatusEvent\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Index.cshtml",
-      "TargetPath": "Views\\StatusEvent\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Details.cshtml",
-      "TargetPath": "Views\\Home\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Delete.cshtml",
-      "TargetPath": "Views\\Category\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Delete.cshtml",
-      "TargetPath": "Views\\Event\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Create.cshtml",
-      "TargetPath": "Views\\Category\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Edit.cshtml",
-      "TargetPath": "Views\\Category\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\MeusEventos.cshtml",
-      "TargetPath": "Views\\Home\\MeusEventos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_LayoutAdmin.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutAdmin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Details.cshtml",
-      "TargetPath": "Views\\Event\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\StatusEvent\\Details.cshtml",
-      "TargetPath": "Views\\StatusEvent\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Category\\Details.cshtml",
-      "TargetPath": "Views\\Category\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Index.cshtml",
-      "TargetPath": "Views\\Event\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Admin\\Index.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Admin\\Index.cshtml",
       "TargetPath": "Views\\Admin\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\User\\MeusEventos.cshtml",
+      "TargetPath": "Views\\User\\MeusEventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Edit.cshtml",
-      "TargetPath": "Views\\Event\\Edit.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Home\\Details.cshtml",
+      "TargetPath": "Views\\Home\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Event\\Create.cshtml",
+      "TargetPath": "Views\\Event\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\User\\UserPage.cshtml",
+      "TargetPath": "Views\\User\\UserPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Event\\Details.cshtml",
+      "TargetPath": "Views\\Event\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Category\\Delete.cshtml",
+      "TargetPath": "Views\\Category\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Category\\Details.cshtml",
+      "TargetPath": "Views\\Category\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\User\\Publicar.cshtml",
+      "TargetPath": "Views\\User\\Publicar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\StatusEvent\\Create.cshtml",
+      "TargetPath": "Views\\StatusEvent\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Home\\Eventos.cshtml",
+      "TargetPath": "Views\\Home\\Eventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Category\\Create.cshtml",
+      "TargetPath": "Views\\Category\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\StatusEvent\\Edit.cshtml",
+      "TargetPath": "Views\\StatusEvent\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Event\\Edit.cshtml",
+      "TargetPath": "Views\\Event\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\StatusEvent\\Delete.cshtml",
+      "TargetPath": "Views\\StatusEvent\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Shared\\_LayoutAdmin.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Event\\Delete.cshtml",
+      "TargetPath": "Views\\Event\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\StatusEvent\\Index.cshtml",
+      "TargetPath": "Views\\StatusEvent\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Category\\Index.cshtml",
+      "TargetPath": "Views\\Category\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Category\\Edit.cshtml",
+      "TargetPath": "Views\\Category\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\Event\\Index.cshtml",
+      "TargetPath": "Views\\Event\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\GitHub\\TickeTac\\TickeTac\\Views\\StatusEvent\\Details.cshtml",
+      "TargetPath": "Views\\StatusEvent\\Details.cshtml",
       "FileKind": "mvc"
     }
   ],
