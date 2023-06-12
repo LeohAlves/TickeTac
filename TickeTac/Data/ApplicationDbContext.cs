@@ -156,7 +156,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             }
         };
         builder.Entity<EventOwner>().HasData(listEventOwner);
-
         #endregion
 
         #region seed category

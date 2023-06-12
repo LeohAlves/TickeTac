@@ -1,11 +1,37 @@
 ﻿@page
 @model AccessDeniedModel
 @{
-    ViewData["Title"] = "Access denied";
-    Layout = null;
+    ViewData["Title"] = "Accesso Negado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<header>
     <h1 class="text-danger">@ViewData["Title"]</h1>
-    <p class="text-danger">You do not have access to this resource.</p>
-</header>
+
+    <div class=preloader>
+        <div class=preloader-inner>
+            <div class=preloader-icon>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=error-area>
+        <div class=d-table>
+            <div class=d-table-cell>
+                <div class=container>
+                    <div class=error-content>
+                        
+                        <h2>@ViewData["Title"]</h2>
+                        <p>Voce nao Possui Permissão para acessar essa Pagina</p>
+                        <div class=button>
+                            <a asp-action="Index" asp-controller="Home" class=btn>Go To Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
