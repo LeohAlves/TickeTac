@@ -47,24 +47,17 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7e18ae49-ed93-4d10-8c3b-04718052f21d",
-                            ConcurrencyStamp = "9304fd70-94a6-4563-aacf-d36b8c6e122a",
+                            Id = "fc44e025-00f0-4e11-8692-8b8cbdf18387",
+                            ConcurrencyStamp = "fcd37b32-cf4f-4bcd-93f3-8a4dafd5d008",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6",
-                            ConcurrencyStamp = "e8ac69a2-76e8-406b-b941-60e3008261da",
+                            Id = "892b4a0e-a4f8-4b90-a805-befac98d834d",
+                            ConcurrencyStamp = "9a88acf4-76ac-4bc7-ac5a-bce2cf1c04e6",
                             Name = "Usuario",
                             NormalizedName = "USUÁRIO"
-                        },
-                        new
-                        {
-                            Id = "2747e6fd-ba95-40b3-bbb7-7ffe666c1ed4",
-                            ConcurrencyStamp = "130f7665-ee7f-4190-8526-5a7b81ec4438",
-                            Name = "Organizador",
-                            NormalizedName = "ORGANIZADOR"
                         });
                 });
 
@@ -153,18 +146,23 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "88f17fb3-53f4-40e1-99f2-3e463809767e",
-                            RoleId = "7e18ae49-ed93-4d10-8c3b-04718052f21d"
+                            UserId = "24a16a2f-3619-46e6-97b4-77edf1aab96d",
+                            RoleId = "fc44e025-00f0-4e11-8692-8b8cbdf18387"
                         },
                         new
                         {
-                            UserId = "405efe08-0a26-4297-ab11-40c5ee4173fc",
-                            RoleId = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6"
+                            UserId = "8e27e82b-06b2-4bf5-84f9-f635d20630fd",
+                            RoleId = "892b4a0e-a4f8-4b90-a805-befac98d834d"
                         },
                         new
                         {
-                            UserId = "5230e13d-5027-4f7b-8054-9fa13dd41a4b",
-                            RoleId = "ff3a35e4-01c0-4fb0-a7ae-9f83a592aff6"
+                            UserId = "d2b06f16-df4e-4000-87bc-ff82507e46f5",
+                            RoleId = "892b4a0e-a4f8-4b90-a805-befac98d834d"
+                        },
+                        new
+                        {
+                            UserId = "ad38253a-58c5-4316-9408-c6d5063758cc",
+                            RoleId = "892b4a0e-a4f8-4b90-a805-befac98d834d"
                         });
                 });
 
@@ -262,57 +260,75 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "88f17fb3-53f4-40e1-99f2-3e463809767e",
+                            Id = "24a16a2f-3619-46e6-97b4-77edf1aab96d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "156411e8-7a66-4958-9c7a-0c9f5ed4448b",
+                            ConcurrencyStamp = "e8687333-e7d4-44dc-b04e-9fb7ade940e9",
                             Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            Name = "Leonardo",
+                            Name = "Admin",
                             NormalizedEmail = "ADMIN@TICKETAC.COM",
                             NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA/6MtZhtp8v3VvDTMu5Oe4RWTZ14O4FH5dxtsYULWly+hO1fikBb8zV+4bJZ67Ahw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENuB42PdT0npQwhywqmlZLBc7GOrsWhtFgMbmmyaqD0gf9iUCzfyGPWAKW/agJPMZQ==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "54232412",
+                            SecurityStamp = "28395444",
                             TwoFactorEnabled = false,
                             UserName = "Admin@TickeTac.com"
                         },
                         new
                         {
-                            Id = "405efe08-0a26-4297-ab11-40c5ee4173fc",
+                            Id = "8e27e82b-06b2-4bf5-84f9-f635d20630fd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5358deca-1108-4b58-9ca3-8856fdbd9044",
-                            Email = "Kaique@TickeTac.com",
+                            ConcurrencyStamp = "114d1ec4-1cb3-4eb7-bb29-802559715358",
+                            Email = "Gallo@Email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            Name = "Kaique",
-                            NormalizedEmail = "KAIQUE@TICKETAC.COM",
-                            NormalizedUserName = "KAKA@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPI3u2mZwSZLOx6zZ8esbJrEC/KcSY9W9+WWvVXZ1fRe9bcglTlAxt1CWbMw/ShgfA==",
+                            Name = "José Gallo",
+                            NormalizedEmail = "GALLO@EMAIL.COM",
+                            NormalizedUserName = "GALLO@EMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPOkx5Ja5rYNSaBsTObe8QoRc5VdxGTtK3jmunfvJejnTBF+xq8ZqWtGl1yUUFkw3Q==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "54232412",
+                            SecurityStamp = "28395444",
                             TwoFactorEnabled = false,
-                            UserName = "Kaka@TickeTac.com"
+                            UserName = "Gallo@Email.com"
                         },
                         new
                         {
-                            Id = "5230e13d-5027-4f7b-8054-9fa13dd41a4b",
+                            Id = "d2b06f16-df4e-4000-87bc-ff82507e46f5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "026c9a2a-79ef-4395-bb8d-b5be3b9b9dae",
-                            Email = "Carlos@Email.com",
+                            ConcurrencyStamp = "d0894b65-9b0e-46ff-8933-f127d1d6425d",
+                            Email = "Kai@Email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            Name = "carlos",
-                            NormalizedEmail = "CARLOS@EMAIL.COM",
-                            NormalizedUserName = "CARLOS@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI95zXlSrYcJTMIHdwgaBBcRtP9U5mGUXPlcGMJFcBRODZsMixFHrzZLXHiKCwZIQQ==",
+                            Name = "Kaique",
+                            NormalizedEmail = "KAI@EMAIL.COM",
+                            NormalizedUserName = "KAI@EMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBSiIFNmtRWkvE+DDoq84PfBNfmojDbuYDF9lRgQIe4926OP9pKXExopIJofL8TkMg==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "",
-                            SecurityStamp = "54232412",
+                            SecurityStamp = "28395444",
                             TwoFactorEnabled = false,
-                            UserName = "Carlos@Email.com"
+                            UserName = "Kai@Email.com"
+                        },
+                        new
+                        {
+                            Id = "ad38253a-58c5-4316-9408-c6d5063758cc",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d271cded-90b8-4a51-a61a-c16a59f6414d",
+                            Email = "Leo@Email.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            Name = "Leonardo",
+                            NormalizedEmail = "LEO@EMAIL.COM",
+                            NormalizedUserName = "LEO@EMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOfKbLBajiNiIKK+11SApJu792+dJIDhG3MM3tApreTulQQfSecWiLe/6oXicuiuew==",
+                            PhoneNumberConfirmed = false,
+                            ProfilePicture = "",
+                            SecurityStamp = "28395444",
+                            TwoFactorEnabled = false,
+                            UserName = "Leo@Email.com"
                         });
                 });
 
@@ -517,6 +533,26 @@ namespace TickeTac.Migrations
                             Price = 150.99m,
                             PublicSpace = "Nem lembro o que é",
                             StatusEventId = (ushort)2
+                        },
+                        new
+                        {
+                            Id = (ushort)2,
+                            CategoryId = (ushort)6,
+                            Cep = "1234567891234",
+                            CityId = 1,
+                            ContactEmail = "Kai@email.com",
+                            ContactPhone = "14991144192",
+                            Description = "Competição de tapa na cara! O vencedor ganha um prêmio especial.",
+                            District = "Nova Barra",
+                            EventDateBegin = new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventDateEnd = new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventOwnerId = (ushort)2,
+                            Image = "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg",
+                            MoreInfo = "",
+                            Name = "Competição de tapa na cara",
+                            Price = 50.00m,
+                            PublicSpace = "Nem lembro o que é",
+                            StatusEventId = (ushort)2
                         });
                 });
 
@@ -551,14 +587,21 @@ namespace TickeTac.Migrations
                             Id = (ushort)1,
                             CpfCnpj = "00100200304",
                             Name = "José Gallo",
-                            UserId = "405efe08-0a26-4297-ab11-40c5ee4173fc"
+                            UserId = "8e27e82b-06b2-4bf5-84f9-f635d20630fd"
                         },
                         new
                         {
                             Id = (ushort)2,
                             CpfCnpj = "09876543211",
-                            Name = "Carlos Eduardo",
-                            UserId = "5230e13d-5027-4f7b-8054-9fa13dd41a4b"
+                            Name = "Kaique",
+                            UserId = "d2b06f16-df4e-4000-87bc-ff82507e46f5"
+                        },
+                        new
+                        {
+                            Id = (ushort)3,
+                            CpfCnpj = "24307069030",
+                            Name = "Leonardo",
+                            UserId = "ad38253a-58c5-4316-9408-c6d5063758cc"
                         });
                 });
 

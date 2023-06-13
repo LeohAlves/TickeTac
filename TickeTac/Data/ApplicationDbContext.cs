@@ -67,7 +67,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 new AppUser()
                 {
                     Id = userId,
-                    Name = "Leonardo",
+                    Name = "Admin",
                     UserName = "Admin@TickeTac.com",
                     NormalizedUserName = "ADMIN@TICKETAC.COM",
                     Email = "Admin@TickeTac.com",
@@ -87,17 +87,19 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         );
         #endregion
 
+        // INICIO DA SEED DE USUARIOS ---------------------------------------
+
         #region seed user usuario
         var usuarioId = Guid.NewGuid().ToString();
         builder.Entity<AppUser>().HasData(
                 new AppUser()
                 {
                     Id = usuarioId,
-                    Name = "Kaique",
-                    UserName = "Kaka@TickeTac.com",
-                    NormalizedUserName = "KAKA@TICKETAC.COM",
-                    Email = "Kaique@TickeTac.com",
-                    NormalizedEmail = "KAIQUE@TICKETAC.COM",
+                    Name = "José Gallo",
+                    UserName = "Gallo@Email.com",
+                    NormalizedUserName = "GALLO@EMAIL.COM",
+                    Email = "Gallo@Email.com",
+                    NormalizedEmail = "GALLO@EMAIL.COM",
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
@@ -117,11 +119,11 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 new AppUser()
                 {
                     Id = usuarioId2,
-                    Name = "carlos",
-                    UserName = "Carlos@Email.com",
-                    NormalizedUserName = "CARLOS@EMAIL.COM",
-                    Email = "Carlos@Email.com",
-                    NormalizedEmail = "CARLOS@EMAIL.COM",
+                    Name = "Kaique",
+                    UserName = "Kai@Email.com",
+                    NormalizedUserName = "KAI@EMAIL.COM",
+                    Email = "Kai@Email.com",
+                    NormalizedEmail = "KAI@EMAIL.COM",
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
@@ -135,7 +137,35 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
              RoleId = listRoles[1].Id
          }
         );
+
+        var usuarioId3 = Guid.NewGuid().ToString();
+        builder.Entity<AppUser>().HasData(
+                new AppUser()
+                {
+                    Id = usuarioId3,
+                    Name = "Leonardo",
+                    UserName = "Leo@Email.com",
+                    NormalizedUserName = "LEO@EMAIL.COM",
+                    Email = "Leo@Email.com",
+                    NormalizedEmail = "LEO@EMAIL.COM",
+                    EmailConfirmed = true,
+                    PasswordHash = hash.HashPassword(null, "123456"),
+                    SecurityStamp = hash.GetHashCode().ToString(),
+                    ProfilePicture = ""
+                }
+        );
+        builder.Entity<IdentityUserRole<string>>().HasData(
+         new IdentityUserRole<string>()
+         {
+             UserId = usuarioId3,
+             RoleId = listRoles[1].Id
+         }
+        );
+
         #endregion
+
+        // FIM DA SEED DE USUARIOS ---------------------------------------
+
         #region seed eventowner
 
         List<EventOwner> listEventOwner = new List<EventOwner>()
@@ -150,9 +180,16 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new EventOwner()
             {
                 Id = 2,
-                Name = "Carlos Eduardo",
+                Name = "Kaique",
                 CpfCnpj = "09876543211",
                 UserId = usuarioId2
+            },
+            new EventOwner()
+            {
+                Id = 3,
+                Name = "Leonardo",
+                CpfCnpj = "24307069030",
+                UserId = usuarioId3
             }
         };
         builder.Entity<EventOwner>().HasData(listEventOwner);
@@ -317,7 +354,26 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 EventOwnerId = 1,
                 StatusEventId = 2,
                 CityId = 1
-
+            },
+            new Event()
+            {
+                Id = 2,
+                Name = "Competição de tapa na cara",
+                ContactPhone = "14991144192",
+                Price = 50.00m,
+                EventDateBegin = DateTime.Parse("23/02/2023 12:00"),
+                EventDateEnd = DateTime.Parse("10/03/2024 18:00"),
+                Description = "Competição de tapa na cara! O vencedor ganha um prêmio especial.",
+                Image = "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg",
+                ContactEmail = "Kai@email.com",
+                MoreInfo = "",
+                District = "Nova Barra",
+                PublicSpace = "Nem lembro o que é",
+                Cep = "1234567891234",
+                CategoryId = 6,
+                EventOwnerId = 2,
+                StatusEventId = 2,
+                CityId = 1
             }
         };
         builder.Entity<Event>().HasData(listEvent);
