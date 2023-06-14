@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\TickeTac\\TickeTac\\TickeTac.csproj": {}
+    "C:\\Users\\Kaique\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\TickeTac\\TickeTac\\TickeTac.csproj": {
+    "C:\\Users\\Kaique\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\TickeTac\\TickeTac\\TickeTac.csproj",
+        "projectUniqueName": "C:\\Users\\Kaique\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj",
         "projectName": "TickeTac",
-        "projectPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\TickeTac\\TickeTac\\TickeTac.csproj",
-        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\OneDrive\\Área de Trabalho\\TickeTac\\TickeTac\\obj\\",
+        "projectPath": "C:\\Users\\Kaique\\Desktop\\TickeTac\\TickeTac\\TickeTac.csproj",
+        "packagesPath": "C:\\Users\\Kaique\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kaique\\Desktop\\TickeTac\\TickeTac\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kaique\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

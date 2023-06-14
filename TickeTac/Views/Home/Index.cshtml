@@ -33,7 +33,7 @@
                                         <option value="none" selected disabled>Categorias</option>
                                         @foreach (var category in Model.Categories)
                                         {
-                                            <option value="@category.Id">@category.Name</option>
+                                            <option asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" value="@category.Id">@category.Name</option>
                                         }
                                     </select>
                                 </div>
@@ -45,14 +45,14 @@
                                         <option value="none" selected disabled>Locais</option>
                                         @foreach (var cities in Model.Cities)
                                         {
-                                            <option value="@cities.Id">@cities.Name</option>
+                                            <option asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" value="@cities.Id">@cities.Name</option>
                                         }
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 p-0">
                                 <div class="search-btn button">
-                                    <button class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
+                                    <button asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                                         <a href="javascript:void(0)">
                                             <span>Organizador: @events.EventOwner.Name</span></a>
                                     </div>
-                                    <p class="sale">For Sale</p>
+                                    <p class="sale">@events.StatusEvent.Name</p>
                                 </div>
                             </div>
                             <div class="content">

@@ -14,6 +14,7 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly ApplicationDbContext _context;
 
+
     public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
     {
         _logger = logger;
@@ -27,11 +28,24 @@ public class HomeController : Controller
             Categories = _context.Categories.ToList(),
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
-            Owners = _context.EventOwners.ToList()
+            Owners = _context.EventOwners.ToList(),
+            StatusEvents = _context.StatusEvents.ToList()
         };
         return View(hvm);
     }
 
+    public IActionResult FiltrarPorCategoria(UInt16 category, int city)
+    {   
+        var filters = 
+        _context.Categories.Where(c => c.Id == category).ToList();
+        _context.Cities.Where(c => c.Id == city).ToList();
+
+        if (filters != null)
+            return View("Index", filters);
+        
+        return View("Index");
+    }
+        
     public IActionResult Eventos()
     {
         EventsViewModel evm = new()
