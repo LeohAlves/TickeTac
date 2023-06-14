@@ -89,7 +89,7 @@ namespace TickeTac.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "States",
+                name: "State",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -99,7 +99,7 @@ namespace TickeTac.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_States", x => x.Id);
+                    table.PrimaryKey("PK_State", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -283,9 +283,9 @@ namespace TickeTac.Migrations
                 {
                     table.PrimaryKey("PK_Cities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cities_States_StateId",
+                        name: "FK_Cities_State_StateId",
                         column: x => x.StateId,
-                        principalTable: "States",
+                        principalTable: "State",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -321,6 +321,7 @@ namespace TickeTac.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CategoryId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
                     StatusEventId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
+                    StateId = table.Column<int>(type: "int", maxLength: 2, nullable: false),
                     EventOwnerId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
                 },
                 constraints: table =>
@@ -342,6 +343,12 @@ namespace TickeTac.Migrations
                         name: "FK_Event_EventOwner_EventOwnerId",
                         column: x => x.EventOwnerId,
                         principalTable: "EventOwner",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Event_State_StateId",
+                        column: x => x.StateId,
+                        principalTable: "State",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -388,8 +395,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "892b4a0e-a4f8-4b90-a805-befac98d834d", "9a88acf4-76ac-4bc7-ac5a-bce2cf1c04e6", "Usuario", "USUÁRIO" },
-                    { "fc44e025-00f0-4e11-8692-8b8cbdf18387", "fcd37b32-cf4f-4bcd-93f3-8a4dafd5d008", "Administrador", "ADMINISTRADOR" }
+                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "c58c4568-6d34-4c65-bff7-b320c9691778", "Usuario", "USUÁRIO" },
+                    { "c6a6cbe9-152a-4972-8d71-ff89c0e5fb4f", "2216853d-b05f-428f-9c41-d367af6ab7ae", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -397,10 +404,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "24a16a2f-3619-46e6-97b4-77edf1aab96d", 0, "e8687333-e7d4-44dc-b04e-9fb7ade940e9", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAENuB42PdT0npQwhywqmlZLBc7GOrsWhtFgMbmmyaqD0gf9iUCzfyGPWAKW/agJPMZQ==", null, false, "", "28395444", false, "Admin@TickeTac.com" },
-                    { "8e27e82b-06b2-4bf5-84f9-f635d20630fd", 0, "114d1ec4-1cb3-4eb7-bb29-802559715358", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEPOkx5Ja5rYNSaBsTObe8QoRc5VdxGTtK3jmunfvJejnTBF+xq8ZqWtGl1yUUFkw3Q==", null, false, "", "28395444", false, "Gallo@Email.com" },
-                    { "ad38253a-58c5-4316-9408-c6d5063758cc", 0, "d271cded-90b8-4a51-a61a-c16a59f6414d", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEOfKbLBajiNiIKK+11SApJu792+dJIDhG3MM3tApreTulQQfSecWiLe/6oXicuiuew==", null, false, "", "28395444", false, "Leo@Email.com" },
-                    { "d2b06f16-df4e-4000-87bc-ff82507e46f5", 0, "d0894b65-9b0e-46ff-8933-f127d1d6425d", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEBSiIFNmtRWkvE+DDoq84PfBNfmojDbuYDF9lRgQIe4926OP9pKXExopIJofL8TkMg==", null, false, "", "28395444", false, "Kai@Email.com" }
+                    { "497e1f18-b889-415d-a310-d1745195b439", 0, "f2950d1e-7280-476d-86ae-16c9f3dbef71", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEEguJ2bYeM2dUjEDDROqC+bPQxNFABR3XVDoQnelWDzzM3H06/83pr0UEcmyvMuVtw==", null, false, "", "22841149", false, "Admin@TickeTac.com" },
+                    { "6da9affb-c03f-419a-8486-73cf49fc51a9", 0, "09d41b39-c259-4fe3-b1e7-8bb42f1343b5", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEEm7tVtOkeH1fIu8IYc2kijcCs8DnlhzarknF8wrmqCgOLXIgwxgA/tUgHmjVjK4FA==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "22841149", false, "Gallo@Email.com" },
+                    { "8aa0e468-a061-4235-80e9-79689cc22c60", 0, "32e7920a-513b-40dc-ad00-7b38f02e26be", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAELh7NxGkxRnpbHpl8nMDeljiAraLkkn3PPJAjjuh7SqxPiwmUT36fzV4XYzN6s0fTw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "22841149", false, "Leo@Email.com" },
+                    { "f7500208-c23c-4d31-add9-c8b2a4437376", 0, "2712c3fb-5f47-4601-99f8-4819b4ae02b5", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEGTt/jeTJEz8dWrraljJaTjDdr1VNDyGSVU1lFqRai+O3con/Nm6H/Rs7DgfNWjieQ==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "22841149", false, "Kai@Email.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -408,18 +415,18 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "Img", "Name" },
                 values: new object[,]
                 {
-                    { (ushort)1, "https://cdn-icons-png.flaticon.com/512/1756/1756784.png", "Feiras e exposições Arte" },
-                    { (ushort)2, "https://cdn-icons-png.flaticon.com/512/3399/3399161.png", "Leilões " },
+                    { (ushort)1, "https://cdn-icons-png.flaticon.com/512/1756/1756784.png", "Feiras e exposições de Arte" },
+                    { (ushort)2, "https://cdn-icons-png.flaticon.com/512/3399/3399161.png", "Leilões" },
                     { (ushort)3, "https://cdn-icons-png.flaticon.com/512/33/33736.png", "Esporte" },
-                    { (ushort)4, "https://i.pinimg.com/originals/ca/16/fd/ca16fd3428cd473af9301ff50894f456.png", "Musica" },
+                    { (ushort)4, "https://i.pinimg.com/originals/ca/16/fd/ca16fd3428cd473af9301ff50894f456.png", "Música" },
                     { (ushort)5, "https://cdn-icons-png.flaticon.com/512/1101/1101820.png", "Games" },
-                    { (ushort)6, "https://cdn2.iconfinder.com/data/icons/theater-stage-performers/287/artist-show-performance-006-512.png", "Stand 'Up" },
+                    { (ushort)6, "https://cdn2.iconfinder.com/data/icons/theater-stage-performers/287/artist-show-performance-006-512.png", "Entretenimento" },
                     { (ushort)7, "https://static.thenounproject.com/png/34322-200.png", "Anime" },
                     { (ushort)8, "https://cdn-icons-png.flaticon.com/512/42/42972.png", "Formatura" }
                 });
 
             migrationBuilder.InsertData(
-                table: "States",
+                table: "State",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
@@ -468,10 +475,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "fc44e025-00f0-4e11-8692-8b8cbdf18387", "24a16a2f-3619-46e6-97b4-77edf1aab96d" },
-                    { "892b4a0e-a4f8-4b90-a805-befac98d834d", "8e27e82b-06b2-4bf5-84f9-f635d20630fd" },
-                    { "892b4a0e-a4f8-4b90-a805-befac98d834d", "ad38253a-58c5-4316-9408-c6d5063758cc" },
-                    { "892b4a0e-a4f8-4b90-a805-befac98d834d", "d2b06f16-df4e-4000-87bc-ff82507e46f5" }
+                    { "c6a6cbe9-152a-4972-8d71-ff89c0e5fb4f", "497e1f18-b889-415d-a310-d1745195b439" },
+                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "6da9affb-c03f-419a-8486-73cf49fc51a9" },
+                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "8aa0e468-a061-4235-80e9-79689cc22c60" },
+                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "f7500208-c23c-4d31-add9-c8b2a4437376" }
                 });
 
             migrationBuilder.InsertData(
@@ -484,20 +491,25 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
                 values: new object[,]
                 {
-                    { (ushort)1, "00100200304", "José Gallo", "8e27e82b-06b2-4bf5-84f9-f635d20630fd" },
-                    { (ushort)2, "09876543211", "Kaique", "d2b06f16-df4e-4000-87bc-ff82507e46f5" },
-                    { (ushort)3, "24307069030", "Leonardo", "ad38253a-58c5-4316-9408-c6d5063758cc" }
+                    { (ushort)1, "00100200304", "José Gallo", "6da9affb-c03f-419a-8486-73cf49fc51a9" },
+                    { (ushort)2, "09876543211", "Kaique", "f7500208-c23c-4d31-add9-c8b2a4437376" },
+                    { (ushort)3, "24307069030", "Leonardo", "8aa0e468-a061-4235-80e9-79689cc22c60" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StatusEventId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", (ushort)2 });
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2 });
 
             migrationBuilder.InsertData(
                 table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StatusEventId" },
-                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)2, "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", (ushort)2 });
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
+                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)2, "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2 });
+
+            migrationBuilder.InsertData(
+                table: "Event",
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
+                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)3, "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -557,6 +569,11 @@ namespace TickeTac.Migrations
                 column: "EventOwnerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Event_StateId",
+                table: "Event",
+                column: "StateId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Event_StatusEventId",
                 table: "Event",
                 column: "StatusEventId");
@@ -611,7 +628,7 @@ namespace TickeTac.Migrations
                 name: "StatusEvent");
 
             migrationBuilder.DropTable(
-                name: "States");
+                name: "State");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

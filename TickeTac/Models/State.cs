@@ -1,19 +1,18 @@
-using System;
-using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace TickeTac.Models
 {
+    [Table("State")]
     public class State
     {
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Nao Pode estar em branco")]
-        [Display(Name ="Sigla Estado")]
-        [StringLength(2, ErrorMessage =" 2 caracters no maximo")]
+        [Required(ErrorMessage = "Não pode estar em branco")]
+        [Display(Name ="Sigla do Estado")]
+        [StringLength(2, ErrorMessage ="2 caracteres no máximo")]
         public string Name { get; set; }
     }
 }

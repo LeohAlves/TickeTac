@@ -103,7 +103,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
-                    ProfilePicture = ""
+                    ProfilePicture = "https://avatars.githubusercontent.com/u/12284966?v=4"
                 }
         );
         builder.Entity<IdentityUserRole<string>>().HasData(
@@ -127,7 +127,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
-                    ProfilePicture = ""
+                    ProfilePicture = "https://avatars.githubusercontent.com/u/99449012?v=4"
                 }
         );
         builder.Entity<IdentityUserRole<string>>().HasData(
@@ -151,7 +151,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
-                    ProfilePicture = ""
+                    ProfilePicture = "https://avatars.githubusercontent.com/u/99449193?v=4"
                 }
         );
         builder.Entity<IdentityUserRole<string>>().HasData(
@@ -202,13 +202,13 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new Category()
             {
                 Id = 1,
-                Name = "Feiras e exposições Arte",
+                Name = "Feiras e exposições de Arte",
                 Img = "https://cdn-icons-png.flaticon.com/512/1756/1756784.png"
             },
             new Category()
             {
                 Id = 2,
-                Name = "Leilões ",
+                Name = "Leilões",
                 Img = "https://cdn-icons-png.flaticon.com/512/3399/3399161.png"
             },
             new Category()
@@ -220,7 +220,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new Category()
             {
                 Id = 4,
-                Name = "Musica",
+                Name = "Música",
                 Img = "https://i.pinimg.com/originals/ca/16/fd/ca16fd3428cd473af9301ff50894f456.png"
             },
 
@@ -234,7 +234,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new Category()
             {
                 Id = 6,
-                Name = "Stand 'Up",
+                Name = "Entretenimento",
                 Img = "https://cdn2.iconfinder.com/data/icons/theater-stage-performers/287/artist-show-performance-006-512.png"
             },
             new Category()
@@ -249,6 +249,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Name = "Formatura",
                 Img = "https://cdn-icons-png.flaticon.com/512/42/42972.png"
             }
+        
 
         };
         builder.Entity<Category>().HasData(listCategory);
@@ -353,7 +354,8 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 CategoryId = 4,
                 EventOwnerId = 1,
                 StatusEventId = 2,
-                CityId = 1
+                CityId = 1,
+                StateId = 25
             },
             new Event()
             {
@@ -373,7 +375,29 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 CategoryId = 6,
                 EventOwnerId = 2,
                 StatusEventId = 2,
-                CityId = 1
+                CityId = 1,
+                StateId = 25
+            },
+            new Event()
+            {
+                Id = 3,
+                Name = "Campeonato de Basquete",
+                ContactPhone = "14991548292",
+                Price = 50.00m,
+                EventDateBegin = DateTime.Parse("10/01/2023 12:00"),
+                EventDateEnd = DateTime.Parse("10/01/2023 18:00"),
+                Description = "Campeonato mundial de basquete! Seirin vs Touou.",
+                Image = "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg",
+                ContactEmail = "Leo@email.com",
+                MoreInfo = "",
+                District = "Nova Barra",
+                PublicSpace = "Nem lembro o que é",
+                Cep = "1234567891234",
+                CategoryId = 3,
+                EventOwnerId = 3,
+                StatusEventId = 3,
+                CityId = 1,
+                StateId = 25
             }
         };
         builder.Entity<Event>().HasData(listEvent);

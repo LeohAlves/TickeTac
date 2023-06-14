@@ -26,7 +26,7 @@ namespace TickeTac.Models
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Price { get; set; }
 
-        [Display(Name = " Data e horário de entrada do evento")]
+        [Display(Name = "Data e horário de entrada do evento")]
         [Required(ErrorMessage = "Informe a data e horário de entrada do evento.")]
         public DateTime EventDateBegin { get; set; }
 
@@ -87,6 +87,12 @@ namespace TickeTac.Models
         [ForeignKey("StatusEventId")]
         public StatusEvent StatusEvent { get; set; }
 
+        [Required(ErrorMessage = "Não pode estar em branco")]
+        [Display(Name ="Sigla do Estado")]
+        [StringLength(2, ErrorMessage ="2 caracteres no máximo")]
+        public int StateId { get; set; }
+        [ForeignKey("StateId")]
+        public State State { get; set; }
 
         [Required]
         [Display(Name = "Organizador")]

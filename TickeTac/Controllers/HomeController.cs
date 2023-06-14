@@ -50,6 +50,7 @@ public class HomeController : Controller
         .Include(e => e.Category)
         .Include(e => e.StatusEvent)
         .Include(e => e.City)
+        .ThenInclude(e => e.State)
         .Include(e => e.EventOwner)
         .ThenInclude(e => e.User).FirstOrDefault();
 
