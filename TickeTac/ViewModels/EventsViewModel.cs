@@ -12,5 +12,6 @@ namespace TickeTac.ViewModels
         public List<Category> Categories { get; set; }
         public List<City> Cities { get; set; }
         public List<EventOwner> Owners { get; set; }
+        public List<StatusEvent> StatusEvents { get; set; }
     }
 }

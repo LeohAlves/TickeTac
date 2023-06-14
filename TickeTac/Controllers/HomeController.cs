@@ -39,6 +39,7 @@ public class HomeController : Controller
             Categories = _context.Categories.ToList(),
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
+            StatusEvents = _context.StatusEvents.ToList(),
             Owners = _context.EventOwners.ToList()
         };
         return View(evm);

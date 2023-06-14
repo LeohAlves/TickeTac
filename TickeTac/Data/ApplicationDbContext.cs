@@ -90,11 +90,11 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         // INICIO DA SEED DE USUARIOS ---------------------------------------
 
         #region seed user usuario
-        var usuarioId = Guid.NewGuid().ToString();
+        var galloId = Guid.NewGuid().ToString();
         builder.Entity<AppUser>().HasData(
                 new AppUser()
                 {
-                    Id = usuarioId,
+                    Id = galloId,
                     Name = "José Gallo",
                     UserName = "Gallo@Email.com",
                     NormalizedUserName = "GALLO@EMAIL.COM",
@@ -109,16 +109,16 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         builder.Entity<IdentityUserRole<string>>().HasData(
          new IdentityUserRole<string>()
          {
-             UserId = usuarioId,
+             UserId = galloId,
              RoleId = listRoles[1].Id
          }
         );
 
-        var usuarioId2 = Guid.NewGuid().ToString();
+        var kaiqueId = Guid.NewGuid().ToString();
         builder.Entity<AppUser>().HasData(
                 new AppUser()
                 {
-                    Id = usuarioId2,
+                    Id = kaiqueId,
                     Name = "Kaique",
                     UserName = "Kai@Email.com",
                     NormalizedUserName = "KAI@EMAIL.COM",
@@ -133,16 +133,15 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         builder.Entity<IdentityUserRole<string>>().HasData(
          new IdentityUserRole<string>()
          {
-             UserId = usuarioId2,
+             UserId = kaiqueId,
              RoleId = listRoles[1].Id
          }
         );
 
-        var usuarioId3 = Guid.NewGuid().ToString();
         builder.Entity<AppUser>().HasData(
                 new AppUser()
                 {
-                    Id = usuarioId3,
+                    Id = 1.ToString(),
                     Name = "Leonardo",
                     UserName = "Leo@Email.com",
                     NormalizedUserName = "LEO@EMAIL.COM",
@@ -157,7 +156,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         builder.Entity<IdentityUserRole<string>>().HasData(
          new IdentityUserRole<string>()
          {
-             UserId = usuarioId3,
+             UserId = 1.ToString(),
              RoleId = listRoles[1].Id
          }
         );
@@ -175,21 +174,21 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Id = 1,
                 Name = "José Gallo",
                 CpfCnpj = "00100200304",
-                UserId = usuarioId
+                UserId = "1"
             },
             new EventOwner()
             {
                 Id = 2,
                 Name = "Kaique",
                 CpfCnpj = "09876543211",
-                UserId = usuarioId2
+                UserId = "2"
             },
             new EventOwner()
             {
                 Id = 3,
                 Name = "Leonardo",
                 CpfCnpj = "24307069030",
-                UserId = usuarioId3
+                UserId = "3"
             }
         };
         builder.Entity<EventOwner>().HasData(listEventOwner);

@@ -395,8 +395,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "c58c4568-6d34-4c65-bff7-b320c9691778", "Usuario", "USUÁRIO" },
-                    { "c6a6cbe9-152a-4972-8d71-ff89c0e5fb4f", "2216853d-b05f-428f-9c41-d367af6ab7ae", "Administrador", "ADMINISTRADOR" }
+                    { "d5a3d3de-9dd0-4c5d-b64a-5bf7a1a23f8a", "959ae70f-6b8e-407b-b489-63f7746f1d84", "Administrador", "ADMINISTRADOR" },
+                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "ed71f2e4-02f6-4b17-ae50-97b8d4ded6a5", "Usuario", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
@@ -404,10 +404,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "497e1f18-b889-415d-a310-d1745195b439", 0, "f2950d1e-7280-476d-86ae-16c9f3dbef71", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEEguJ2bYeM2dUjEDDROqC+bPQxNFABR3XVDoQnelWDzzM3H06/83pr0UEcmyvMuVtw==", null, false, "", "22841149", false, "Admin@TickeTac.com" },
-                    { "6da9affb-c03f-419a-8486-73cf49fc51a9", 0, "09d41b39-c259-4fe3-b1e7-8bb42f1343b5", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEEm7tVtOkeH1fIu8IYc2kijcCs8DnlhzarknF8wrmqCgOLXIgwxgA/tUgHmjVjK4FA==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "22841149", false, "Gallo@Email.com" },
-                    { "8aa0e468-a061-4235-80e9-79689cc22c60", 0, "32e7920a-513b-40dc-ad00-7b38f02e26be", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAELh7NxGkxRnpbHpl8nMDeljiAraLkkn3PPJAjjuh7SqxPiwmUT36fzV4XYzN6s0fTw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "22841149", false, "Leo@Email.com" },
-                    { "f7500208-c23c-4d31-add9-c8b2a4437376", 0, "2712c3fb-5f47-4601-99f8-4819b4ae02b5", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEGTt/jeTJEz8dWrraljJaTjDdr1VNDyGSVU1lFqRai+O3con/Nm6H/Rs7DgfNWjieQ==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "22841149", false, "Kai@Email.com" }
+                    { "0ed9d258-62fc-4206-8bd9-c7af281debca", 0, "0ad2e888-eefe-492a-ba86-e964ed5a14ee", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEI+POyY7nVubwpGZZYJYc9UnONijNng6z4fePMdRff5gQSKYBvB6C2Mk5a3pQIy+fg==", null, false, "", "22841149", false, "Admin@TickeTac.com" },
+                    { "1", 0, "13bd955b-df03-4109-9e63-6d659c090c1b", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEBv+ZNdgydNaooP8lZEdu4mN0N/CF49cIt73Xx+shUN14V/ncMITaVqQ4EB3J+uJow==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "22841149", false, "Gallo@Email.com" },
+                    { "2", 0, "2729aad3-91d5-4dc2-82b9-f96e2a230503", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEAztEIM5EuWVwU2sSreVvdEWC7caS7mgNAvB6kthWZtlu+aya6FFyna2mVMcXp7wvw==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "22841149", false, "Kai@Email.com" },
+                    { "3", 0, "6a646a7e-c614-4595-9bff-d31db81f0f1f", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEMb95J6aYEWxDSjCDz0LCaZdFjGCmRIKGbnmec9VBnjY6PbmgIxrpuz5jP0FkSaCvw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "22841149", false, "Leo@Email.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -475,10 +475,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "c6a6cbe9-152a-4972-8d71-ff89c0e5fb4f", "497e1f18-b889-415d-a310-d1745195b439" },
-                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "6da9affb-c03f-419a-8486-73cf49fc51a9" },
-                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "8aa0e468-a061-4235-80e9-79689cc22c60" },
-                    { "b18aab2b-7c57-4237-b8ea-9f5d795c5630", "f7500208-c23c-4d31-add9-c8b2a4437376" }
+                    { "d5a3d3de-9dd0-4c5d-b64a-5bf7a1a23f8a", "0ed9d258-62fc-4206-8bd9-c7af281debca" },
+                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "1" },
+                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "2" },
+                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "3" }
                 });
 
             migrationBuilder.InsertData(
@@ -491,9 +491,9 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
                 values: new object[,]
                 {
-                    { (ushort)1, "00100200304", "José Gallo", "6da9affb-c03f-419a-8486-73cf49fc51a9" },
-                    { (ushort)2, "09876543211", "Kaique", "f7500208-c23c-4d31-add9-c8b2a4437376" },
-                    { (ushort)3, "24307069030", "Leonardo", "8aa0e468-a061-4235-80e9-79689cc22c60" }
+                    { (ushort)1, "00100200304", "José Gallo", "1" },
+                    { (ushort)2, "09876543211", "Kaique", "2" },
+                    { (ushort)3, "24307069030", "Leonardo", "3" }
                 });
 
             migrationBuilder.InsertData(
