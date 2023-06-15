@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class Criarbanco : Migration
+    public partial class CriarBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -395,8 +395,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "d5a3d3de-9dd0-4c5d-b64a-5bf7a1a23f8a", "959ae70f-6b8e-407b-b489-63f7746f1d84", "Administrador", "ADMINISTRADOR" },
-                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "ed71f2e4-02f6-4b17-ae50-97b8d4ded6a5", "Usuario", "USUÁRIO" }
+                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "3df2832c-1f07-4ef9-a402-991c27738102", "Usuario", "USUÁRIO" },
+                    { "bb89b450-e033-4b24-a813-8717de489a3a", "540681ce-c1e2-41ee-b6b7-2a5dd196200e", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -404,10 +404,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "0ed9d258-62fc-4206-8bd9-c7af281debca", 0, "0ad2e888-eefe-492a-ba86-e964ed5a14ee", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEI+POyY7nVubwpGZZYJYc9UnONijNng6z4fePMdRff5gQSKYBvB6C2Mk5a3pQIy+fg==", null, false, "", "22841149", false, "Admin@TickeTac.com" },
-                    { "1", 0, "13bd955b-df03-4109-9e63-6d659c090c1b", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEBv+ZNdgydNaooP8lZEdu4mN0N/CF49cIt73Xx+shUN14V/ncMITaVqQ4EB3J+uJow==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "22841149", false, "Gallo@Email.com" },
-                    { "2", 0, "2729aad3-91d5-4dc2-82b9-f96e2a230503", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEAztEIM5EuWVwU2sSreVvdEWC7caS7mgNAvB6kthWZtlu+aya6FFyna2mVMcXp7wvw==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "22841149", false, "Kai@Email.com" },
-                    { "3", 0, "6a646a7e-c614-4595-9bff-d31db81f0f1f", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEMb95J6aYEWxDSjCDz0LCaZdFjGCmRIKGbnmec9VBnjY6PbmgIxrpuz5jP0FkSaCvw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "22841149", false, "Leo@Email.com" }
+                    { "489096bd-55a9-459a-967e-94f2b50a5f1b", 0, "0d99763b-8af8-4459-92c8-882c512ab8d9", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAENBQyR7xwd8+aruBTuBeWKC7DIg0nprs5aEaPWxZMPpBbgpLem2x7kooYmj9zO5iLQ==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "60173144", false, "Gallo@Email.com" },
+                    { "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe", 0, "40252783-3cbf-47d4-bac1-3a7375510428", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEMukB3CnJ/nJLmEY1jA/CKK4jxBTg76upBN9tEw1vbg7nRc1LPl19rDroZdFR4ZR8w==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "60173144", false, "Leo@Email.com" },
+                    { "a8a3b515-da42-48fd-aec2-02b6e11f1561", 0, "f1194ac2-f3a5-4873-8ffc-7c000197be77", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEFixXs/VR7H1lKqEFTvSmJyrSJ6vGTpsWBvOh9pFGhBkpS3FV9Q7w4ylTUyZvkZdww==", null, false, "", "60173144", false, "Admin@TickeTac.com" },
+                    { "df091c85-340b-4091-902d-aad7fa2376b0", 0, "f74b6d07-9b8f-4e42-995e-4a810104a488", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEJvzLjW9LcZsjD//5eGESkEoL2EStRLGWlFJkYGc295GSTYaFyTNZopdeMm06vgsqw==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "60173144", false, "Kai@Email.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -475,10 +475,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "d5a3d3de-9dd0-4c5d-b64a-5bf7a1a23f8a", "0ed9d258-62fc-4206-8bd9-c7af281debca" },
-                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "1" },
-                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "2" },
-                    { "ef4715f2-cfa4-4230-ac96-4c2c0ae33e0e", "3" }
+                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "489096bd-55a9-459a-967e-94f2b50a5f1b" },
+                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe" },
+                    { "bb89b450-e033-4b24-a813-8717de489a3a", "a8a3b515-da42-48fd-aec2-02b6e11f1561" },
+                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "df091c85-340b-4091-902d-aad7fa2376b0" }
                 });
 
             migrationBuilder.InsertData(
@@ -491,9 +491,9 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
                 values: new object[,]
                 {
-                    { (ushort)1, "00100200304", "José Gallo", "1" },
-                    { (ushort)2, "09876543211", "Kaique", "2" },
-                    { (ushort)3, "24307069030", "Leonardo", "3" }
+                    { (ushort)1, "00100200304", "José Gallo", "489096bd-55a9-459a-967e-94f2b50a5f1b" },
+                    { (ushort)2, "09876543211", "Kaique", "df091c85-340b-4091-902d-aad7fa2376b0" },
+                    { (ushort)3, "24307069030", "Leonardo", "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe" }
                 });
 
             migrationBuilder.InsertData(

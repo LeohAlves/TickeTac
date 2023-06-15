@@ -25,20 +25,10 @@ namespace TickeTac.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(Guid id)
         {
-        
-        UserViewModel uvm = new()
-        {
-            Categories = _context.Categories.ToList(),
-            Events = _context.Events.ToList(),
-            Cities = _context.Cities.ToList(),
-            StatusEvents = _context.StatusEvents.ToList(),
-            Owners = _context.EventOwners.ToList(),
-            AppUsers = _context.AppUsers.ToList()
-        };
-        
-            return View(uvm);
+    
+            return View();
         }
 
         public IActionResult MeusEventos()

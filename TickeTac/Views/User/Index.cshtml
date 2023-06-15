@@ -8,204 +8,207 @@
 
 @{
   if (User.Identity.IsAuthenticated)
-                {
+  {
 
-<div class=breadcrumbs>
-  <div class=container>
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-md-6 col-12">
-        <div class=breadcrumbs-content>
-          <h1 class=page-title>Meu Perfil</h1>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-12">
-        <ul class=breadcrumb-nav>
-          <li> <a asp-action="Index" asp-controller="Home"> Home</a></li>
-          <li>Configurações de perfil</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<section class="dashboard section">
-  <div class=container>
-    <div class=row>
-      <div class="col-lg-3 col-md-4 col-12">
-
-        <div class=dashboard-sidebar>
-          <div class=user-image>
-            <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
-            <h3>
-            </h3>
+    <div class=breadcrumbs>
+      <div class=container>
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class=breadcrumbs-content>
+              <h1 class=page-title>Meu Perfil</h1>
+            </div>
           </div>
-          <div class=dashboard-menu>
-            <ul>
-              <li><a class=active asp-action="Index" asp-controller="User"><i class="lni lni-pencil-alt"></i> Editar
-                  Perfil</a>
-              </li>
-              <li><a asp-action="MeusEventos" asp-controller="User"><i class="lni lni-bolt-alt"></i> Meus
-                  eventos</a>
-              </li>
-              <li><a asp-action="Publicar" asp-controller="User"><i class="lni lni-circle-plus"></i> Publicar evento</a>
-              </li>
+          <div class="col-lg-6 col-md-6 col-12">
+            <ul class=breadcrumb-nav>
+              <li> <a asp-action="Index" asp-controller="Home"> Home</a></li>
+              <li>Configurações de perfil</li>
             </ul>
-            <div class=button>
-              @{
-                if (User.Identity.IsAuthenticated)
-                {
-                  <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
-                  asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                    <button type="submit" class="nav-link btn btn-link text-dark">Clique para Sair</button>
-                  </form>
-                  
-                }
-                else
-                {
-                  <p>Você saiu com sucesso da conta.</p>
-                }
-              }
-            </div>
           </div>
-        </div>
-
-      </div>
-      <div class="col-lg-9 col-md-8 col-12">
-        <div class=main-content>
-
-          <div class="dashboard-block mt-0 profile-settings-block">
-            <h3 class=block-title>Configurações de Perfil</h3>
-            <div class=inner-block>
-              <div class=image>
-                <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
-              </div>
-              <form class=profile-setting-form method=post action="#">
-                <div class=row>
-                  <div class="col-lg-6 col-12">
-                    <div class=form-group>
-                      <label>Nome*</label>
-                      <input name=first-name type=text value="@User.Identity.">
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class=form-group>
-                      <label>Endereço de Email*</label>
-                      <input name=email type=email value="@User.Identity?.Name">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-group upload-image">
-                      <label>Imagem de Perfil</label>
-                      <input name=profile-image type=file placeholder="Enviar imagem">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-group button mb-0">
-                      <button type=submit class="btn ">Atualizar Perfil</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <div class="dashboard-block mt-10 profile-settings-block">
-            <h3 class=block-title>Configurações de Organizador</h3>
-            <div class=inner-block>
-              <form class=profile-setting-form method=post action="#">
-                <div class=row>
-                  <div class="col-lg-6 col-12">
-                    <div class=form-group>
-                      <label>Nome Profissional*</label>
-                      <input name=first-name type=text placeholder=AppUser.Name*>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-12">
-                    <div class=form-group>
-                      <label>CPF ou CNPJ*</label>
-                      <input name=email type=text placeholder="111.111.111-11">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-group button mb-0">
-                      <button type=submit class="btn ">Atualizar Perfil</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
-
-          <div class="dashboard-block password-change-block">
-            <h3 class=block-title>Alterar Senha</h3>
-            <div class=inner-block>
-              <form class=default-form-style method=post action="#">
-                <div class=row>
-                  <div class=col-12>
-                    <div class=form-group>
-                      <label>Senha Antiga*</label>
-                      <input name=current-password type=password placeholder="Digite a senha antiga">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class=form-group>
-                      <label>Nova Senha*</label>
-                      <input name=new-password type=password placeholder="Digite a nova senha">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class=form-group>
-                      <label>Confirme a senha*</label>
-                      <input name=retype-password type=password placeholder="Confirme a senha">
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-group button mb-0">
-                      <button type=submit class="btn ">Alterar Password</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
-</section>
-<a href="#" class="scroll-top btn-hover">
-  <i class="lni lni-chevron-up"></i>
-</a>
-} else {
-  <h1 class="text-danger">@ViewData["Title"]</h1>
+
+
+    <section class="dashboard section">
+      <div class=container>
+        <div class=row>
+          <div class="col-lg-3 col-md-4 col-12">
+
+            <div class=dashboard-sidebar>
+              <div class=user-image>
+                <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
+                <h3>Steve Aldridge</h3>
+              </div>
+              <div class=dashboard-menu>
+                <ul>
+                  <li><a class=active asp-action="Index" asp-controller="User"><i class="lni lni-pencil-alt"></i> Editar
+                      Perfil</a>
+                  </li>
+                  <li><a asp-action="MeusEventos" asp-controller="User"><i class="lni lni-bolt-alt"></i> Meus
+                      eventos</a>
+                  </li>
+                  <li><a asp-action="Publicar" asp-controller="User"><i class="lni lni-circle-plus"></i> Publicar
+                      evento</a>
+                  </li>
+                </ul>
+                <div class=button>
+                  @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                      <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                        <button type="submit" class="nav-link btn btn-link text-dark">Clique para Sair</button>
+                      </form>
+
+                    }
+                    else
+                    {
+                      <p>Você saiu com sucesso da conta.</p>
+                    }
+                  }
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-9 col-md-8 col-12">
+            <div class=main-content>
+
+              <div class="dashboard-block mt-0 profile-settings-block">
+                <h3 class=block-title>Configurações de Perfil</h3>
+                <div class=inner-block>
+                  <div class=image>
+                    <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
+                  </div>
+                  <form class=profile-setting-form method=post action="#">
+                    <div class=row>
+                      <div class="col-lg-6 col-12">
+                        <div class=form-group>
+                          <label>Nome*</label>
+                          <input name=first-name type=text value="">
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-12">
+                        <div class=form-group>
+                          <label>Endereço de Email*</label>
+                          <input name=email type=email value="@User.Identity?.Name">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class="form-group upload-image">
+                          <label>Imagem de Perfil</label>
+                          <input name=profile-image type=file placeholder="Enviar imagem">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class="form-group button mb-0">
+                          <button type=submit class="btn ">Atualizar Perfil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="dashboard-block mt-10 profile-settings-block">
+                <h3 class=block-title>Configurações de Organizador</h3>
+                <div class=inner-block>
+                  <form class=profile-setting-form method=post action="#">
+                    <div class=row>
+                      <div class="col-lg-6 col-12">
+                        <div class=form-group>
+                          <label>Nome Profissional*</label>
+                          <input name=first-name type=text placeholder=AppUser.Name*>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-12">
+                        <div class=form-group>
+                          <label>CPF ou CNPJ*</label>
+                          <input name=email type=text placeholder="111.111.111-11">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class="form-group button mb-0">
+                          <button type=submit class="btn ">Atualizar Perfil</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+              <div class="dashboard-block password-change-block">
+                <h3 class=block-title>Alterar Senha</h3>
+                <div class=inner-block>
+                  <form class=default-form-style method=post action="#">
+                    <div class=row>
+                      <div class=col-12>
+                        <div class=form-group>
+                          <label>Senha Antiga*</label>
+                          <input name=current-password type=password placeholder="Digite a senha antiga">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class=form-group>
+                          <label>Nova Senha*</label>
+                          <input name=new-password type=password placeholder="Digite a nova senha">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class=form-group>
+                          <label>Confirme a senha*</label>
+                          <input name=retype-password type=password placeholder="Confirme a senha">
+                        </div>
+                      </div>
+                      <div class=col-12>
+                        <div class="form-group button mb-0">
+                          <button type=submit class="btn ">Alterar Password</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+  }
+  else
+  {
+    <h1 class="text-danger">@ViewData["Title"]</h1>
 
     <div class=preloader>
-        <div class=preloader-inner>
-            <div class=preloader-icon>
-                <span></span>
-                <span></span>
-            </div>
+      <div class=preloader-inner>
+        <div class=preloader-icon>
+          <span></span>
+          <span></span>
         </div>
+      </div>
     </div>
 
 
     <div class=error-area>
-        <div class=d-table>
-            <div class=d-table-cell>
-                <div class=container>
-                    <div class=error-content>
-                        
-                        <h2>ERRO!</h2>
-                        <p>Você precisa estar em uma conta.</p>
-                        <div class=button>
-                            <a asp-action="Index" asp-controller="Home" class="btn">Voltar para página inicial</a>
-                        </div>
-                    </div>
-                </div>
+      <div class=d-table>
+        <div class=d-table-cell>
+          <div class=container>
+            <div class=error-content>
+
+              <h2>ERRO!</h2>
+              <p>Você precisa estar em uma conta.</p>
+              <div class=button>
+                <a asp-action="Index" asp-controller="Home" class="btn">Voltar para página inicial</a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-}}
+  }
+}

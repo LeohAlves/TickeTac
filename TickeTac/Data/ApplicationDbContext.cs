@@ -137,11 +137,11 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
              RoleId = listRoles[1].Id
          }
         );
-
+        var leoId = Guid.NewGuid().ToString();
         builder.Entity<AppUser>().HasData(
                 new AppUser()
                 {
-                    Id = 1.ToString(),
+                    Id = leoId,
                     Name = "Leonardo",
                     UserName = "Leo@Email.com",
                     NormalizedUserName = "LEO@EMAIL.COM",
@@ -156,7 +156,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         builder.Entity<IdentityUserRole<string>>().HasData(
          new IdentityUserRole<string>()
          {
-             UserId = 1.ToString(),
+             UserId = leoId,
              RoleId = listRoles[1].Id
          }
         );
@@ -174,21 +174,21 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Id = 1,
                 Name = "José Gallo",
                 CpfCnpj = "00100200304",
-                UserId = "1"
+                UserId = galloId
             },
             new EventOwner()
             {
                 Id = 2,
                 Name = "Kaique",
                 CpfCnpj = "09876543211",
-                UserId = "2"
+                UserId = kaiqueId
             },
             new EventOwner()
             {
                 Id = 3,
                 Name = "Leonardo",
                 CpfCnpj = "24307069030",
-                UserId = "3"
+                UserId = leoId
             }
         };
         builder.Entity<EventOwner>().HasData(listEventOwner);
