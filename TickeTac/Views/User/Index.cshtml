@@ -1,6 +1,14 @@
+@model TickeTac.ViewModels.UserViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+
 @{
   ViewData["Title"] = "Perfil";
 }
+
+@{
+  if (User.Identity.IsAuthenticated)
+                {
 
 <div class=breadcrumbs>
   <div class=container>
@@ -29,7 +37,7 @@
         <div class=dashboard-sidebar>
           <div class=user-image>
             <img src="~/assets/images/dashboard/xuser-image.jpg.pagespeed.ic.m-IHPK3x81.jpg" alt="#">
-            <h3>User.Name
+            <h3>
             </h3>
           </div>
           <div class=dashboard-menu>
@@ -49,12 +57,13 @@
                 {
                   <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
                   asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                    <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                    <button type="submit" class="nav-link btn btn-link text-dark">Clique para Sair</button>
                   </form>
+                  
                 }
                 else
                 {
-                  <p>You have successfully logged out of the application.</p>
+                  <p>Você saiu com sucesso da conta.</p>
                 }
               }
             </div>
@@ -76,19 +85,19 @@
                   <div class="col-lg-6 col-12">
                     <div class=form-group>
                       <label>Nome*</label>
-                      <input name=first-name type=text placeholder=AppUser.Name*>
+                      <input name=first-name type=text value="@User.Identity.">
                     </div>
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class=form-group>
                       <label>Endereço de Email*</label>
-                      <input name=email type=email placeholder="username@gmail.com">
+                      <input name=email type=email value="@User.Identity?.Name">
                     </div>
                   </div>
                   <div class=col-12>
                     <div class="form-group upload-image">
-                      <label>Imagem De Perfil</label>
-                      <input name=profile-image type=file placeholder="Upload Image">
+                      <label>Imagem de Perfil</label>
+                      <input name=profile-image type=file placeholder="Enviar imagem">
                     </div>
                   </div>
                   <div class=col-12>
@@ -170,3 +179,33 @@
 <a href="#" class="scroll-top btn-hover">
   <i class="lni lni-chevron-up"></i>
 </a>
+} else {
+  <h1 class="text-danger">@ViewData["Title"]</h1>
+
+    <div class=preloader>
+        <div class=preloader-inner>
+            <div class=preloader-icon>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=error-area>
+        <div class=d-table>
+            <div class=d-table-cell>
+                <div class=container>
+                    <div class=error-content>
+                        
+                        <h2>ERRO!</h2>
+                        <p>Você precisa estar em uma conta.</p>
+                        <div class=button>
+                            <a asp-action="Index" asp-controller="Home" class=btn>Go To Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}}

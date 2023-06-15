@@ -4,24 +4,41 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
+using TickeTac.Models;
+using TickeTac.Data;
+using TickeTac.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace TickeTac.Controllers
 {  
-    [Authorize(Roles = "Usuario")]
+    
     public class UserController : Controller
     {
         private readonly ILogger<UserController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(ILogger<UserController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+        
+        UserViewModel uvm = new()
+        {
+            Categories = _context.Categories.ToList(),
+            Events = _context.Events.ToList(),
+            Cities = _context.Cities.ToList(),
+            StatusEvents = _context.StatusEvents.ToList(),
+            Owners = _context.EventOwners.ToList(),
+            AppUsers = _context.AppUsers.ToList()
+        };
+        
+            return View(uvm);
         }
 
         public IActionResult MeusEventos()
