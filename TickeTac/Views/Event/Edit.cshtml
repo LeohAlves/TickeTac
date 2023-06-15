@@ -1,132 +1,177 @@
 @model TickeTac.Models.Event
 
 @{
-   ViewData["Title"] = "Edit";
-   Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <div id="content-page" class="content-page">
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-sm-12 col-lg-12">
-            <div class="iq-card">
-               <div class="iq-card-header d-flex justify-content-between">
-                  <div class="iq-header-title">
-                     <h4 class="card-title">Editar Detalhes</h4>
-                  </div>
-               </div>
-
-               <form asp-action="Edit" class="text-center">
-                  <!-- fieldsets -->
-                  <fieldset>
-                     <div class="form-card text-left">
-                        <div class="row">
-                           <div class="col-12">
-                              <h3 class="mb-4">Informaçoes do Evento:</h3>
-                           </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Editar Detalhes</h4>
                         </div>
+                    </div>
 
-                        <div class=" ml-2 row">
-                           <div class="col-md-5">
-                              <div class="form-group">
-                                 <label asp-for="Name" class="control-label"></label>
-                                 <input asp-for="Name" class="form-control" />
-                                 <span asp-validation-for="Name" class="text-danger"></span>
-                              </div>
-                           </div>
+                    <form asp-action="Edit" class="text-center">
+                        <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card text-left">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="mb-4">Informaçoes do Evento:</h3>
+                                    </div>
+                                </div>
 
-                           <div class="col-md-12">
-                              <div class="form-group">
-                                 <label asp-for="ContactPhone" class="control-label"></label>
-                                 <input asp-for="ContactPhone" class="form-control" />
-                                 <span asp-validation-for="ContactPhone" class="text-danger"></span>
-                              </div>
-                           </div>
+                                <div class=" ml-2 row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
 
-                           <div class="col-md-12">
-                              <div class="form-group">
-                                 <label asp-for="Price" class="control-label"></label>
-                                 <input asp-for="Price" class="form-control" />
-                                 <span asp-validation-for="Price" class="text-danger"></span>
-                              </div>
-                           </div>
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="ContactPhone" class="control-label"></label>
+                                            <input asp-for="ContactPhone" class="form-control" />
+                                            <span asp-validation-for="ContactPhone" class="text-danger"></span>
+                                        </div>
+                                    </div>
 
-                           <div class="col-md-12">
-                              <div class="form-group">
-                                 <label asp-for="EventDateBegin" class="control-label"></label>
-                                 <input asp-for="EventDateBegin" class="form-control" />
-                                 <span asp-validation-for="EventDateBegin" class="text-danger"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-12">
-                              <div class="form-group">
-                                 <label asp-for="EventDateEnd" class="control-label"></label>
-                                 <input asp-for="EventDateEnd" class="form-control" />
-                                 <span asp-validation-for="EventDateEnd" class="text-danger"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-12">
-                              <div class="form-group">
-                                 <label asp-for="EventDateEnd" class="control-label"></label>
-                                 <input asp-for="EventDateEnd" class="form-control" />
-                                 <span asp-validation-for="EventDateEnd" class="text-danger"></span>
-                              </div>
-                           </div>
+                                    <div class="col-md-5 ">
+                                        <div class="form-group">
+                                            <label asp-for="EventDateBegin" class="control-label"></label>
+                                            <input asp-for="EventDateBegin" class="form-control" />
+                                            <span asp-validation-for="EventDateBegin" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="EventDateEnd" class="control-label"></label>
+                                            <input asp-for="EventDateEnd" class="form-control" />
+                                            <span asp-validation-for="EventDateEnd" class="text-danger"></span>
+                                        </div>
+                                    </div>
 
-                           <div class=" col-10 md-3 form-group">
-                              <label asp-for="Description"></label>
-                              <textarea asp-for="Description" class="form-control" rows="4"></textarea>
-                              <span asp-validation-for="Description" class="text-danger"></span>
-                           </div>
-                           <div class="col-md-10">
-                              <div class="form-group">
-                                 <label asp-for="Image" class="control-label"></label>
-                                 <input asp-for="Image" class="form-control" />
-                                 <span asp-validation-for="Image" class="text-danger"></span>
-                              </div>
-                           </div>
-                           <div class="col-md-10">
-                              <div class="form-group">
-                                 <label asp-for="ContactEmail" class="control-label"></label>
-                                 <input asp-for="ContactEmail" class="form-control" />
-                                 <span asp-validation-for="ContactEmail" class="text-danger"></span>
-                              </div>
-                           </div>
+                                    <div class=" col-10 md-3 form-group">
+                                        <label asp-for="Description"></label>
+                                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="Image" class="control-label"></label>
+                                            <input asp-for="Image" class="form-control" />
+                                            <span asp-validation-for="Image" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="ContactEmail" class="control-label"></label>
+                                            <input asp-for="ContactEmail" class="form-control" />
+                                            <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="CategoryId"></label>
+                                        <div class="input-group input-group-static">
+                                            <select asp-for="CategoryId" class="form-control"
+                                                asp-items="ViewBag.CategoryId">
+                                                <option value="" disabled selected hidden>Selecione uma opção</option>
+                                            </select>
+                                            <span asp-validation-for="CategoryId"
+                                                class="text-danger col-12 text-xs pt-1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="StatusEventId"></label>
+                                        <div class="input-group input-group-static">
+                                            <select asp-for="StatusEventId" class="form-control"
+                                                asp-items="ViewBag.StatusEventId">
+                                                <option value="" disabled selected hidden>Selecione uma opção</option>
+                                            </select>
+                                            <span asp-validation-for="StatusEventId"
+                                                class="text-danger col-6 text-xs pt-1"></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <label asp-for="EventOwnerId"></label>
+                                        <div class="input-group input-group-static">
+                                            <select asp-for="EventOwnerId" class="form-control"
+                                                asp-items="ViewBag.EventOwnerId">
+                                                <option value="" disabled selected hidden>Selecione uma opção</option>
+                                            </select>
+                                            <span asp-validation-for="EventOwnerId"
+                                                class="text-danger col-6 text-xs pt-1"></span>
+                                        </div>
+                                    </div>
 
-                           <div class="col-md-10">
-                              <div class="form-group">
-                                 <label asp-for="MoreInfo" class="control-label"></label>
-                                 <input asp-for="MoreInfo" class="form-control" />
-                                 <span asp-validation-for="MoreInfo" class="text-danger"></span>
-                              </div>
-                           </div>
-
-                           <div class="col-md-6">
-                              <label asp-for="CategoryId"></label>
-                              <div class="  input-group input-group-static">
-                                 <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                    <option value="" disabled selected hidden>Selecione uma opção</option>
-                                 </select>
-                                 <span asp-validation-for="CategoryId" class="text-danger col-12 text-xs pt-1"></span>
-                              </div>
-                           </div>
-                           <div>
-                              <H4>Localização</H4>
-                           </div>
-                           
-                        </div>
-                        <a class="btn btn-primary action-button float-right" href="form-wizard-vertical.html">Submit</a>
-                        <button type="button" name="previous"
-                           class="btn btn-dark previous action-button-previous float-right mr-3" value="Previous"><a
-                              asp-action="Index" class="">De volta a lista</a></button>
-                  </fieldset>
-               </form>
+                                </div>
+                                <div class=" ml-2 row">
+                                    <div class="col-11">
+                                        <H4 class="mt-3 mtb-3 text-center">Localização</H4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="CityId"></label>
+                                        <div class="input-group input-group-static">
+                                            <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId">
+                                                <option value="" disabled selected hidden>Selecione uma opção</option>
+                                            </select>
+                                            <span asp-validation-for="CityId"
+                                                class="text-danger col-12 text-xs pt-1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label asp-for="StateId"></label>
+                                        <div class="input-group input-group-static">
+                                            <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId">
+                                                <option value="" disabled selected hidden>Selecione uma opção</option>
+                                            </select>
+                                            <span asp-validation-for="StateId"
+                                                class="text-danger col-12 text-xs pt-1"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="Cep" class="control-label"></label>
+                                            <input asp-for="Cep" class="form-control" />
+                                            <span asp-validation-for="Cep" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label asp-for="PublicSpace" class="control-label"></label>
+                                            <input asp-for="PublicSpace" class="form-control" />
+                                            <span asp-validation-for="PublicSpace" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label asp-for="District" class="control-label"></label>
+                                            <input asp-for="District" class="form-control" />
+                                            <span asp-validation-for="District" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-10  form-group">
+                                        <label asp-for="MoreInfo"></label>
+                                        <textarea asp-for="MoreInfo" class="form-control" rows="4"></textarea>
+                                        <span asp-validation-for="MoreInfo" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Salvar"
+                                        class="mt-3 btn btn-primary action-button float-right" />
+                                </div>
+                                <a asp-action="Index" class="btn btn-primary">De volta a lista</a>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div>
