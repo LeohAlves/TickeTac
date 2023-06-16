@@ -1,9 +1,11 @@
 @model TickeTac.ViewModels.UserViewModel
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 @{
   ViewData["Title"] = "Perfil";
+  var usuario = UserManager.FindEmailByAssync(@User.Identity?.Name); 
 }
 
 @{
