@@ -18,7 +18,7 @@ namespace TickeTac.Models
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Estado do evento")]
+        [Display(Name = "Estado")]
 
         public int StateId { get; set; }
 

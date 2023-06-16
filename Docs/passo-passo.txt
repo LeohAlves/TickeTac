@@ -51,6 +51,7 @@ dotnet-aspnet-codegenerator controller -name EventReviewController -m EventRevie
 
 dotnet-aspnet-codegenerator controller -name AppUserController -m AppUser -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
+dotnet-aspnet-codegenerator controller -name CityController -m City -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
 
 

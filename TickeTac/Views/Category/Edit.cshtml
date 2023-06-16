@@ -4,34 +4,53 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Editar Categoria</h4>
+                        </div>
+                    </div>
 
-<h1>Edit</h1>
+                    <form asp-action="Edit" class="text-center">
+                        <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card text-left">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="mb-4">Informaçoes da Categoria:</h3>
+                                    </div>
+                                </div>
 
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                                <div class=" ml-2 row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" />
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="Img" class="control-label"></label>
+                                            <input asp-for="Img" class="form-control" />
+                                            <span asp-validation-for="Img" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Salvar"
+                                        class="mt-3 btn btn-primary action-button float-right" />
+                                </div>
+                                <a asp-action="Index" class="btn btn-primary">De volta a lista</a>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Img" class="control-label"></label>
-                <input asp-for="Img" class="form-control" />
-                <span asp-validation-for="Img" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Voltar</a>
-</div>
-

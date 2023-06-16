@@ -15,7 +15,7 @@
                         </div>
                     </div>
 
-                    <form asp-action="Edit" class="text-center">
+                    <form asp-action="Edit" method="post" class="text-center">
                         <!-- fieldsets -->
                         <fieldset>
                             <div class="form-card text-left">
@@ -31,6 +31,13 @@
                                             <label asp-for="Name" class="control-label"></label>
                                             <input asp-for="Name" class="form-control" />
                                             <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="Price" class="control-label"></label>
+                                            <input asp-for="Price" class="form-control" />
+                                            <span asp-validation-for="Price" class="text-danger"></span>
                                         </div>
                                     </div>
 
@@ -114,7 +121,7 @@
                                 </div>
                                 <div class=" ml-2 row">
                                     <div class="col-11">
-                                        <H4 class="mt-3 mtb-3 text-center">Localização</H4>
+                                        <H4 class="mt-3 mb-3 text-center">Localização</H4>
                                     </div>
                                     <div class="col-md-6">
                                         <label asp-for="CityId"></label>

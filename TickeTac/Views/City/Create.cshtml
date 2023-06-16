@@ -1,0 +1,52 @@
+@model TickeTac.Models.City
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="content-page" class="content-page">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Adiconar Nova Cidade</h4>
+                    </div>
+                </div>
+                <form asp-action="Create" class="pl-3 pr-4 text-center">
+                    <!-- fieldsets -->
+                    <fieldset>
+                        <div class="form-card text-left">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3 class="mb-4">Informações da Cidade</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="Name" class="control-label">Nome da Cidade</label>
+                                        <input asp-for="Name" class="form-control" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="StateId"></label>
+                                    <div class="input-group input-group-static">
+                                        <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId">
+                                            <option value="" disabled selected hidden>Selecione uma opção</option>
+                                        </select>
+                                        <span asp-validation-for="StateId"
+                                            class="text-danger col-12 text-xs pt-1"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Salvar" class="btn float-right mb-3 btn-primary" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

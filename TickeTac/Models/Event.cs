@@ -39,7 +39,7 @@ namespace TickeTac.Models
         public string Description { get; set; }
 
         [Display(Name = "Imagem")]
-        [StringLength(200)]
+        [StringLength(400)]
         public string Image { get; set; }
 
         [Display(Name = "E-mail de contato")]
