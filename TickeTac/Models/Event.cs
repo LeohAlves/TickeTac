@@ -94,11 +94,9 @@ namespace TickeTac.Models
         [ForeignKey("StateId")]
         public State State { get; set; }
 
-        [Required]
-        [Display(Name = "Organizador")]
-        public UInt16 EventOwnerId { get; set; }
-        [ForeignKey("EventOwnerId")]
-        public EventOwner EventOwner { get; set; }
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+        public AppUser User { get; set; }
 
         public ICollection<EventReview> ReviewReceived { get; set; }
     }

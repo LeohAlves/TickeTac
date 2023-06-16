@@ -16,7 +16,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
     public DbSet<Event> Events { get; set; }
     public DbSet<State> States { get; set; }
     public DbSet<City> Cities { get; set; }
-    public DbSet<EventOwner> EventOwners { get; set; }
     public DbSet<EventReview> EventReviews { get; set; }
     public DbSet<StatusEvent> StatusEvents { get; set; }
 
@@ -162,38 +161,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         );
 
         #endregion
-
-        // FIM DA SEED DE USUARIOS ---------------------------------------
-
-        #region seed eventowner
-
-        List<EventOwner> listEventOwner = new List<EventOwner>()
-        {
-            new EventOwner()
-            {
-                Id = 1,
-                Name = "José Gallo",
-                CpfCnpj = "00100200304",
-                UserId = galloId
-            },
-            new EventOwner()
-            {
-                Id = 2,
-                Name = "Kaique",
-                CpfCnpj = "09876543211",
-                UserId = kaiqueId
-            },
-            new EventOwner()
-            {
-                Id = 3,
-                Name = "Leonardo",
-                CpfCnpj = "24307069030",
-                UserId = leoId
-            }
-        };
-        builder.Entity<EventOwner>().HasData(listEventOwner);
-        #endregion
-
         #region seed category
 
         List<Category> listCategory = new List<Category>()
@@ -351,7 +318,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 PublicSpace = "Nem lembro o que é",
                 Cep = "1234567891234",
                 CategoryId = 4,
-                EventOwnerId = 1,
+                UserId = galloId,
                 StatusEventId = 2,
                 CityId = 1,
                 StateId = 25
@@ -372,7 +339,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 PublicSpace = "Nem lembro o que é",
                 Cep = "1234567891234",
                 CategoryId = 6,
-                EventOwnerId = 2,
+                UserId = kaiqueId ,
                 StatusEventId = 2,
                 CityId = 1,
                 StateId = 25
@@ -393,7 +360,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 PublicSpace = "Nem lembro o que é",
                 Cep = "1234567891234",
                 CategoryId = 3,
-                EventOwnerId = 3,
+                UserId = leoId,
                 StatusEventId = 3,
                 CityId = 1,
                 StateId = 25

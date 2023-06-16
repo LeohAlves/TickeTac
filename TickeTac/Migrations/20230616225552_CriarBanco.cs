@@ -246,30 +246,6 @@ namespace TickeTac.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "EventOwner",
-                columns: table => new
-                {
-                    Id = table.Column<ushort>(type: "smallint unsigned", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CpfCnpj = table.Column<string>(type: "varchar(14)", maxLength: 14, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventOwner", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EventOwner_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "Cities",
                 columns: table => new
                 {
@@ -306,7 +282,7 @@ namespace TickeTac.Migrations
                     EventDateEnd = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Description = table.Column<string>(type: "varchar(1000)", maxLength: 1000, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Image = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
+                    Image = table.Column<string>(type: "varchar(400)", maxLength: 400, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ContactEmail = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -322,11 +298,17 @@ namespace TickeTac.Migrations
                     CategoryId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
                     StatusEventId = table.Column<ushort>(type: "smallint unsigned", nullable: false),
                     StateId = table.Column<int>(type: "int", maxLength: 2, nullable: false),
-                    EventOwnerId = table.Column<ushort>(type: "smallint unsigned", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Event", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Event_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Event_Category_CategoryId",
                         column: x => x.CategoryId,
@@ -337,12 +319,6 @@ namespace TickeTac.Migrations
                         name: "FK_Event_Cities_CityId",
                         column: x => x.CityId,
                         principalTable: "Cities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Event_EventOwner_EventOwnerId",
-                        column: x => x.EventOwnerId,
-                        principalTable: "EventOwner",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -395,8 +371,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "3df2832c-1f07-4ef9-a402-991c27738102", "Usuario", "USUÁRIO" },
-                    { "bb89b450-e033-4b24-a813-8717de489a3a", "540681ce-c1e2-41ee-b6b7-2a5dd196200e", "Administrador", "ADMINISTRADOR" }
+                    { "3cab5ecd-72c6-4d69-b1d3-2749e36ce64e", "f5644878-56e2-4fe0-a1af-2413762c1ae6", "Administrador", "ADMINISTRADOR" },
+                    { "bc88ee45-7fc5-43b6-ba51-cb2d2c9fc3e2", "2e785ebb-bb65-4ba3-bb30-148bb7ed9f13", "Usuario", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
@@ -404,10 +380,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "489096bd-55a9-459a-967e-94f2b50a5f1b", 0, "0d99763b-8af8-4459-92c8-882c512ab8d9", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAENBQyR7xwd8+aruBTuBeWKC7DIg0nprs5aEaPWxZMPpBbgpLem2x7kooYmj9zO5iLQ==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "60173144", false, "Gallo@Email.com" },
-                    { "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe", 0, "40252783-3cbf-47d4-bac1-3a7375510428", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEMukB3CnJ/nJLmEY1jA/CKK4jxBTg76upBN9tEw1vbg7nRc1LPl19rDroZdFR4ZR8w==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "60173144", false, "Leo@Email.com" },
-                    { "a8a3b515-da42-48fd-aec2-02b6e11f1561", 0, "f1194ac2-f3a5-4873-8ffc-7c000197be77", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEFixXs/VR7H1lKqEFTvSmJyrSJ6vGTpsWBvOh9pFGhBkpS3FV9Q7w4ylTUyZvkZdww==", null, false, "", "60173144", false, "Admin@TickeTac.com" },
-                    { "df091c85-340b-4091-902d-aad7fa2376b0", 0, "f74b6d07-9b8f-4e42-995e-4a810104a488", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEJvzLjW9LcZsjD//5eGESkEoL2EStRLGWlFJkYGc295GSTYaFyTNZopdeMm06vgsqw==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "60173144", false, "Kai@Email.com" }
+                    { "3670aee8-6c78-4a7e-a794-40275d8b1070", 0, "504bd98b-2122-4482-9fa8-422ea916651d", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEDNLrBQl+kIgxgwlgLy/ISfSd3TLnEIVpBFCOk3ekTg4Y7F+GVFEI4zlPrIA8IuxbA==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "50931783", false, "Kai@Email.com" },
+                    { "435fa518-a463-4f25-ae9d-653cedc990ce", 0, "cc0e0330-b789-4620-8745-600eb88e6e8e", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEPXaxY8yq843opljaGQlBjUbec6LjLKl//39FRu68MjW3vwFUo4VU4/Sm1Xa0m9bhg==", null, false, "", "50931783", false, "Admin@TickeTac.com" },
+                    { "d05ed18e-2352-4b40-970e-d2b54834e23d", 0, "a391ca59-64a3-4bb8-9069-ff91748c0598", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEG5pVrGQcV2WAyg6RCP5uCEoHunLXb9CM3ISHkRkLlvrjFEbgX/Bhltu65xjI0dpSg==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "50931783", false, "Gallo@Email.com" },
+                    { "d346f07b-302f-4e8c-877c-d5cff3c35fcc", 0, "4bc0c2e2-358e-42db-b4a9-1e5a2d9aefe7", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEHib5xMxRgVroE8L+HEScEm4mFHBth/seibG/uiUHMveMvwzSmn8cs8YwQZxICfIlw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "50931783", false, "Leo@Email.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -475,10 +451,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "489096bd-55a9-459a-967e-94f2b50a5f1b" },
-                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe" },
-                    { "bb89b450-e033-4b24-a813-8717de489a3a", "a8a3b515-da42-48fd-aec2-02b6e11f1561" },
-                    { "1be2e981-dcab-4ffa-897e-784c5ca81aaa", "df091c85-340b-4091-902d-aad7fa2376b0" }
+                    { "bc88ee45-7fc5-43b6-ba51-cb2d2c9fc3e2", "3670aee8-6c78-4a7e-a794-40275d8b1070" },
+                    { "3cab5ecd-72c6-4d69-b1d3-2749e36ce64e", "435fa518-a463-4f25-ae9d-653cedc990ce" },
+                    { "bc88ee45-7fc5-43b6-ba51-cb2d2c9fc3e2", "d05ed18e-2352-4b40-970e-d2b54834e23d" },
+                    { "bc88ee45-7fc5-43b6-ba51-cb2d2c9fc3e2", "d346f07b-302f-4e8c-877c-d5cff3c35fcc" }
                 });
 
             migrationBuilder.InsertData(
@@ -487,29 +463,19 @@ namespace TickeTac.Migrations
                 values: new object[] { 1, "Barra Bonita", 25 });
 
             migrationBuilder.InsertData(
-                table: "EventOwner",
-                columns: new[] { "Id", "CpfCnpj", "Name", "UserId" },
-                values: new object[,]
-                {
-                    { (ushort)1, "00100200304", "José Gallo", "489096bd-55a9-459a-967e-94f2b50a5f1b" },
-                    { (ushort)2, "09876543211", "Kaique", "df091c85-340b-4091-902d-aad7fa2376b0" },
-                    { (ushort)3, "24307069030", "Leonardo", "8b8317ea-6a23-4b3f-ab34-56f7e4145ffe" }
-                });
+                table: "Event",
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2, "d05ed18e-2352-4b40-970e-d2b54834e23d" });
 
             migrationBuilder.InsertData(
                 table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)1, "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2 });
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
+                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2, "3670aee8-6c78-4a7e-a794-40275d8b1070" });
 
             migrationBuilder.InsertData(
                 table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
-                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)2, "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2 });
-
-            migrationBuilder.InsertData(
-                table: "Event",
-                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "EventOwnerId", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId" },
-                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), (ushort)3, "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3 });
+                columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
+                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3, "d346f07b-302f-4e8c-877c-d5cff3c35fcc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -564,11 +530,6 @@ namespace TickeTac.Migrations
                 column: "CityId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Event_EventOwnerId",
-                table: "Event",
-                column: "EventOwnerId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Event_StateId",
                 table: "Event",
                 column: "StateId");
@@ -579,8 +540,8 @@ namespace TickeTac.Migrations
                 column: "StatusEventId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventOwner_UserId",
-                table: "EventOwner",
+                name: "IX_Event_UserId",
+                table: "Event",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -616,22 +577,19 @@ namespace TickeTac.Migrations
                 name: "Event");
 
             migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "Category");
 
             migrationBuilder.DropTable(
                 name: "Cities");
 
             migrationBuilder.DropTable(
-                name: "EventOwner");
-
-            migrationBuilder.DropTable(
                 name: "StatusEvent");
 
             migrationBuilder.DropTable(
                 name: "State");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
         }
     }
 }

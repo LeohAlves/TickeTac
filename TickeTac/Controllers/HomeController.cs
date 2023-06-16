@@ -28,7 +28,7 @@ public class HomeController : Controller
             Categories = _context.Categories.ToList(),
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
-            Owners = _context.EventOwners.ToList(),
+            Users = _context.AppUsers.ToList(),
             StatusEvents = _context.StatusEvents.ToList()
         };
         return View(hvm);
@@ -54,7 +54,7 @@ public class HomeController : Controller
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
             StatusEvents = _context.StatusEvents.ToList(),
-            Owners = _context.EventOwners.ToList()
+            AppUsers = _context.AppUsers.ToList()
         };
         return View(evm);
     }
@@ -66,8 +66,7 @@ public class HomeController : Controller
         .Include(e => e.StatusEvent)
         .Include(e => e.City)
         .ThenInclude(e => e.State)
-        .Include(e => e.EventOwner)
-        .ThenInclude(e => e.User).FirstOrDefault();
+        .Include(e => e.User).FirstOrDefault();
 
         if (@event == null)
             return NotFound();

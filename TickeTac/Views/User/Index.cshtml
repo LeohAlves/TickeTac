@@ -5,7 +5,7 @@
 
 @{
   ViewData["Title"] = "Perfil";
-  var usuario = UserManager.FindEmailByAssync(@User.Identity?.Name); 
+  var usuario = UserManager.FindByEmailAsync("@User.Identity?.Name"); 
 }
 
 @{
