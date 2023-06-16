@@ -1,124 +1,143 @@
 @model TickeTac.Models.Event
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Editar Detalhes</h4>
+                        </div>
+                    </div>
 
-<h1>Delete</h1>
+                    <div class="text-center">
+                        <!-- fieldsets -->
+                        <fieldset>
+                            <div class="form-card text-left">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="mb-4">Informaçoes do Evento:</h3>
+                                    </div>
+                                </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Event</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ContactPhone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ContactPhone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EventDateBegin)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EventDateBegin)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EventDateEnd)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EventDateEnd)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ContactEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ContactEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MoreInfo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MoreInfo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.City.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.District)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.District)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PublicSpace)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PublicSpace)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StatusEvent)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StatusEvent.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.State.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Id)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+                                <div class=" ml-2 row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="Name" class="control-label"></label>
+                                            <input asp-for="Name" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="Price" class="control-label"></label>
+                                            <input asp-for="Price" class="form-control" disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="ContactPhone" class="control-label"></label>
+                                            <input asp-for="ContactPhone" class="form-control" disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 ">
+                                        <div class="form-group">
+                                            <label asp-for="EventDateBegin" class="control-label"></label>
+                                            <input asp-for="EventDateBegin" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label asp-for="EventDateEnd" class="control-label"></label>
+                                            <input asp-for="EventDateEnd" class="form-control" disabled />
+                                        </div>
+                                    </div>
+
+                                    <div class=" col-10 md-3 form-group">
+                                        <label asp-for="Description"></label>
+                                        <textarea asp-for="Description" class="form-control" rows="4"
+                                            disabled></textarea>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="Image" class="control-label"></label>
+                                            <input asp-for="Image" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="form-group">
+                                            <label asp-for="ContactEmail" class="control-label"></label>
+                                            <input asp-for="ContactEmail" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="CategoryId" class="control-label"></label>
+                                            <input asp-for="Category.Name" class="form-control" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="StatusEventId" class="control-label"></label>
+                                        <input asp-for="StatusEvent.Name" class="form-control" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" ml-2 row">
+                                <div class="col-11">
+                                    <H4 class="mt-3 mb-3 text-center">Localização</H4>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="CityId" class="control-label"></label>
+                                        <input asp-for="City.Name" class="form-control" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="StateId" class="control-label"></label>
+                                        <input asp-for="State.Name" class="form-control" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label asp-for="Cep" class="control-label"></label>
+                                        <input asp-for="Cep" class="form-control" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label asp-for="PublicSpace" class="control-label"></label>
+                                        <input asp-for="PublicSpace" class="form-control" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label asp-for="District" class="control-label"></label>
+                                        <input asp-for="District" class="form-control" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-10  form-group">
+                                    <label asp-for="MoreInfo"></label>
+                                    <textarea asp-for="MoreInfo" class="form-control" rows="4" disabled></textarea>
+                                </div>
+                            </div>
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="Id" />
+                                <input class="mt-3 btn btn-primary action-button float-right" type="submit" value="Delete"  /> 
+                                <a class="btn float-left btn-primary" asp-action="Index">Back to List</a>
+                            </form>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
