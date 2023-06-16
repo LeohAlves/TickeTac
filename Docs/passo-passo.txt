@@ -45,8 +45,6 @@ dotnet-aspnet-codegenerator controller -name CategoryController -m Category -dc 
 
 dotnet-aspnet-codegenerator controller -name EventController -m Event -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
-dotnet-aspnet-codegenerator controller -name EventOwnerController -m EventOwner -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
-
 dotnet-aspnet-codegenerator controller -name EventReviewController -m EventReview -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"
 
 dotnet-aspnet-codegenerator controller -name AppUserController -m AppUser -dc ApplicationDbContext --relativeFolderPath Controllers -l "~/Views/Shared/_LayoutAdmin.cshtml"

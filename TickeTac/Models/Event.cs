@@ -94,6 +94,8 @@ namespace TickeTac.Models
         [ForeignKey("StateId")]
         public State State { get; set; }
 
+        [Required]
+        [Display(Name ="Organizador")]
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public AppUser User { get; set; }
