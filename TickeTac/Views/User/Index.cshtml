@@ -1,11 +1,11 @@
-@model TickeTac.ViewModels.UserViewModel
+@model TickeTac.Models.AppUser
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
 
 @{
   ViewData["Title"] = "Perfil";
-  var usuario = UserManager.FindByEmailAsync("@User.Identity?.Name"); 
+  var usuario = await UserManager.FindByEmailAsync(@User.Identity?.Name);
 }
 
 @{
@@ -54,20 +54,13 @@
                   </li>
                 </ul>
                 <div class=button>
-                  @{
-                    if (User.Identity.IsAuthenticated)
-                    {
-                      <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
-                asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                        <button type="submit" class="nav-link btn btn-link text-dark">Clique para Sair</button>
-                      </form>
 
-                    }
-                    else
-                    {
-                      <p>Você saiu com sucesso da conta.</p>
-                    }
-                  }
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
+                asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Sair</button>
+                </form>
+
+                
                 </div>
               </div>
             </div>
@@ -87,7 +80,7 @@
                       <div class="col-lg-6 col-12">
                         <div class=form-group>
                           <label>Nome*</label>
-                          <input name=first-name type=text value="">
+                          <input name=first-name type=text value="@usuario.Name">
                         </div>
                       </div>
                       <div class="col-lg-6 col-12">
@@ -111,34 +104,6 @@
                   </form>
                 </div>
               </div>
-
-              <div class="dashboard-block mt-10 profile-settings-block">
-                <h3 class=block-title>Configurações de Organizador</h3>
-                <div class=inner-block>
-                  <form class=profile-setting-form method=post action="#">
-                    <div class=row>
-                      <div class="col-lg-6 col-12">
-                        <div class=form-group>
-                          <label>Nome Profissional*</label>
-                          <input name=first-name type=text placeholder=AppUser.Name*>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 col-12">
-                        <div class=form-group>
-                          <label>CPF ou CNPJ*</label>
-                          <input name=email type=text placeholder="111.111.111-11">
-                        </div>
-                      </div>
-                      <div class=col-12>
-                        <div class="form-group button mb-0">
-                          <button type=submit class="btn ">Atualizar Perfil</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-
 
               <div class="dashboard-block password-change-block">
                 <h3 class=block-title>Alterar Senha</h3>

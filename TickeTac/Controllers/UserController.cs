@@ -25,7 +25,7 @@ namespace TickeTac.Controllers
             _context = context;
         }
 
-        public IActionResult Index(Guid id)
+        public IActionResult Index( )
         {
     
             return View();
