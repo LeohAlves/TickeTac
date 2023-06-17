@@ -68,15 +68,15 @@ namespace TickeTac.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Required(ErrorMessage = "Senha invalida  ")]
+            [StringLength(100, ErrorMessage = "A {0} deve ter minimo {2} e no maximo {1} caracteres, eser AlfaNumerica", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "Senha")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Confirme a Senha")]
+            [Compare("Password", ErrorMessage = "As senhas Não Conferem.")]
             public string ConfirmPassword { get; set; }
         }
 
