@@ -27,7 +27,7 @@ namespace TickeTac.Controllers
 
         public IActionResult Index( )
         {
-    
+            
             return View();
         }
 

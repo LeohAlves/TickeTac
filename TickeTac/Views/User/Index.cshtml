@@ -5,12 +5,13 @@
 
 @{
   ViewData["Title"] = "Perfil";
-  var usuario = await UserManager.FindByEmailAsync(@User.Identity?.Name);
 }
+  
 
 @{
   if (User.Identity.IsAuthenticated)
   {
+    var usuario = await UserManager.FindByEmailAsync(@User.Identity.Name);
 
     <div class=breadcrumbs>
       <div class=container>

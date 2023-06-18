@@ -8,7 +8,7 @@
     <div class="login-button">
         <ul>
             <li>
-                <a class="nav-link text-dark" asp-controller="User" asp-action="Index" title="Gerenciar">Olá
+                <a asp-controller="User" asp-action="Index" title="Gerenciar">Olá,
                     @User.Identity?.Name!</a>
             </li>
             <li>
@@ -17,6 +17,9 @@
                     <button type="submit" class="nav-link btn btn-link text-dark">Sair</button>
                 </form>
             </li>
+                <div class="button header-button">
+                    <a asp-controller="User" asp-action="Publicar" class="btn">Anunciar Evento</a>
+                </div>
         </ul>
     </div>
 }
