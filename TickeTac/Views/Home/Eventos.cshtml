@@ -40,8 +40,8 @@
 
             <div class="single-widget search">
               <h3>Procurar Eventos</h3>
-              <form action="#">
-                <input type=text placeholder="Procure aqui">
+              <form method="post">
+                <input type="text" asp-for="SearchWords" placeholder="Procurar">
                 <button type=submit><i class="lni lni-search-alt"></i></button>
               </form>
             </div>
@@ -136,14 +136,7 @@
                       </div>
                       }
                       
-                      <div class="col-lg-4 col-md-6 col-12">
-
-                        
-                        <div class=single-item-grid>
-                        
-                        </div>
-
-                      </div>
+                      
                     </div>
                     <div class=row>
                       <div class=col-12>

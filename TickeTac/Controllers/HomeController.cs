@@ -68,19 +68,8 @@ public class HomeController : Controller
         hvm.Events = events.ToList();
         return View(hvm);
     }
+    
 
-    public IActionResult FiltrarPorCategoria(UInt16 category, int city)
-    {   
-        var filters = 
-        _context.Categories.Where(c => c.Id == category).ToList();
-        _context.Cities.Where(c => c.Id == city).ToList();
-
-        if (filters != null)
-            return View("Index", filters);
-        
-        return View("Index");
-    }
-        
     public IActionResult Eventos()
     {
         EventsViewModel evm = new()
@@ -89,8 +78,31 @@ public class HomeController : Controller
             Events = _context.Events.ToList(),
             Cities = _context.Cities.ToList(),
             StatusEvents = _context.StatusEvents.ToList(),
-            AppUsers = _context.AppUsers.ToList()
+            Users = _context.AppUsers.ToList()
         };
+        return View(evm);
+    }
+
+    [HttpPost]
+    public IActionResult Eventos(EventsViewModel evm)
+    {
+        evm.Events = _context.Events.ToList();
+        evm.Categories = _context.Categories.ToList();
+        evm.Cities = _context.Cities.ToList();
+        evm.Users = _context.AppUsers.ToList();
+        evm.StatusEvents = _context.StatusEvents.ToList();
+        
+        IQueryable<Event> events = null;
+        if (!string.IsNullOrEmpty(evm.SearchWords))
+        {
+            events = _context.Events.Where(e => e.Name.Contains(evm.SearchWords) || e.Description.Contains(evm.SearchWords));
+        }
+        else
+        {
+            events = _context.Events;
+        }
+        
+        evm.Events = events.ToList();
         return View(evm);
     }
 

@@ -11,7 +11,11 @@ namespace TickeTac.ViewModels
         public List<Event> Events { get; set; }
         public List<Category> Categories { get; set; }
         public List<City> Cities { get; set; }
-        public List<AppUser> AppUsers { get; set; }
+        public List<AppUser> Users { get; set; }
         public List<StatusEvent> StatusEvents { get; set; }
+
+        public string SearchWords { get; set; }
+        public string SearchCategory { get; set; }
+        public string SearchStatus { get; set; }
     }
 }

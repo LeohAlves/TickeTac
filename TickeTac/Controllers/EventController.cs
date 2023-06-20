@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TickeTac.Data;
 using TickeTac.Models;
+using TickeTac.ViewModels;
 
 namespace TickeTac.Controllers
 {

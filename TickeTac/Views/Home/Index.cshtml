@@ -68,12 +68,15 @@
                         <!-- Start Single Category -->
                         @foreach (var category in Model.Categories)
                         {
+                            <form method="post">
+                            <input type="button" asp-for="SearchCategory">
                             <a href="#" class="single-cat">
                                 <div class="icon">
                                     <img src="@category.Img" alt="#">
                                 </div>
                                 <h3>@category.Name</h3>
                             </a>
+                            </form>
                         }
                     </div>
                 </div>
@@ -108,7 +111,7 @@
                                 <div class="author">
                                     <div class="author-image">
                                         <a href="javascript:void(0)">
-                                            <span>Organizador: </span></a>
+                                            <span>Organizador: @events.User.Name</span></a>
                                     </div>
                                     <p class="sale">@events.StatusEvent.Name</p>
                                 </div>
