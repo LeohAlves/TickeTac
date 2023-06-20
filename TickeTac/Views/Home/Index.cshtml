@@ -18,45 +18,38 @@
                     </div>
                     <!-- End Search Form -->
                     <!-- Start Search Form -->
-                    <div class="search-form wow fadeInUp" data-wow-delay=".7s">
+                    <form method="post" class="search-form wow fadeInUp" data-wow-delay=".7s">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12 p-0">
                                 <div class="search-input">
-                                    <label for="keyword"><i class="lni lni-search-alt theme-color"></i></label>
-                                    <input type="text" name="keyword" id="keyword" placeholder="Procurar">
+                                    <label><i class="lni lni-search-alt theme-color"></i></label>
+                                    <input type="text" asp-for="SearchWords" placeholder="Procurar">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12 p-0">
                                 <div class="search-input">
-                                    <label for="category"><i class="lni lni-grid-alt theme-color"></i></label>
-                                    <select name="category" id="category">
+                                    <label><i class="lni lni-grid-alt theme-color"></i></label>
+                                    <select asp-for="SearchCategory" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
                                         <option value="none" selected disabled>Categorias</option>
-                                        @foreach (var category in Model.Categories)
-                                        {
-                                            <option asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" value="@category.Id">@category.Name</option>
-                                        }
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-12 p-0">
                                 <div class="search-input">
-                                    <label for="location"><i class="lni lni-map-marker theme-color"></i></label>
-                                    <select name="location" id="location">
+                                    <label><i class="lni lni-map-marker theme-color"></i></label>
+                                    <select asp-for="SearchCity" asp-items="@(new SelectList(Model.Cities, "Id", "Name"))">
                                         <option value="none" selected disabled>Locais</option>
-                                        @foreach (var cities in Model.Cities)
-                                        {
-                                            <option asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" value="@cities.Id">@cities.Name</option>
-                                        }
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-md-2 col-12 p-0">
                                 <div class="search-btn button">
-                                    <button asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
+                                    @* <button asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button> *@
+                                    <button type="submit" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <!-- End Search Form -->
                 </div>
             </div>
@@ -115,7 +108,7 @@
                                 <div class="author">
                                     <div class="author-image">
                                         <a href="javascript:void(0)">
-                                            <span>Organizador: @events.User.Name</span></a>
+                                            <span>Organizador: </span></a>
                                     </div>
                                     <p class="sale">@events.StatusEvent.Name</p>
                                 </div>
@@ -252,7 +245,7 @@
                 <div class="single-work wow fadeInUp" data-wow-delay=".2s">
                     <span class="serial">01</span>
                     <h3>Crie a sua conta</h3>
-                    <p>Clique no botão de "Registrar" e siga as intruções.</p>
+                    <p>Clique em "registrar" na parte superior direita do site e siga as intruções.</p>
                 </div>
                 <!-- End Single Work -->
             </div>
@@ -260,8 +253,8 @@
                 <!-- Start Single Work -->
                 <div class="single-work wow fadeInUp" data-wow-delay=".4s">
                     <span class="serial">02</span>
-                    <h3>Entre na sua conta</h3>
-                    <p>Clique no botão "Login" e insira as informações registradas</p>
+                    <h3>Se torne um organizador</h3>
+                    <p>Clique no botão roxo de "Anunciar Evento" e insira as informações necessárias</p>
                 </div>
                 <!-- End Single Work -->
             </div>
@@ -270,7 +263,7 @@
                 <div class="single-work wow fadeInUp" data-wow-delay=".6s">
                     <span class="serial">03</span>
                     <h3>Publique seu evento</h3>
-                    <p>Clique no botão roxo de "Anunciar Evento" e insira as informações necessárias</p>
+                    <p>Preencha os dados necessários para a publicação de um evento</p>
                 </div>
                 <!-- End Single Work -->
             </div>
