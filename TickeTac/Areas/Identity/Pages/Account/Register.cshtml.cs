@@ -54,14 +54,17 @@ namespace TickeTac.Areas.Identity.Pages.Account
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        public class InputModel 
+        public class InputModel
         {
 
             [Required(ErrorMessage = "O campo não pode ser vazio!")]
             [Display(Name = "Nome do usuário")]
             [StringLength(70, ErrorMessage = "O nome deve possuir no máximo 70 caracteres!")]
             public string Name { get; set; }
-            
+
+            [StringLength(400)]
+            public string ProfilePicture { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -96,6 +99,7 @@ namespace TickeTac.Areas.Identity.Pages.Account
 
                 var user = CreateUser();
                 user.Name = Input.Name;
+                user.ProfilePicture = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png";
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
