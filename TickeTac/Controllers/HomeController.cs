@@ -21,6 +21,7 @@ public class HomeController : Controller
         _context = context;
     }
 
+    [HttpGet]
     public IActionResult Index()
     {
         HomeViewModel hvm = new()
@@ -33,43 +34,8 @@ public class HomeController : Controller
         };
         return View(hvm);
     }
-
-
-    [HttpPost]
-    public IActionResult Index(HomeViewModel hvm)
-    {
-        hvm.Categories = _context.Categories.ToList();
-        hvm.Cities = _context.Cities.ToList();
-        hvm.Users = _context.AppUsers.ToList();
-        hvm.StatusEvents = _context.StatusEvents.ToList();
-        
-        IQueryable<Event> events = null;
-        if (!string.IsNullOrEmpty(hvm.SearchWords))
-        {
-            events = _context.Events.Where(e => e.Name.Contains(hvm.SearchWords) || e.Description.Contains(hvm.SearchWords));
-        }
-        else
-        {
-            events = _context.Events;
-        }
-
-        if (!string.IsNullOrEmpty(hvm.SearchCity))
-        {
-            int Id = int.Parse(hvm.SearchCity);
-            events = events.Where(e => e.CityId == Id);
-        }
-
-        if (!string.IsNullOrEmpty(hvm.SearchCategory))
-        {
-            int Id = int.Parse(hvm.SearchCategory);
-            events = events.Where(e => e.CategoryId == Id);
-        }
-        
-        hvm.Events = events.ToList();
-        return View(hvm);
-    }
     
-
+    [HttpGet]
     public IActionResult Eventos()
     {
         EventsViewModel evm = new()
@@ -82,6 +48,8 @@ public class HomeController : Controller
         };
         return View(evm);
     }
+
+    
 
     [HttpPost]
     public IActionResult Eventos(EventsViewModel evm)
@@ -101,7 +69,14 @@ public class HomeController : Controller
         {
             events = _context.Events;
         }
+
+        if (!string.IsNullOrEmpty(evm.SearchCategory))
+        {
+            int Id = int.Parse(evm.SearchCategory);
+            events = events.Where(e => e.CategoryId == Id);
+        }
         
+        evm.SearchCategory = null;
         evm.Events = events.ToList();
         return View(evm);
     }

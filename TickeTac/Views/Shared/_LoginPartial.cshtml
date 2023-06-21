@@ -5,11 +5,12 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+    var usuario = await UserManager.FindByEmailAsync(@User.Identity.Name);
     <div class="login-button">
         <ul>
             <li>
                 <a asp-controller="User" asp-action="Index" title="Gerenciar">Olá,
-                    @User.Identity?.Name!</a>
+                    @usuario.Name</a>
             </li>
             <li>
                 <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout"
