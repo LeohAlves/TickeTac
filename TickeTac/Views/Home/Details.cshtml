@@ -87,25 +87,25 @@
             <p>Bairro: @Model.District</p>
             <p>Rua: @Model.PublicSpace</p>
           </div>
+
+          @if (@Model.StatusEvent.Id == 1){
           <div class="single-block comments">
             <h3></h3>
-
-
-
+            
             <div class=single-comment>
               <img src="~/assets/images/testimonial/xtesti2.jpg.pagespeed.ic.x-z5bUxtkQ.jpg" alt="#">
               <div class=content>
-                <h4>Kaique</h4>
-                <span>16/06</span>
+                <h4>NOME DO ORGANIZADOR</h4>
+                <span>DATA DE REVIEW</span>
                 <p>
-                  Adorei este Evnto
+                  Adorei este Evnto COMENTÁRIO
                 </p>
               </div>
             </div>
-
           </div>
+          }
 
-
+          @if (@Model.StatusEvent.Id == 1){
           <div class="single-block comment-form">
             <h3>Publique um comentário</h3>
             <form action="#" method=POST>
@@ -133,8 +133,9 @@
               </div>
             </form>
           </div>
-
+}
         </div>
+        
         <div class="col-lg-4 col-md-5 col-12">
           <div class=item-details-sidebar>
 
