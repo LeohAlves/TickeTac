@@ -372,8 +372,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "412e87e2-6fb6-4ba1-a9cd-656564650283", "cd113fb9-6203-4f3b-b655-ce456c1bc533", "Administrador", "ADMINISTRADOR" },
-                    { "cdd05175-6b46-44b9-81cd-b393b90bad79", "eae10afb-d801-4a1f-9b96-5049d91d153d", "Usuario", "USUÁRIO" }
+                    { "00e11376-a4a9-4c7d-8f11-68ab76aead7d", "19ecf45d-b2f5-4676-94c4-f3f25f37fc49", "Administrador", "ADMINISTRADOR" },
+                    { "0f4dd369-2c34-42f0-9bf5-def5f959fc6d", "caffc68b-90dc-410e-8dc5-e966ecd190c5", "Usuário", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
@@ -381,10 +381,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "02cc937b-6104-4bd0-8cbf-8e305bfd6b99", 0, "ed3d3aab-b816-485f-b623-ef546526a872", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEJlKtN1m8FmSAF68qAkWGp1BMHQisI2DvXXpGSkC+MJGgOX2FtDQHIqx+WPbHzSz3g==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "60281111", false, "Kai@Email.com" },
-                    { "17ac2a57-40e8-48de-86ae-615caed9cd0e", 0, "3127b30f-fc5f-4b2f-bc6d-4dd5cb1ad3e6", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEDNinkj16w7QMcXAjgsplQa45lywG1LNZwT3XiC4OQYH5TjaT8MiTv/AgW9o34Y1vA==", null, false, "", "60281111", false, "Admin@TickeTac.com" },
-                    { "f31344a5-f0f1-4b1e-940a-1094ed33c0ae", 0, "886a0072-38d7-4fdf-92ee-a1feac1338a8", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEOsQstSzM6EcyY1aU+wJ2c3TwFM4bvpi8Vo18ylv8x0cEjsNnI7h/J6PpxKKS00FIA==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "60281111", false, "Gallo@Email.com" },
-                    { "fa92616a-2f0c-404a-9d8a-f351f1fe1ed7", 0, "51de4e73-5312-49b8-9dd4-b05a378a22f3", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEJGdKRIhhLn55SMnZ6mMZPlY3hHR2JJj7CyP3JPUtQW6ZEK+5fllAdWWyFw+0s8rWA==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "60281111", false, "Leo@Email.com" }
+                    { "241b9008-9e65-4b05-9aca-7590529c791b", 0, "cfbc0308-7904-4b17-bb07-2c6d6960f802", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEJrYROnfNAmXjSv5Js+dgtIPF9x2BsorzPJp5JXVGwc0VAIcGEN/y/RdEw8dnue3Dw==", null, false, "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png", "50931783", false, "Admin@TickeTac.com" },
+                    { "2c2f10c1-2c2c-47ea-b5d6-20562a472dd7", 0, "55199f13-021e-4f32-ada5-f76efc954080", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEAYu3c4aiko+AV5lUXAD5BHPqdMB/vOFbRcf0dhUYLlRKmsM8lngTwq+2i8GoriZnw==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "50931783", false, "Gallo@Email.com" },
+                    { "6bf0ee59-4c67-4f8b-8d1b-315684eaeac4", 0, "55c7365e-53cb-4e1f-9da0-7a85dee9e7f6", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEIg9sbpJU/JWoOERTMx2c73avRf5a+hN8PjJlg/tspirqrMw9c4YkIKyTHYPN9bXEw==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "50931783", false, "Kai@Email.com" },
+                    { "ff32b410-5bb4-4ccc-9ef3-34ee5defeb4b", 0, "6756895f-a63d-429a-ad8e-7d4b82390806", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAECSJGGjM4W/k6CNb2Sv40nmGTIwyI0Fwxr5BBt2JWcRolpqcvO0/Aqs4VP7ccJhDOA==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "50931783", false, "Leo@Email.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -452,10 +452,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "cdd05175-6b46-44b9-81cd-b393b90bad79", "02cc937b-6104-4bd0-8cbf-8e305bfd6b99" },
-                    { "412e87e2-6fb6-4ba1-a9cd-656564650283", "17ac2a57-40e8-48de-86ae-615caed9cd0e" },
-                    { "cdd05175-6b46-44b9-81cd-b393b90bad79", "f31344a5-f0f1-4b1e-940a-1094ed33c0ae" },
-                    { "cdd05175-6b46-44b9-81cd-b393b90bad79", "fa92616a-2f0c-404a-9d8a-f351f1fe1ed7" }
+                    { "00e11376-a4a9-4c7d-8f11-68ab76aead7d", "241b9008-9e65-4b05-9aca-7590529c791b" },
+                    { "0f4dd369-2c34-42f0-9bf5-def5f959fc6d", "2c2f10c1-2c2c-47ea-b5d6-20562a472dd7" },
+                    { "0f4dd369-2c34-42f0-9bf5-def5f959fc6d", "6bf0ee59-4c67-4f8b-8d1b-315684eaeac4" },
+                    { "0f4dd369-2c34-42f0-9bf5-def5f959fc6d", "ff32b410-5bb4-4ccc-9ef3-34ee5defeb4b" }
                 });
 
             migrationBuilder.InsertData(
@@ -466,17 +466,17 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2, "f31344a5-f0f1-4b1e-940a-1094ed33c0ae" });
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2, "2c2f10c1-2c2c-47ea-b5d6-20562a472dd7" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2, "02cc937b-6104-4bd0-8cbf-8e305bfd6b99" });
+                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2, "6bf0ee59-4c67-4f8b-8d1b-315684eaeac4" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3, "fa92616a-2f0c-404a-9d8a-f351f1fe1ed7" });
+                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3, "ff32b410-5bb4-4ccc-9ef3-34ee5defeb4b" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

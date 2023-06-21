@@ -47,13 +47,13 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             {
                 Id = Guid.NewGuid().ToString() ,
                 Name="Administrador",
-                NormalizedName= "ADMINISTRADOR"
+                NormalizedName = "ADMINISTRADOR",
             },
             new IdentityRole()
             {
-                Id = Guid.NewGuid().ToString() ,
-                Name="Usuario",
-                NormalizedName= "USUÁRIO"
+                Id = Guid.NewGuid().ToString(),
+                Name="Usuário",
+                NormalizedName = "USUÁRIO"
             },
         };
         builder.Entity<IdentityRole>().HasData(listRoles);
@@ -74,7 +74,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                     EmailConfirmed = true,
                     PasswordHash = hash.HashPassword(null, "123456"),
                     SecurityStamp = hash.GetHashCode().ToString(),
-                    ProfilePicture = ""
+                    ProfilePicture = "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png"
                 }
         );
         builder.Entity<IdentityUserRole<string>>().HasData(

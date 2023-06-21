@@ -52,28 +52,18 @@
               <ul class=list>
                 @foreach (var category in Model.Categories)
                 {
+                  
                   <li>
-                    <a href="javascript:void(0)">@category.Name<span>@category.Id</span></a>
+                    <form method="post">
+                    <a asp-for="SearchCategory" asp-items="""@Model.Categories, "Id", "Name"))">@category.Name<span>@category.Id</span></a>
+                    </form>
                   </li>
+                  
                 }
               </ul>
             </div>
 
-              <div class="single-widget condition">
-              <h3>Status</h3>
-            @foreach (var status in Model.StatusEvents)
-                {
-              <div class=form-check>
-                  <input class=form-check-input type=checkbox value="" id=@status.Name>
-                  <label class=form-check-label for=flexCheckDefault1>
-                    @status.Name
-                  </label>
-              </div> 
-              }
-
               
-
-            </div>
           </div>
         </div>
         <div class="col-lg-9 col-md-8 col-12">
@@ -83,7 +73,7 @@
                 <div class=category-grid-topbar>
                   <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-12">
-                      <h3 class=title>Exibindo "alterar dps para mostrar a quantidade de eventos exibidos na page" Eventos encontrados</h3>
+                      <h3 class=title>Exibindo os eventos encontrados</h3>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                       <nav>
@@ -141,14 +131,6 @@
                     <div class=row>
                       <div class=col-12>
 
-                        <div class="pagination left">
-                          <ul class=pagination-list>
-                            <li class=active><a href="javascript:void(0)">1</a></li>
-                            <li ><a href="javascript:void(0)">2</a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-                          </ul>
-                        </div>
-
                       </div>
                     </div>
                   </div>
@@ -196,14 +178,6 @@
                       
                     <div class=row>
                       <div class=col-12>
-
-                        <div class="pagination left">
-                          <ul class=pagination-list>
-                            <li class=active><a href="javascript:void(0)">1</a></li>
-                            <li ><a href="javascript:void(0)">2</a></li>
-                            <li><a href="javascript:void(0)"><i class="lni lni-chevron-right"></i></a></li>
-                          </ul>
-                        </div>
 
                       </div>
                     </div>

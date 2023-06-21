@@ -68,15 +68,15 @@
                         <!-- Start Single Category -->
                         @foreach (var category in Model.Categories)
                         {
-                            <form method="post">
-                            <input type="button" asp-for="SearchCategory">
+                           
+                            
                             <a href="#" class="single-cat">
                                 <div class="icon">
                                     <img src="@category.Img" alt="#">
                                 </div>
                                 <h3>@category.Name</h3>
                             </a>
-                            </form>
+                        
                         }
                     </div>
                 </div>
