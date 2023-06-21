@@ -19,7 +19,7 @@ namespace TickeTac.Models
         [Required(ErrorMessage = "É necessário informar um telefone!")]
         [StringLength(14, ErrorMessage = "Numero invalido")]
         public string ContactPhone { get; set; }
-        
+
         [Display(Name = "Preço")]
         [Column(TypeName = "decimal(10,2)")]
         [Required(ErrorMessage = "Informe o {0}")]
@@ -35,11 +35,11 @@ namespace TickeTac.Models
         public DateTime EventDateEnd { get; set; }
 
         [Display(Name = "Descrição")]
-        [StringLength(1000, ErrorMessage = "A descrição deve possuir no máximo 1000 caracteres.")]
+        [StringLength(600, ErrorMessage = "A descrição deve possuir no máximo 1000 caracteres.")]
         public string Description { get; set; }
 
         [Display(Name = "Imagem")]
-        [StringLength(400)]
+        [StringLength(500, ErrorMessage = "Imagem invalida")]
         public string Image { get; set; }
 
         [Display(Name = "E-mail de contato")]
@@ -48,17 +48,9 @@ namespace TickeTac.Models
         [EmailAddress(ErrorMessage = "Informe um e-mail válido!")]
         public string ContactEmail { get; set; }
 
-        [Display(Name = "Informações adicionais")]
+        [Display(Name = "Complemento")]
         [StringLength(300)]
         public string MoreInfo { get; set; }
-
-        [Display(Name = "Cidade")]
-        [Required(ErrorMessage = "É necessário especificar uma cidade.")]
-        [StringLength(70)]
-        public int CityId { get; set; }
-        [ForeignKey("CityId")]
-        public City City { get; set; }
-
         [Display(Name = "Bairro")]
         [Required(ErrorMessage = "É necessário especificar um bairro.")]
         [StringLength(50)]
@@ -71,7 +63,7 @@ namespace TickeTac.Models
 
         [Display(Name = "CEP")]
         [Required(ErrorMessage = "É necessário especificar um CEP.")]
-        [StringLength(13)]
+        [StringLength(15)]
         public string Cep { get; set; }
 
         [Display(Name = "Categoria")]
@@ -88,14 +80,19 @@ namespace TickeTac.Models
         public StatusEvent StatusEvent { get; set; }
 
         [Required(ErrorMessage = "Não pode estar em branco")]
-        [Display(Name ="Sigla do Estado")]
-        [StringLength(2, ErrorMessage ="2 caracteres no máximo")]
+        [Display(Name = "Sigla do Estado")]
         public int StateId { get; set; }
         [ForeignKey("StateId")]
         public State State { get; set; }
 
+        [Display(Name = "Cidade")]
+        [Required(ErrorMessage = "É necessário especificar uma cidade.")]
+        public int CityId { get; set; }
+        [ForeignKey("CityId")]
+        public City City { get; set; }
+
         [Required]
-        [Display(Name ="Organizador")]
+        [Display(Name = "Organizador")]
         public string UserId { get; set; }
         [ForeignKey("UserId")]
         public AppUser User { get; set; }

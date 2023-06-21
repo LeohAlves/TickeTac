@@ -75,8 +75,8 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
-            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Name", @event.CityId);
-            ViewData["StateId"] = new SelectList(_context.States, "Id", "Name", @event.StateId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
+            ViewData["StateId"] = new SelectList(_context.States, "Id", "Id", @event.StateId);
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
             ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Name", @event.UserId);
             return View(@event);
@@ -136,8 +136,8 @@ namespace TickeTac.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
-            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Name", @event.CityId);
-            ViewData["StateId"] = new SelectList(_context.States, "Id", "Name", @event.StateId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
+            ViewData["StateId"] = new SelectList(_context.States, "Id", "Id", @event.StateId);
             ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
             ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Name", @event.UserId);
             return View(@event);

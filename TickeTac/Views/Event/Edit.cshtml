@@ -24,8 +24,8 @@
                                         <h3 class="mb-4">Informaçoes do Evento:</h3>
                                     </div>
                                 </div>
-
                                 <div class=" ml-2 row">
+                                    <input type="hidden" asp-for="Id" />
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label asp-for="Name" class="control-label"></label>
@@ -109,8 +109,7 @@
                                     <div class="col-md-6">
                                         <label asp-for="UserId"></label>
                                         <div class="input-group input-group-static">
-                                            <select asp-for="UserId" class="form-control"
-                                                asp-items="ViewBag.UserId">
+                                            <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId">
                                                 <option value="" disabled selected hidden>Selecione uma opção</option>
                                             </select>
                                             <span asp-validation-for="UserId"
