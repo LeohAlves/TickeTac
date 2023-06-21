@@ -18,7 +18,7 @@
                     </div>
                     <!-- End Search Form -->
                     <!-- Start Search Form -->
-                    <form method="post" class="search-form wow fadeInUp" data-wow-delay=".7s">
+                    <form id="formSearch" method="post" class="search-form wow fadeInUp" data-wow-delay=".7s">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12 p-0">
                                 <div class="search-input">
@@ -30,7 +30,7 @@
                                 <div class="search-input">
                                     <label><i class="lni lni-grid-alt theme-color"></i></label>
                                     <select asp-for="SearchCategory" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
-                                        <option value="none" selected disabled>Categorias</option>
+                                        <option value="" selected>Categorias</option>
                                     </select>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                 <div class="search-input">
                                     <label><i class="lni lni-map-marker theme-color"></i></label>
                                     <select asp-for="SearchCity" asp-items="@(new SelectList(Model.Cities, "Id", "Name"))">
-                                        <option value="none" selected disabled>Locais</option>
+                                        <option value="" selected>Locais</option>
                                     </select>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                         {
                            
                             
-                            <a href="#" class="single-cat">
+                            <a href="javascript:void(0)" class="single-cat" onclick="Search(@category.Id)">
                                 <div class="icon">
                                     <img src="@category.Img" alt="#">
                                 </div>
@@ -273,3 +273,12 @@
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script>
+        function Search(category) {
+            document.querySelector('#SearchCategory').value = category;
+            document.querySelector('#formSearch').submit();
+        }
+    </script>  
+}

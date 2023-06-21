@@ -3,151 +3,179 @@
 @{
   ViewData["Title"] = "Eventos";
 }
-
-  <div class=preloader>
-    <div class=preloader-inner>
-      <div class=preloader-icon>
-        <span></span>
-        <span></span>
+<form hidden id="formSearch" method="post" class="search-form wow fadeInUp" data-wow-delay=".7s">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-12 p-0">
+      <div class="search-input">
+        <label><i class="lni lni-search-alt theme-color"></i></label>
+        <input type="text" asp-for="SearchWords" placeholder="Procurar">
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-12 p-0">
+      <div class="search-input">
+        <label><i class="lni lni-grid-alt theme-color"></i></label>
+        <select asp-for="SearchCategory" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
+          <option value="" selected>Categorias</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-12 p-0">
+      <div class="search-btn button">
+        @* <button asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" class="btn"><i class="lni
+          lni-search-alt"></i> Pesquisar </button> *@
+        <button type="submit" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
       </div>
     </div>
   </div>
+</form>
 
-  <div class=breadcrumbs>
-    <div class=container>
-      <div class="row align-items-center">
-        <div class="col-lg-6 col-md-6 col-12">
-          <div class=breadcrumbs-content>
-            <h1 class=page-title>Listagem de Eventos</h1>
+<div class=preloader>
+  <div class=preloader-inner>
+    <div class=preloader-icon>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class=breadcrumbs>
+  <div class=container>
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class=breadcrumbs-content>
+          <h1 class=page-title>Listagem de Eventos</h1>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <ul class=breadcrumb-nav>
+          <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+          <li>Eventos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="category-page section">
+  <div class=container>
+    <div class=row>
+      <div class="col-lg-3 col-md-4 col-12">
+        <div class=category-sidebar>
+
+          <div class="single-widget search">
+            <h3>Procurar Eventos</h3>
+            <form method="post">
+              <input type="text" asp-for="SearchWords" placeholder="Procurar">
+              <button type=submit><i class="lni lni-search-alt"></i></button>
+            </form>
           </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-12">
-          <ul class=breadcrumb-nav>
-            <li><a asp-action="Index" asp-controller="Home">Home</a></li>
-            <li>Eventos</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-  <section class="category-page section">
-    <div class=container>
-      <div class=row>
-        <div class="col-lg-3 col-md-4 col-12">
-          <div class=category-sidebar>
-
-            <div class="single-widget search">
-              <h3>Procurar Eventos</h3>
-              <form method="post">
-                <input type="text" asp-for="SearchWords" placeholder="Procurar">
-                <button type=submit><i class="lni lni-search-alt"></i></button>
-              </form>
-            </div>
-
-
-            <div class=single-widget>
-              <h3>Todas as categorias</h3>
-              <ul class=list>
-                @foreach (var category in Model.Categories)
-                {
-                  
+          <div class=single-widget>
+            <h3>Todas as categorias</h3>
+            <ul class=list>
+              @foreach (var category in Model.Categories)
+              {
+                <form method="post">
                   <li>
-                    <form method="post">
-                    <a asp-for="SearchCategory" asp-items="""@Model.Categories, "Id", "Name"))">@category.Name<span>@category.Id</span></a>
-                    </form>
-                  </li>
-                  
-                }
-              </ul>
-            </div>
 
-              
+                    <a href="javascript:void(0)" onclick="Search(@category.Id)">@category.Name</a>
+
+                  </li>
+                </form>
+              }
+            </ul>
           </div>
+
+
         </div>
-        <div class="col-lg-9 col-md-8 col-12">
-          <div class=category-grid-list>
-            <div class=row>
-              <div class=col-12>
-                <div class=category-grid-topbar>
-                  <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <h3 class=title>Exibindo os eventos encontrados</h3>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                      <nav>
-                        <div class="nav nav-tabs" id=nav-tab role=tablist>
-                          <button class="nav-link active" id=nav-grid-tab data-bs-toggle=tab data-bs-target="#nav-grid"
-                            type=button role=tab aria-controls=nav-grid aria-selected=true><i
-                              class="lni lni-grid-alt"></i></button>
-                          <button class=nav-link id=nav-list-tab data-bs-toggle=tab data-bs-target="#nav-list"
-                            type=button role=tab aria-controls=nav-list aria-selected=false><i
-                              class="lni lni-list"></i></button>
+      </div>
+      <div class="col-lg-9 col-md-8 col-12">
+        <div class=category-grid-list>
+          <div class=row>
+            <div class=col-12>
+              <div class=category-grid-topbar>
+                <div class="row align-items-center">
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <h3 class=title>Exibindo os eventos encontrados</h3>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-12">
+                    <nav>
+                      <div class="nav nav-tabs" id=nav-tab role=tablist>
+                        <button class="nav-link active" id=nav-grid-tab data-bs-toggle=tab data-bs-target="#nav-grid"
+                          type=button role=tab aria-controls=nav-grid aria-selected=true><i
+                            class="lni lni-grid-alt"></i></button>
+                        <button class=nav-link id=nav-list-tab data-bs-toggle=tab data-bs-target="#nav-list" type=button
+                          role=tab aria-controls=nav-list aria-selected=false><i class="lni lni-list"></i></button>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class=tab-content id=nav-tabContent>
+                <div class="tab-pane fade show active" id=nav-grid role=tabpanel aria-labelledby=nav-grid-tab>
+                  <div class=row>
+                    @foreach (var events in Model.Events)
+                    {
+                      <div class="col-lg-4 col-md-6 col-12">
+
+                        <div class="">
+
+                          <div class="single-item-grid wow fadeInUp" data-wow-delay=".2s">
+                            <div class=image>
+                              <a asp-action="Details" asp-route-id="@events.Id" class="banner-img2 thumbnail"><img
+                                src="@events.Image" alt="Imagem do evento"></a>
+
+                              <i class="cross-badge lni lni-bolt"></i>
+                              <span class="flat-badge sale">@events.StatusEvent.Name</span>
+
+                            </div>
+                            <div class=content>
+                              <a href="javascript:void(0)" class=tag>@events.Category.Name</a>
+                              <h3 class=title>
+                                <a asp-action="Details" asp-route-id="@events.Id">@events.Name</a>
+                              </h3>
+                              <p class=location><a href="javascript:void(0)"><i
+                                  class="lni lni-map-marker"></i>@events.City.Name</a></p>
+                              <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Início:
+                                  @events.EventDateBegin</a></p>
+                              <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Fim:
+                                  @events.EventDateEnd</a></p>
+                              <ul class=info>
+                                <li class=price>$<span>@events.Price</span></li>
+                                <li class=like><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
-                      </nav>
+
+                      </div>
+                    }
+
+
+                  </div>
+                  <div class=row>
+                    <div class=col-12>
+
                     </div>
                   </div>
                 </div>
-                <div class=tab-content id=nav-tabContent>
-                  <div class="tab-pane fade show active" id=nav-grid role=tabpanel aria-labelledby=nav-grid-tab>
-                    <div class=row>
+
+
+                <!-- FOREACH da listagem dos eventos  -->
+
+                <div class="tab-pane fade" id=nav-list role=tabpanel aria-labelledby=nav-list-tab>
+                  <div class=row>
+                    <div class="col-lg-12 col-md-12 col-12">
                       @foreach (var events in Model.Events)
-                        {
-                      <div class="col-lg-4 col-md-6 col-12">
-                      
-                      <div class="">
-
-                        <div class="single-item-grid wow fadeInUp" data-wow-delay=".2s">
-                          <div class=image>
-                            <a asp-action="Details" asp-route-id="@events.Id" class="banner-img2 thumbnail"><img src="@events.Image" alt="Imagem do evento"></a>
-                            
-                            <i class="cross-badge lni lni-bolt"></i>
-                            <span class="flat-badge sale">@events.StatusEvent.Name</span>
-                            
-                          </div>
-                          <div class=content>
-                            <a href="javascript:void(0)" class=tag>@events.Category.Name</a>
-                            <h3 class=title>
-                              <a asp-action="Details" asp-route-id="@events.Id">@events.Name</a>
-                            </h3>
-                            <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>@events.City.Name</a></p>
-                            <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Início: @events.EventDateBegin</a></p>
-                            <p class=location><a href="javascript:void(0)"><i class="lni lni lni-timer"></i>Fim: @events.EventDateEnd</a></p>
-                            <ul class=info>
-                              <li class=price>$<span>@events.Price</span></li>
-                              <li class=like><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                        
-                      </div>
-                      }
-                      
-                      
-                    </div>
-                    <div class=row>
-                      <div class=col-12>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  
-                  <!-- FOREACH da listagem dos eventos  -->
-                  
-                  <div class="tab-pane fade" id=nav-list role=tabpanel aria-labelledby=nav-list-tab>
-                    <div class=row>
-                      <div class="col-lg-12 col-md-12 col-12">
-                        @foreach (var events in Model.Events){
+                      {
                         <div class=single-item-grid>
                           <div class="row align-items-center">
                             <div class="col-lg-5 col-md-7 col-12">
                               <div class=image>
-                                <a href=item-details.html><img
-                                    src="@events.Image" alt="#" class="banner-img"></a>
+                                <a href=item-details.html><img src="@events.Image" alt="#" class="banner-img"></a>
                                 <i class=" cross-badge lni lni-bolt"></i>
                                 <span class="flat-badge sale">@events.StatusEvent.Name</span>
                               </div>
@@ -158,9 +186,12 @@
                                 <h3 class=title>
                                   <a href=item-details.html>@events.Name</a>
                                 </h3>
-                                <p class=location><a href="javascript:void(0)"><i class="lni lni-map-marker"></i>@events.City.Name</a></p>
-                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Início: @events.EventDateBegin</a></p>
-                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim: @events.EventDateEnd</a></p>
+                                <p class=location><a href="javascript:void(0)"><i
+                                    class="lni lni-map-marker"></i>@events.City.Name</a></p>
+                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Início:
+                                    @events.EventDateBegin</a></p>
+                                <p class=location><a href="javascript:void(0)"><i class="lni lni-timer"></i>Fim:
+                                    @events.EventDateEnd</a></p>
                                 <ul class=info>
                                   <li class=price>$@events.Price</li>
                                   <li class=like><a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
@@ -170,12 +201,12 @@
                             </div>
                           </div>
                         </div>
-                        }
+                      }
 
-                    <!-- Fim do FOREACH -->
+                      <!-- Fim do FOREACH -->
 
-                      </div>
-                      
+                    </div>
+
                     <div class=row>
                       <div class=col-12>
 
@@ -189,9 +220,17 @@
         </div>
       </div>
     </div>
-  </section>
-  <a href="#" class="scroll-top btn-hover">
-    <i class="lni lni-chevron-up"></i>
-  </a>
-<!-- Mirrored from demo.graygrids.com/themes/classigrids-demo/item-listing-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 May 2023 23:10:31 GMT -->
+</section>
+<a href="#" class="scroll-top btn-hover">
+  <i class="lni lni-chevron-up"></i>
+</a>
 
+@section Scripts {
+<script>
+  function Search(category) {
+    document.querySelector('#SearchCategory').value = category;
+    document.querySelector('#formSearch').submit();
+  }
+</script>
+}
+<!-- Mirrored from demo.graygrids.com/themes/classigrids-demo/item-listing-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 03 May 2023 23:10:31 GMT -->

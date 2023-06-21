@@ -21,11 +21,14 @@ namespace TickeTac.Controllers
         }
 
         // GET: Event
+        
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Events.Include(e => e.Category).Include(e => e.City).Include(e => e.State).Include(e => e.StatusEvent).Include(e => e.User);
             return View(await applicationDbContext.ToListAsync());
         }
+
+        
 
         // GET: Event/Details/5
         public async Task<IActionResult> Details(ushort? id)
