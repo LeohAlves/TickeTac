@@ -47,15 +47,15 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9c174fa6-1fe0-4000-bfe3-80f83ebdc7e5",
-                            ConcurrencyStamp = "5a115614-aa87-443e-851f-9a7660a67a5a",
+                            Id = "660dd208-4408-409e-b620-159bfd97b7bb",
+                            ConcurrencyStamp = "f7350ddf-515f-4a30-aba8-f90416cb81d7",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "d84accc5-71bb-4755-87b9-990a0de003a7",
-                            ConcurrencyStamp = "a7e255aa-fb83-423c-b6b8-002b5bb57d26",
+                            Id = "3d6677fe-0042-47e0-88eb-27d9bfbfe6e4",
+                            ConcurrencyStamp = "a5222b58-7a7f-48e7-aa36-282f0b532a06",
                             Name = "Usuário",
                             NormalizedName = "USUÁRIO"
                         });
@@ -146,23 +146,23 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "c0711567-6d92-415b-83c6-9fd7ff8cbc19",
-                            RoleId = "9c174fa6-1fe0-4000-bfe3-80f83ebdc7e5"
+                            UserId = "85cf8709-2bde-4941-a538-86982c216e0f",
+                            RoleId = "660dd208-4408-409e-b620-159bfd97b7bb"
                         },
                         new
                         {
-                            UserId = "59c846c2-d295-4d01-8383-a69ff470f0b9",
-                            RoleId = "d84accc5-71bb-4755-87b9-990a0de003a7"
+                            UserId = "90c92809-e069-490c-a81c-7b382e85beb0",
+                            RoleId = "3d6677fe-0042-47e0-88eb-27d9bfbfe6e4"
                         },
                         new
                         {
-                            UserId = "5ae0e476-3067-4b0e-84db-605644e84594",
-                            RoleId = "d84accc5-71bb-4755-87b9-990a0de003a7"
+                            UserId = "0016d2d8-650a-4f42-956e-fe426b7bf9cc",
+                            RoleId = "3d6677fe-0042-47e0-88eb-27d9bfbfe6e4"
                         },
                         new
                         {
-                            UserId = "a746de18-7d60-429e-bf87-f32da689769f",
-                            RoleId = "d84accc5-71bb-4755-87b9-990a0de003a7"
+                            UserId = "8e941777-b864-41bf-8bf3-c9580f349f0c",
+                            RoleId = "3d6677fe-0042-47e0-88eb-27d9bfbfe6e4"
                         });
                 });
 
@@ -260,16 +260,16 @@ namespace TickeTac.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c0711567-6d92-415b-83c6-9fd7ff8cbc19",
+                            Id = "85cf8709-2bde-4941-a538-86982c216e0f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b878b635-6c3b-4608-bba8-f6743d57d582",
+                            ConcurrencyStamp = "c872d2dc-0871-42cc-b1e8-3a233466e242",
                             Email = "Admin@TickeTac.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Admin",
                             NormalizedEmail = "ADMIN@TICKETAC.COM",
                             NormalizedUserName = "ADMIN@TICKETAC.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI4S/jUh5JRjWTNO56D3QxTWZivVyLbwc5cqNU4Y/KWlyVRkhwFObhxTVevkioNyUg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFnal3uea5Ib89dkdAJT420QTPEQgI/QPVZZ+j2L6cJUz7KlIHujwZiu1BrRHOPmVQ==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png",
                             SecurityStamp = "2492560",
@@ -278,16 +278,16 @@ namespace TickeTac.Migrations
                         },
                         new
                         {
-                            Id = "59c846c2-d295-4d01-8383-a69ff470f0b9",
+                            Id = "90c92809-e069-490c-a81c-7b382e85beb0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8544eea-f668-4c70-998c-6b8402a26d5c",
+                            ConcurrencyStamp = "7f0e3515-c73c-4e36-9b55-47d118ec5a22",
                             Email = "Gallo@Email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "José Gallo",
                             NormalizedEmail = "GALLO@EMAIL.COM",
                             NormalizedUserName = "GALLO@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIMO4G9KGMwIH2dzYRe8nfyP0lY3M8OjpPNcp3iVb0vKlbxF4E6AMEUqUQCt8MH33w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECKeJw0XHEcI1UJ9wpqcfEqXF0Rs4MFBTmiM2qqUZkcMXyNGGhOv8vzeYyyKU0NMkg==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "https://avatars.githubusercontent.com/u/12284966?v=4",
                             SecurityStamp = "2492560",
@@ -296,16 +296,16 @@ namespace TickeTac.Migrations
                         },
                         new
                         {
-                            Id = "5ae0e476-3067-4b0e-84db-605644e84594",
+                            Id = "0016d2d8-650a-4f42-956e-fe426b7bf9cc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fd6f15b3-ef63-4f3f-88d6-ab1b5e621f55",
+                            ConcurrencyStamp = "deeb1a69-3fdc-4a5b-b23c-f945342c6835",
                             Email = "Kai@Email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Kaique",
                             NormalizedEmail = "KAI@EMAIL.COM",
                             NormalizedUserName = "KAI@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENlNh0U6bxnmd9kS/d6nt7/B9AQBRAxziwbhn6c6wyw+PzglO89vFgQpXUlUjvEVag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOG/Cu0JKaXPRuuBx+dIe6LTG6KkDp+rYBJjqpytmGzTdNHJKu4PkY3eePP8o6ToXA==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "https://avatars.githubusercontent.com/u/99449012?v=4",
                             SecurityStamp = "2492560",
@@ -314,16 +314,16 @@ namespace TickeTac.Migrations
                         },
                         new
                         {
-                            Id = "a746de18-7d60-429e-bf87-f32da689769f",
+                            Id = "8e941777-b864-41bf-8bf3-c9580f349f0c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb02041f-43df-42e2-b1cf-d86c48e34a44",
+                            ConcurrencyStamp = "a2bccd9a-79d4-43dd-af03-3bbad5759c79",
                             Email = "Leo@Email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Leonardo",
                             NormalizedEmail = "LEO@EMAIL.COM",
                             NormalizedUserName = "LEO@EMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ90+Aavbkl6e+RA2If2Y44UsxYjql1rqRm50eqwvYilqggOBjvfkMIh+av/Q8yWOg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMy/zgIiRzdamLPXAlwFiX8J0HxMGh/PypFYtJUFdkI1Bn7Hx1ku4euMegcf50L47Q==",
                             PhoneNumberConfirmed = false,
                             ProfilePicture = "https://avatars.githubusercontent.com/u/99449193?v=4",
                             SecurityStamp = "2492560",
@@ -386,7 +386,7 @@ namespace TickeTac.Migrations
                         {
                             Id = (ushort)6,
                             Img = "https://cdn2.iconfinder.com/data/icons/theater-stage-performers/287/artist-show-performance-006-512.png",
-                            Name = "Entretenimento"
+                            Name = "Humor"
                         },
                         new
                         {
@@ -427,6 +427,30 @@ namespace TickeTac.Migrations
                         {
                             Id = 1,
                             Name = "Barra Bonita",
+                            StateId = 25
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Igaraçu do Tietê",
+                            StateId = 25
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Jaú",
+                            StateId = 25
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Mineiros do Tietê",
+                            StateId = 25
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Bauru",
                             StateId = 25
                         });
                 });
@@ -523,64 +547,64 @@ namespace TickeTac.Migrations
                         {
                             Id = (ushort)1,
                             CategoryId = (ushort)4,
-                            Cep = "1234567891234",
+                            Cep = "17340970",
                             CityId = 1,
-                            ContactEmail = "gallo@email.com",
-                            ContactPhone = "14991115478",
+                            ContactEmail = "showdogallo@hotmail.com",
+                            ContactPhone = "1328535834",
                             Description = "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano",
-                            District = "Nova Barra",
+                            District = "Centro",
                             EventDateBegin = new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EventDateEnd = new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg",
                             MoreInfo = "",
                             Name = "Show de Rock do Gallo",
                             Price = 150.99m,
-                            PublicSpace = "Nem lembro o que é",
+                            PublicSpace = "Rua Winifrida 270",
                             StateId = 25,
                             StatusEventId = (ushort)3,
-                            UserId = "59c846c2-d295-4d01-8383-a69ff470f0b9"
+                            UserId = "90c92809-e069-490c-a81c-7b382e85beb0"
                         },
                         new
                         {
                             Id = (ushort)2,
-                            CategoryId = (ushort)6,
-                            Cep = "1234567891234",
-                            CityId = 1,
-                            ContactEmail = "Kai@email.com",
-                            ContactPhone = "14991144192",
-                            Description = "Competição de tapa na cara! O vencedor ganha um prêmio especial.",
-                            District = "Nova Barra",
-                            EventDateBegin = new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventDateEnd = new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            Image = "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg",
+                            CategoryId = (ushort)2,
+                            Cep = "17013421",
+                            CityId = 5,
+                            ContactEmail = "leiloaveiculos@hotmail.com",
+                            ContactPhone = "1928064158",
+                            Description = "Leilão de veículos antigos e únicos, com modalidades exclusivas.",
+                            District = "Vila Cardia",
+                            EventDateBegin = new DateTime(2023, 10, 2, 16, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventDateEnd = new DateTime(2023, 10, 2, 20, 0, 0, 0, DateTimeKind.Unspecified),
+                            Image = "https://static.s4bdigital.net/logos_empresas/09aba452-1ed3-4b2d-98d3-3c53eda43418.jpg",
                             MoreInfo = "",
-                            Name = "Competição de tapa na cara",
-                            Price = 50.00m,
-                            PublicSpace = "Nem lembro o que é",
+                            Name = "Leilão de veículos",
+                            Price = 0m,
+                            PublicSpace = "Rua Almeida Brandão",
                             StateId = 25,
                             StatusEventId = (ushort)2,
-                            UserId = "5ae0e476-3067-4b0e-84db-605644e84594"
+                            UserId = "0016d2d8-650a-4f42-956e-fe426b7bf9cc"
                         },
                         new
                         {
                             Id = (ushort)3,
                             CategoryId = (ushort)3,
-                            Cep = "1234567891234",
-                            CityId = 1,
-                            ContactEmail = "Leo@email.com",
+                            Cep = "17220260",
+                            CityId = 3,
+                            ContactEmail = "mundialdobasquete@hotmail.com",
                             ContactPhone = "14991548292",
-                            Description = "Campeonato mundial de basquete! Seirin vs Touou.",
-                            District = "Nova Barra",
+                            Description = "Campeonato mundial de basquete! ",
+                            District = "Jardim Frei Galvão",
                             EventDateBegin = new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EventDateEnd = new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Image = "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg",
                             MoreInfo = "",
                             Name = "Campeonato de Basquete",
                             Price = 50.00m,
-                            PublicSpace = "Nem lembro o que é",
+                            PublicSpace = "Rua Manoel Gonçalves",
                             StateId = 25,
                             StatusEventId = (ushort)1,
-                            UserId = "a746de18-7d60-429e-bf87-f32da689769f"
+                            UserId = "8e941777-b864-41bf-8bf3-c9580f349f0c"
                         });
                 });
 

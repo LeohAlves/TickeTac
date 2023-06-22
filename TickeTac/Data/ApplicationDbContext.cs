@@ -200,7 +200,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new Category()
             {
                 Id = 6,
-                Name = "Entretenimento",
+                Name = "Humor",
                 Img = "https://cdn2.iconfinder.com/data/icons/theater-stage-performers/287/artist-show-performance-006-512.png"
             },
             new Category()
@@ -293,6 +293,26 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Id = 1,
                 Name = "Barra Bonita",
                 StateId = 25
+            },
+            new City() {
+                Id = 2,
+                Name = "Igaraçu do Tietê",
+                StateId = 25
+            },
+            new City() {
+                Id = 3,
+                Name = "Jaú",
+                StateId = 25
+            },
+            new City() {
+                Id = 4,
+                Name = "Mineiros do Tietê",
+                StateId = 25
+            },
+            new City() {
+                Id = 5,
+                Name = "Bauru",
+                StateId = 25
             }
         };
         builder.Entity<City>().HasData(listCity);
@@ -306,17 +326,17 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             {
                 Id = 1,
                 Name = "Show de Rock do Gallo",
-                ContactPhone = "14991115478",
+                ContactPhone = "1328535834",
                 Price = 150.99m,
                 EventDateBegin = DateTime.Parse("28/12/2023 12:00"),
                 EventDateEnd = DateTime.Parse("01/01/2024 18:00"),
                 Description = "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano",
                 Image = "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg",
-                ContactEmail = "gallo@email.com",
+                ContactEmail = "showdogallo@hotmail.com",
                 MoreInfo = "",
-                District = "Nova Barra",
-                PublicSpace = "Nem lembro o que é",
-                Cep = "1234567891234",
+                District = "Centro",
+                PublicSpace = "Rua Winifrida 270",
+                Cep = "17340970",
                 CategoryId = 4,
                 UserId = galloId,
                 StatusEventId = 3,
@@ -326,22 +346,22 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
             new Event()
             {
                 Id = 2,
-                Name = "Competição de tapa na cara",
-                ContactPhone = "14991144192",
-                Price = 50.00m,
-                EventDateBegin = DateTime.Parse("23/02/2023 12:00"),
-                EventDateEnd = DateTime.Parse("10/03/2024 18:00"),
-                Description = "Competição de tapa na cara! O vencedor ganha um prêmio especial.",
-                Image = "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg",
-                ContactEmail = "Kai@email.com",
+                Name = "Leilão de veículos",
+                ContactPhone = "1928064158",
+                Price = 0,
+                EventDateBegin = DateTime.Parse("02/10/2023 16:00"),
+                EventDateEnd = DateTime.Parse("02/10/2023 20:00"),
+                Description = "Leilão de veículos antigos e únicos, com modalidades exclusivas.",
+                Image = "https://static.s4bdigital.net/logos_empresas/09aba452-1ed3-4b2d-98d3-3c53eda43418.jpg",
+                ContactEmail = "leiloaveiculos@hotmail.com",
                 MoreInfo = "",
-                District = "Nova Barra",
-                PublicSpace = "Nem lembro o que é",
-                Cep = "1234567891234",
-                CategoryId = 6,
+                District = "Vila Cardia",
+                PublicSpace = "Rua Almeida Brandão",
+                Cep = "17013421",
+                CategoryId = 2,
                 UserId = kaiqueId ,
                 StatusEventId = 2,
-                CityId = 1,
+                CityId = 5,
                 StateId = 25
             },
             new Event()
@@ -352,19 +372,20 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Price = 50.00m,
                 EventDateBegin = DateTime.Parse("10/01/2023 12:00"),
                 EventDateEnd = DateTime.Parse("10/01/2023 18:00"),
-                Description = "Campeonato mundial de basquete! Seirin vs Touou.",
+                Description = "Campeonato mundial de basquete! ",
                 Image = "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg",
-                ContactEmail = "Leo@email.com",
+                ContactEmail = "mundialdobasquete@hotmail.com",
                 MoreInfo = "",
-                District = "Nova Barra",
-                PublicSpace = "Nem lembro o que é",
-                Cep = "1234567891234",
+                District = "Jardim Frei Galvão",
+                PublicSpace = "Rua Manoel Gonçalves",
+                Cep = "17220260",
                 CategoryId = 3,
                 UserId = leoId,
                 StatusEventId = 1,
-                CityId = 1,
+                CityId = 3,
                 StateId = 25
             }
+           
         };
         builder.Entity<Event>().HasData(listEvent);
 

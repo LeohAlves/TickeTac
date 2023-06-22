@@ -79,7 +79,7 @@
                                                 <div class=selector-head>
                                                     <span class=arrow><i class="lni lni-chevron-down"></i></span>
                                                     <select class=user-chosen-select>
-                                                        <option value=none>Select a Category</option>
+                                                        <option value=none>Selecione uma categoria</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -88,35 +88,36 @@
                                     <div class=row>
                                         <div class=col-12>
                                             <div class=form-group>
-                                                <label>Add Preco*</label>
-                                                <input name=price type=text placeholder="Enter Price">
+                                                <label>Preço*</label>
+                                                <input name=price type=text placeholder="Digite um valor">
                                             </div>
                                         </div>
                                         <div class=col-12>
                                             <div class=form-group>
-                                                <label>Add E-Mail para contato*</label>
-                                                <input name=price type=text placeholder="Enter Price">
+                                                <label>E-mail para contato*</label>
+                                                <input name=email type=email placeholder="exemplo@hotmail.com">
                                             </div>
                                         </div>
                                         <div class=col-12>
                                             <div class=form-group>
                                                 <label>Telefone para contato*</label>
-                                                <input name=price type=text placeholder="Enter Price">
+                                                <input name=telefone type=text placeholder="Digite um telefone">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class=form-group>
-                                                <label>Inicio*</label>
-                                                <input name=name type=text placeholder="Enter your name">
+                                                <label>Início*</label>
+                                                <input name=start type=text placeholder="Hora de início">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class=form-group>
                                                 <label>Fim*</label>
-                                                <input name=name type=text placeholder="Enter your name">
+                                                <input name=end type=text placeholder="Hora de fim">
                                             </div>
                                         </div>
                                         <div class=col-12>
+                                            <label>Imagem do evento</label>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class=upload-input>
@@ -128,28 +129,34 @@
                                         <div class=col-12>
                                             <div class="form-group mt-30">
                                                 <label>Descrição*</label>
-                                                <textarea name=message placeholder="Input ad description"></textarea>
+                                                <textarea name=message placeholder="Escreva aqui"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class=row>
                                         <div class="col-lg-6 col-12">
                                             <div class=form-group>
-                                                <label>Cidade</label>
-                                                <input name=number type=text placeholder="Cidade">
+                                                <label>Cidade*</label>
+                                                <input name=number type=text placeholder="Ex: Barra Bonita...">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class=form-group>
                                                 <label>Estado*</label>
-                                                <input name=number type=text placeholder="Enter mobile number">
+
+                                                <div class=selector-head>
+                                                    <span class=arrow><i class="lni lni-chevron-down"></i></span>
+                                                    <select class=user-chosen-select>
+                                                        <option value=none>Selecione um estado</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class=col-12>
                                             <div class=form-group>
                                                 <label>Logradouro</label>
-                                                <input name=address type=text placeholder="Defina um logradouro">
+                                                <input name=address type=text placeholder="Ex: Rua José dos campos...">
                                             </div>
                                         </div>
                                         <div class=col-12>
@@ -157,11 +164,11 @@
                                                 <input class=form-check-input type=checkbox value=""
                                                     id=flexCheckDefault>
                                                 <label class=form-check-label for=flexCheckDefault>
-                                                    I agree to all Terms of Use & Posting Rules
+                                                    Eu concordo com os <a href="javascript:void(0)">Termos de Uso</a> e <a href="javascript:void(0)">Regras de Publicação</a>
                                                 </label>
                                             </div>
                                             <div class="form-group button mb-0 mt-15">
-                                                <button type=submit class="btn ">Submit Ad</button>
+                                                <button type=submit class="btn ">Publicar</button>
                                             </div>
                                         </div>
                                     </div>
