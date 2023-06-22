@@ -9,7 +9,7 @@ namespace TickeTac.ViewModels
 {
     public class HomeViewModel
     {
-        public List<Event> Events { get; set; }
+        public IEnumerable<Event> Events { get; set; }
         public List<Category> Categories { get; set; }
         public List<City> Cities { get; set; }
         public List<AppUser> Users { get; set; }
