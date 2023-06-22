@@ -319,7 +319,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Cep = "1234567891234",
                 CategoryId = 4,
                 UserId = galloId,
-                StatusEventId = 2,
+                StatusEventId = 3,
                 CityId = 1,
                 StateId = 25
             },
@@ -361,7 +361,7 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
                 Cep = "1234567891234",
                 CategoryId = 3,
                 UserId = leoId,
-                StatusEventId = 3,
+                StatusEventId = 1,
                 CityId = 1,
                 StateId = 25
             }

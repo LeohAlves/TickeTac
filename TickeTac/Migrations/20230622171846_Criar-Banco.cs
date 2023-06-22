@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TickeTac.Migrations
 {
-    public partial class CreateDatabse : Migration
+    public partial class CriarBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -372,8 +372,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "58e9d7c8-22c7-494d-a637-5b9ab581b00f", "23505415-60c7-45f1-a9b3-b8a41f421836", "Usuário", "USUÁRIO" },
-                    { "f1981bc9-5450-459e-b382-24673674947e", "9fe1591a-a0d2-4f16-a743-55fef086fb30", "Administrador", "ADMINISTRADOR" }
+                    { "9c174fa6-1fe0-4000-bfe3-80f83ebdc7e5", "5a115614-aa87-443e-851f-9a7660a67a5a", "Administrador", "ADMINISTRADOR" },
+                    { "d84accc5-71bb-4755-87b9-990a0de003a7", "a7e255aa-fb83-423c-b6b8-002b5bb57d26", "Usuário", "USUÁRIO" }
                 });
 
             migrationBuilder.InsertData(
@@ -381,10 +381,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "0aff4b3f-6c07-4325-adf8-5846e4fa4256", 0, "4415f185-09ab-4f03-9e07-e862da079428", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEHNy28BqrAn7VR+1Wcl1Zpxbzg/qdzsYVwsg9qbYMiuCiU8b8uKCTsdCwk3ZMCjqCQ==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "2492560", false, "Gallo@Email.com" },
-                    { "5c14cfbf-9769-4669-b1af-219b0df33acb", 0, "3a8f335f-8c42-48d7-b7c7-11dff116e1e0", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAEI5yLRPy67V+5S24EBcqGvJ3P3W+Jsu4M3UaSUws61VWc+jUIXA/er9m3An0W6Ehmg==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "2492560", false, "Kai@Email.com" },
-                    { "90d1106d-f7f9-4eb4-8e79-d17931d80fb7", 0, "584a776d-9439-4973-a445-354a795bcee6", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEFa+Ue0Io8ehIlo+HaVaZ6LzTzygjQf6UikvF9wqQYPO3u2i0iZtDHd9S78lTOCLCg==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "2492560", false, "Leo@Email.com" },
-                    { "d37896be-af54-404c-9578-30c252dcd6ac", 0, "eea5645a-29e6-45f2-902a-ad1e2a509004", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEEuCj7sP49egQRE5lSzZ9Tx76TR0hC9CDRgLxgHN6avK3dbHSAUKtzngS9HiJ+OJpQ==", null, false, "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png", "2492560", false, "Admin@TickeTac.com" }
+                    { "59c846c2-d295-4d01-8383-a69ff470f0b9", 0, "c8544eea-f668-4c70-998c-6b8402a26d5c", "Gallo@Email.com", true, false, null, "José Gallo", "GALLO@EMAIL.COM", "GALLO@EMAIL.COM", "AQAAAAEAACcQAAAAEIMO4G9KGMwIH2dzYRe8nfyP0lY3M8OjpPNcp3iVb0vKlbxF4E6AMEUqUQCt8MH33w==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "2492560", false, "Gallo@Email.com" },
+                    { "5ae0e476-3067-4b0e-84db-605644e84594", 0, "fd6f15b3-ef63-4f3f-88d6-ab1b5e621f55", "Kai@Email.com", true, false, null, "Kaique", "KAI@EMAIL.COM", "KAI@EMAIL.COM", "AQAAAAEAACcQAAAAENlNh0U6bxnmd9kS/d6nt7/B9AQBRAxziwbhn6c6wyw+PzglO89vFgQpXUlUjvEVag==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "2492560", false, "Kai@Email.com" },
+                    { "a746de18-7d60-429e-bf87-f32da689769f", 0, "cb02041f-43df-42e2-b1cf-d86c48e34a44", "Leo@Email.com", true, false, null, "Leonardo", "LEO@EMAIL.COM", "LEO@EMAIL.COM", "AQAAAAEAACcQAAAAEJ90+Aavbkl6e+RA2If2Y44UsxYjql1rqRm50eqwvYilqggOBjvfkMIh+av/Q8yWOg==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "2492560", false, "Leo@Email.com" },
+                    { "c0711567-6d92-415b-83c6-9fd7ff8cbc19", 0, "b878b635-6c3b-4608-bba8-f6743d57d582", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEI4S/jUh5JRjWTNO56D3QxTWZivVyLbwc5cqNU4Y/KWlyVRkhwFObhxTVevkioNyUg==", null, false, "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png", "2492560", false, "Admin@TickeTac.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -452,10 +452,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "58e9d7c8-22c7-494d-a637-5b9ab581b00f", "0aff4b3f-6c07-4325-adf8-5846e4fa4256" },
-                    { "58e9d7c8-22c7-494d-a637-5b9ab581b00f", "5c14cfbf-9769-4669-b1af-219b0df33acb" },
-                    { "58e9d7c8-22c7-494d-a637-5b9ab581b00f", "90d1106d-f7f9-4eb4-8e79-d17931d80fb7" },
-                    { "f1981bc9-5450-459e-b382-24673674947e", "d37896be-af54-404c-9578-30c252dcd6ac" }
+                    { "d84accc5-71bb-4755-87b9-990a0de003a7", "59c846c2-d295-4d01-8383-a69ff470f0b9" },
+                    { "d84accc5-71bb-4755-87b9-990a0de003a7", "5ae0e476-3067-4b0e-84db-605644e84594" },
+                    { "d84accc5-71bb-4755-87b9-990a0de003a7", "a746de18-7d60-429e-bf87-f32da689769f" },
+                    { "9c174fa6-1fe0-4000-bfe3-80f83ebdc7e5", "c0711567-6d92-415b-83c6-9fd7ff8cbc19" }
                 });
 
             migrationBuilder.InsertData(
@@ -466,17 +466,17 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)2, "0aff4b3f-6c07-4325-adf8-5846e4fa4256" });
+                values: new object[] { (ushort)1, (ushort)4, "1234567891234", 1, "gallo@email.com", "14991115478", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Nova Barra", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Nem lembro o que é", 25, (ushort)3, "59c846c2-d295-4d01-8383-a69ff470f0b9" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2, "5c14cfbf-9769-4669-b1af-219b0df33acb" });
+                values: new object[] { (ushort)2, (ushort)6, "1234567891234", 1, "Kai@email.com", "14991144192", "Competição de tapa na cara! O vencedor ganha um prêmio especial.", "Nova Barra", new DateTime(2023, 2, 23, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 3, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://video-images.vice.com/articles/5c939d5d2709700007238d39/lede/1553178006531-54222299_2219532254976982_7557531415907139584_o.jpeg", "", "Competição de tapa na cara", 50.00m, "Nem lembro o que é", 25, (ushort)2, "5ae0e476-3067-4b0e-84db-605644e84594" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)3, "90d1106d-f7f9-4eb4-8e79-d17931d80fb7" });
+                values: new object[] { (ushort)3, (ushort)3, "1234567891234", 1, "Leo@email.com", "14991548292", "Campeonato mundial de basquete! Seirin vs Touou.", "Nova Barra", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Nem lembro o que é", 25, (ushort)1, "a746de18-7d60-429e-bf87-f32da689769f" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
