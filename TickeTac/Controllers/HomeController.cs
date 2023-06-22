@@ -20,6 +20,39 @@ public class HomeController : Controller
         _logger = logger;
         _context = context;
     }
+    [HttpPost]
+    public IActionResult Index(HomeViewModel hvm)
+    {
+        hvm.Categories = _context.Categories.ToList();
+        hvm.Cities = _context.Cities.ToList();
+        hvm.Users = _context.AppUsers.ToList();
+        hvm.StatusEvents = _context.StatusEvents.ToList();
+
+        IQueryable<Event> events = null;
+        if (!string.IsNullOrEmpty(hvm.SearchWords))
+        {
+            events = _context.Events.Where(e => e.Name.Contains(hvm.SearchWords) || e.Description.Contains(hvm.SearchWords));
+        }
+        else
+        {
+            events = _context.Events;
+        }
+
+        if (!string.IsNullOrEmpty(hvm.SearchCity))
+        {
+            int Id = int.Parse(hvm.SearchCity);
+            events = events.Where(e => e.CityId == Id);
+        }
+
+        if (!string.IsNullOrEmpty(hvm.SearchCategory))
+        {
+            int Id = int.Parse(hvm.SearchCategory);
+            events = events.Where(e => e.CategoryId == Id);
+        }
+
+        hvm.Events = events.ToList();
+        return View(hvm);
+    }
 
     [HttpGet]
     public IActionResult Index()
@@ -81,6 +114,7 @@ public class HomeController : Controller
         return View(evm);
     }
 
+
     public IActionResult Details(UInt16 Id)
     {
         var @event = _context.Events.Where(e => e.Id == Id)
@@ -96,20 +130,7 @@ public class HomeController : Controller
         return View(@event);
     }
 
-    public IActionResult UserPage()
-    {
-        return View();
-    }
 
-    public IActionResult MeusEventos()
-    {
-        return View();
-    }
-
-    public IActionResult Publicar()
-    {
-        return View();
-    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
