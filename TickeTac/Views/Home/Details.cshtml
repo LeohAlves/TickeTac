@@ -106,21 +106,15 @@
           
           <div class="single-block comment-form">
             <h3>Publique um comentário</h3>
-            <form action="#" method=POST>
+            <form action="" method=post>
               <div class=row>
                 <div class="col-lg-6 col-12">
-                  <div class="form-box form-group">
-                    <input type=text name=name class="form-control form-control-custom" placeholder="Seu nome" />
-                  </div>
                 </div>
                 <div class="col-lg-6 col-12">
-                  <div class="form-box form-group">
-                    <input type=email name=email class="form-control form-control-custom" placeholder="Seu e-mail" />
-                  </div>
                 </div>
                 <div class=col-12>
                   <div class="form-box form-group">
-                    <textarea name="#" class="form-control form-control-custom"></textarea>
+                    <textarea name="comentario" class="form-control form-control-custom"></textarea>
                   </div>
                 </div>
                 <div class=col-12>
@@ -142,7 +136,7 @@
               <div class=content>
                 <img src="@Model.User.ProfilePicture" alt="#">
                 <h4>@Model.User.Name</h4>
-                <a href="javascript:void(0)" class=see-all>Ver outros eventos</a>
+                <a asp-action="Organizador" asp-route-id="@Model.UserId" class=see-all>Ver outros eventos</a>
               </div>
             </div>
 
