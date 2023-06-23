@@ -69,21 +69,17 @@
                                 <h3 class=block-title>Publicar Evento</h3>
                                 <div class=inner-block>
                                     <div class=post-ad-tab>
-                                        <form class=default-form-style method=post action="#">
+
+                                        @* Form de publicar *@
+
+                                        <form class=default-form-style method=post asp-action="Publicar">
                                             <div class=row>
-                                                <fieldset>
-                                                @* <div class="col-md-6"> 
+                                                <div class="col-md-6">
                                                     <label asp-for="UserId"></label>
                                                     <div class="input-group input-group-static">
-                                                        <select asp-for="UserId" class="form-control"
-                                                    asp-items="ViewBag.UserId">
-                                                            <option value="" disabled selected hidden>Selecione uma opção
-                                                            </option>
-                                                        </select>
-                                                        <span asp-validation-for="UserId"
-                                                    class="text-danger col-6 text-xs pt-1"></span>
-                                                    </div> 
-                                                </div>*@
+                                                      <input asp-for="UserId" value="@usuario.Id" hidden> 
+                                                    </div>
+                                                </div>
                                                 <div class=col-12>
                                                     <div class=col-12>
                                                         <div class=form-group>
@@ -98,8 +94,10 @@
                                                             <label>Categoria*</label>
                                                             <div class=selector-head>
                                                                 <span class=arrow><i class="lni lni-chevron-down"></i></span>
-                                                                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                                                    <option value="" disabled selected hidden>Selecione uma opção
+                                                                <select asp-for="CategoryId" class="form-control"
+                                                            asp-items="ViewBag.CategoryId">
+                                                                    <option value="" disabled selected hidden>Selecione uma
+                                                                        opção
                                                                     </option>
                                                                 </select>
                                                                 <span asp-validation-for="StatusEventId"
@@ -114,7 +112,8 @@
                                                                 <span class=arrow><i class="lni lni-chevron-down"></i></span>
                                                                 <select asp-for="StatusEventId" class="form-control"
                                                             asp-items="ViewBag.StatusEventId">
-                                                                    <option value="" disabled selected hidden>Selecione uma opção
+                                                                    <option value="" disabled selected hidden>Selecione uma
+                                                                        opção
                                                                     </option>
                                                                 </select>
                                                                 <span asp-validation-for="StatusEventId"
@@ -166,9 +165,9 @@
 
                                                     <div class=col-12>
                                                         <div class="form-group mt-30">
-                                                            <label asp-for="Description">Descrição*</label>
-                                                            <textarea asp-for="Description" name=message
-                                                        placeholder="Escreva aqui"></textarea>
+                                                            <label asp-for="Description"></label>
+                                                            <textarea asp-for="Description" class="form-control"></textarea>
+                                                            <span asp-validation-for="Description" class="text-danger"></span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -205,16 +204,36 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                
 
-                                                    <div class=col-12>
+
+                                                    <div class=col-6>
                                                         <div class=form-group>
                                                             <label>Logradouro</label>
                                                             <input asp-for="PublicSpace"
                                                         placeholder="Ex: Rua José dos campos...">
                                                         </div>
                                                     </div>
-                                                </fieldset>
+                                                    <div class=col-6>
+                                                        <div class=form-group>
+                                                            <label>Logradouro</label>
+                                                            <input asp-for="District"
+                                                        placeholder="Ex: Rio Lindo ||">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class=col-6>
+                                                        <div class=form-group>
+                                                            <label asp-for="Cep"></label>
+                                                            <input asp-for="Cep">
+                                                        </div>
+                                                    </div>
+                                                    <div class=col-12>
+                                                        <div class="form-group mt-30">
+                                                            <label asp-for="MoreInfo">Complemeto</label>
+                                                            <textarea asp-for="MoreInfo" name=message
+                                                        placeholder="Escreva aqui"></textarea>
+                                                        </div>
+                                                    </div>
                                                     <div class=col-12>
                                                         <div class=form-check>
                                                             <input class=form-check-input type=checkbox value=""
@@ -228,11 +247,11 @@
                                                         <div class="form-group button mb-0 mt-15">
                                                             <input type=submit class="btn" value="Publicar" />
                                                         </div>
-                                                        
+
                                                     </div>
-                                                
+
                                                 </div>
-                                                
+
                                         </form>
                                     </div>
                                 </div>
