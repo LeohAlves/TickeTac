@@ -122,12 +122,28 @@ public class HomeController : Controller
         .Include(e => e.StatusEvent)
         .Include(e => e.City)
         .ThenInclude(e => e.State)
-        .Include(e => e.User).FirstOrDefault();
+        .Include(e => e.User)
+        .Include(e => e.ReviewReceived).ThenInclude(r => r.User)
+        .FirstOrDefault();
 
         if (@event == null)
             return NotFound();
 
         return View(@event);
+    }
+
+    [HttpPost]
+    public IActionResult Details(UInt16 Id, string Comentario)
+    {
+        EventReview review = new EventReview{
+            EventId = Id,
+            ReviewDate = DateTime.Now,
+            ReviewText = Comentario,
+            UserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+        };
+        _context.EventReviews.Add(review);
+        _context.SaveChanges();
+        return RedirectToAction("Details", "Home", Id);
     }
 
     public IActionResult Organizador(UInt16 Id)

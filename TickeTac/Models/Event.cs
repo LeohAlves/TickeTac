@@ -9,7 +9,6 @@ namespace TickeTac.Models
     {
         [Key]
         public UInt16 Id { get; set; }
-
         [Display(Name = "Nome do evento")]
         [Required(ErrorMessage = "O campo não pode ser vazio!")]
         [StringLength(100, ErrorMessage = "O nome do evento deve possuir no máximo 100 caracteres!")]

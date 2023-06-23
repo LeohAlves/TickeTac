@@ -24,9 +24,6 @@ public class ApplicationDbContext : IdentityDbContext<AppUser>
         base.OnModelCreating(builder);
 
         #region Many-to-many EventReview
-        builder.Entity<EventReview>().HasKey(
-            r => new { r.EventId, r.UserId }
-        );
 
         builder.Entity<EventReview>()
             .HasOne(er => er.User)

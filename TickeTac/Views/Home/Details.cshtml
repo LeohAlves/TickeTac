@@ -1,4 +1,6 @@
 @model TickeTac.Models.Event
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
 
 @{
   ViewData["Title"] = "Detalhes";
@@ -89,43 +91,48 @@
           </div>
 
           @if (@Model.StatusEvent.Id == 1){
-          <div class="single-block comments">
-            <h3></h3>
-            
-            <div class=single-comment>
-              <img src="" alt="FOTO DO AVALIADOR">
-              <div class=content>
-                <h4>NOME DO AVALIADOR</h4>
-                <span>DATA DE REVIEW</span>
-                <p>
-                  Adorei este Evnto COMENTÁRIO DA REVIEW
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="single-block comment-form">
-            <h3>Publique um comentário</h3>
-            <form action="" method=post>
-              <div class=row>
-                <div class="col-lg-6 col-12">
-                </div>
-                <div class="col-lg-6 col-12">
-                </div>
-                <div class=col-12>
-                  <div class="form-box form-group">
-                    <textarea name="comentario" class="form-control form-control-custom"></textarea>
-                  </div>
-                </div>
-                <div class=col-12>
-                  <div class=button>
-                    <input type=submit class=btn />
+          @foreach (var review in Model.ReviewReceived.OrderByDescending(rr => rr.Id).Take(1))
+            {
+              <div class="single-block comments">
+                <h3></h3>
+                <div class=single-comment>
+                  <img src="@review.User.ProfilePicture" alt="FOTO DO AVALIADOR">
+                  <div class="content">
+                    <h4>@review.User.Name</h4>
+                    <span>@review.ReviewDate.ToString("dd/MM/yyyy")</span>
+                    <p>
+                      @review.ReviewText
+                    </p>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-}
+            }
+            @if (SignInManager.IsSignedIn(User))
+            {
+              <div class="single-block comment-form">
+                <h3>Publique um comentário</h3>
+                <form method="post">
+                  <input type="hidden" asp-for="Id">
+                  <div class="row">
+                    <div class="col-lg-6 col-12">
+                    </div>
+                    <div class="col-lg-6 col-12">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-box form-group">
+                        <textarea name="Comentario" class="form-control form-control-custom" required></textarea>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="button">
+                        <input type="submit" class="btn" value="Enviar" />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            }
+          }
         </div>
         
         <div class="col-lg-4 col-md-5 col-12">
