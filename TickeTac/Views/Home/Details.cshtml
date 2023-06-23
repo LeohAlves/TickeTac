@@ -83,9 +83,9 @@
 
           <div class="single-block ">
             <h3>Endereço</h3>
-            <p>Cidade: @Model.City.Name, @Model.State.Name</p>
+            <p>Cidade: @Model.City.Name</p>
             <p>Bairro: @Model.District</p>
-            <p>Rua: @Model.PublicSpace</p>
+            <p>Logradouro: @Model.PublicSpace</p>
           </div>
 
           @if (@Model.StatusEvent.Id == 1){
@@ -136,28 +136,18 @@
               <div class=content>
                 <img src="@Model.User.ProfilePicture" alt="#">
                 <h4>@Model.User.Name</h4>
-                <a asp-action="Organizador" asp-route-id="@Model.UserId" class=see-all>Ver outros eventos</a>
+                <a asp-action="Organizador" asp-route-id="@Model.User.Name" class=see-all>Ver outros eventos</a>
               </div>
             </div>
 
 
             <div class="single-block contant-seller comment-form ">
               <h3>Contate-me</h3>
-              <form action="#" method=POST>
+              <form action="#" method=post>
                 <div class=row>
                   <div class=col-12>
                     <div class="form-box form-group">
-                      <input type=text name=name class="form-control form-control-custom" placeholder="Nome" />
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-box form-group">
-                      <input type=email name=email class="form-control form-control-custom" placeholder="E-mail" />
-                    </div>
-                  </div>
-                  <div class=col-12>
-                    <div class="form-box form-group">
-                      <textarea name="#" class="form-control form-control-custom" placeholder="Mensagem"></textarea>
+                      <textarea name="comentario" class="form-control form-control-custom" placeholder="Digite aqui"></textarea>
                     </div>
                   </div>
                   <div class=col-12>

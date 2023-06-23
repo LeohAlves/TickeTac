@@ -71,6 +71,7 @@
                                     <div class=post-ad-tab>
                                         <form class=default-form-style method=post action="#">
                                             <div class=row>
+                                                <fieldset>
                                                 @* <div class="col-md-6"> 
                                                     <label asp-for="UserId"></label>
                                                     <div class="input-group input-group-static">
@@ -81,8 +82,8 @@
                                                         </select>
                                                         <span asp-validation-for="UserId"
                                                     class="text-danger col-6 text-xs pt-1"></span>
-                                                    </div> *@
-                                                </div>
+                                                    </div> 
+                                                </div>*@
                                                 <div class=col-12>
                                                     <div class=col-12>
                                                         <div class=form-group>
@@ -204,6 +205,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                
 
                                                     <div class=col-12>
                                                         <div class=form-group>
@@ -212,6 +214,7 @@
                                                         placeholder="Ex: Rua José dos campos...">
                                                         </div>
                                                     </div>
+                                                </fieldset>
                                                     <div class=col-12>
                                                         <div class=form-check>
                                                             <input class=form-check-input type=checkbox value=""
@@ -223,10 +226,13 @@
                                                             </label>
                                                         </div>
                                                         <div class="form-group button mb-0 mt-15">
-                                                            <button type=submit class="btn ">Publicar</button>
+                                                            <input type=submit class="btn" value="Publicar" />
                                                         </div>
+                                                        
                                                     </div>
+                                                
                                                 </div>
+                                                
                                         </form>
                                     </div>
                                 </div>

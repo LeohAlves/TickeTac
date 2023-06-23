@@ -130,6 +130,11 @@ public class HomeController : Controller
         return View(@event);
     }
 
+    public IActionResult Organizador(UInt16 Id)
+    {
+        return View();
+    }
+
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
