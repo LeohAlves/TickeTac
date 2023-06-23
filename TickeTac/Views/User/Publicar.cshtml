@@ -12,7 +12,7 @@
     if (User.Identity.IsAuthenticated)
     {
         var usuario = await UserManager.FindByEmailAsync(@User.Identity?.Name);
-        
+
         <div class=breadcrumbs>
             <div class=container>
                 <div class="row align-items-center">
@@ -71,76 +71,103 @@
                                     <div class=post-ad-tab>
                                         <form class=default-form-style method=post action="#">
                                             <div class=row>
-                                                <div class=col-12 >
-                                                    <div class=form-group hidden>
-                                                        <input asp-for="Id " placeholder="User Id here">
-                                                    </div>
-                                                    
+                                                @* <div class="col-md-6"> 
+                                                    <label asp-for="UserId"></label>
+                                                    <div class="input-group input-group-static">
+                                                        <select asp-for="UserId" class="form-control"
+                                                    asp-items="ViewBag.UserId">
+                                                            <option value="" disabled selected hidden>Selecione uma opção
+                                                            </option>
+                                                        </select>
+                                                        <span asp-validation-for="UserId"
+                                                    class="text-danger col-6 text-xs pt-1"></span>
+                                                    </div> *@
+                                                </div>
+                                                <div class=col-12>
                                                     <div class=col-12>
                                                         <div class=form-group>
                                                             <label asp-for="Name"></label>
                                                             <input asp-for="Name">
-                                                            <span asp-validation-for="Name" class="text-danger col-12 text-xs pt-1"></span>
+                                                            <span asp-validation-for="Name"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
-                                                    <div class=col-12>
+                                                    <div class="col-6 col-12 ">
                                                         <div class=form-group>
                                                             <label>Categoria*</label>
                                                             <div class=selector-head>
                                                                 <span class=arrow><i class="lni lni-chevron-down"></i></span>
                                                                 <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
-                                                                    <option value="" disabled selected hidden>Selecione uma
-                                                                        opção
+                                                                    <option value="" disabled selected hidden>Selecione uma opção
                                                                     </option>
                                                                 </select>
-                                                                <span asp-validation-for="CategoryId" class="text-danger col-12 text-xs pt-1"></span>
+                                                                <span asp-validation-for="StatusEventId"
+                                                            class="text-danger col-12 text-xs pt-1"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 col-12">
+                                                        <div class=form-group>
+                                                            <label>Status do evento*</label>
+                                                            <div class=selector-head>
+                                                                <span class=arrow><i class="lni lni-chevron-down"></i></span>
+                                                                <select asp-for="StatusEventId" class="form-control"
+                                                            asp-items="ViewBag.StatusEventId">
+                                                                    <option value="" disabled selected hidden>Selecione uma opção
+                                                                    </option>
+                                                                </select>
+                                                                <span asp-validation-for="StatusEventId"
+                                                            class="text-danger col-12 text-xs pt-1"></span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class=row>
-                                                    <div class=col-12>
+                                                    <div class="col-12">
                                                         <div class=form-group>
                                                             <label asp-for="Price">Preço*</label>
-                                                            <input  asp-for="Price" type=text placeholder="Digite um valor">
-                                                            <span asp-validation-for="Price" class="text-danger col-12 text-xs pt-1"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class=col-12>
-                                                        <div class=form-group>
-                                                            <label>E-mail para contato*</label>
-                                                            <input name=email type=email placeholder="exemplo@hotmail.com">
-                                                        </div>
-                                                    </div>
-                                                    <div class=col-12>
-                                                        <div class=form-group>
-                                                            <label>Telefone para contato*</label>
-                                                            <input name=telefone type=text placeholder="Digite um telefone">
+                                                            <input asp-for="Price" type=text placeholder="Digite um valor">
+                                                            <span asp-validation-for="Price"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-12>
                                                         <div class=form-group>
                                                             <label>Imagem</label>
-                                                            <input asp-for="Image" placeholder="Digite o caminho online da imagem">
+                                                            <input asp-for="Image" placeholder="Digite o caminho da imagem">
+                                                        </div>
+                                                    </div>
+                                                    <div class=col-12>
+                                                        <div class=form-group>
+                                                            <label>E-mail para contato*</label>
+                                                            <input asp-for="ContactEmail" type=email
+                                                        placeholder="exemplo@hotmail.com">
+                                                        </div>
+                                                    </div>
+                                                    <div class=col-12>
+                                                        <div class=form-group>
+                                                            <label>Telefone para contato*</label>
+                                                            <input asp-for="ContactPhone" placeholder="Digite um telefone">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Início*</label>
-                                                            <input name=start type=text placeholder="Hora de início">
+                                                            <input asp-for="EventDateBegin" placeholder="Hora de início">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Fim*</label>
-                                                            <input name=end type=text placeholder="Hora de fim">
+                                                            <input asp-for="EventDateEnd" placeholder="Hora de fim">
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div class=col-12>
                                                         <div class="form-group mt-30">
                                                             <label asp-for="Description">Descrição*</label>
-                                                            <textarea asp-for="Description" name=message placeholder="Escreva aqui"></textarea>
+                                                            <textarea asp-for="Description" name=message
+                                                        placeholder="Escreva aqui"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -148,18 +175,32 @@
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Cidade*</label>
-                                                            <input name=number type=text placeholder="Ex: Barra Bonita...">
+                                                            <div class=selector-head>
+                                                                <span class=arrow><i class="lni lni-chevron-down"></i></span>
+                                                                <select asp-for="CityId" class="form-control"
+                                                            asp-items="ViewBag.CityId">
+                                                                    <option value="" disabled selected hidden>Selecione uma
+                                                                        opção
+                                                                    </option>
+                                                                </select>
+                                                                <span asp-validation-for="CityId"
+                                                            class="text-danger col-12 text-xs pt-1"></span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Estado*</label>
-
                                                             <div class=selector-head>
                                                                 <span class=arrow><i class="lni lni-chevron-down"></i></span>
-                                                                <select class=user-chosen-select>
-                                                                    <option value=none>Selecione um estado</option>
+                                                                <select asp-for="StateId" class="form-control"
+                                                            asp-items="ViewBag.StateId">
+                                                                    <option value="" disabled selected hidden>Selecione uma
+                                                                        opção
+                                                                    </option>
                                                                 </select>
+                                                                <span asp-validation-for="StateId"
+                                                            class="text-danger col-12 text-xs pt-1"></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -167,17 +208,17 @@
                                                     <div class=col-12>
                                                         <div class=form-group>
                                                             <label>Logradouro</label>
-                                                            <input name=address type=text
-                                                            placeholder="Ex: Rua José dos campos...">
+                                                            <input asp-for="PublicSpace"
+                                                        placeholder="Ex: Rua José dos campos...">
                                                         </div>
                                                     </div>
                                                     <div class=col-12>
                                                         <div class=form-check>
                                                             <input class=form-check-input type=checkbox value=""
                                                             id=flexCheckDefault>
-                                                            <label class=form-check-label for=flexCheckDefault>
-                                                                Eu concordo com os <a href="javascript:void(0)">Termos de
-                                                                    Uso</a> e
+                                                            <label class=form-check-label for=flexCheckDefault>Eu concordo com
+                                                                os <a href="javascript:void(0)">Termos de Uso
+                                                                </a> e
                                                                 <a href="javascript:void(0)">Regras de Publicação</a>
                                                             </label>
                                                         </div>

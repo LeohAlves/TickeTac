@@ -54,12 +54,6 @@ namespace TickeTac.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Publicar([Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,CityId,District,PublicSpace,Cep,CategoryId,StatusEventId,StateId,UserId")] Event @event)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(@event);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
             ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
             ViewData["StateId"] = new SelectList(_context.States, "Id", "Id", @event.StateId);
