@@ -12,6 +12,7 @@ using TickeTac.Data;
 using TickeTac.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace TickeTac.Controllers
 {
 
@@ -32,10 +33,24 @@ namespace TickeTac.Controllers
             return View();
         }
 
-        public IActionResult MeusEventos()
+        public IActionResult MeusEventos(string ownerId)
         {
+            IQueryable<Event> events = null;
+            events = _context.Events;
 
-            return View();
+            if (!string.IsNullOrEmpty(ownerId))
+            {
+                events = events.Where(e => e.UserId == ownerId);
+            }
+
+            EventOwnerViewModel eovm = new()
+            {
+                Events = events
+                .Include(e => e.Category)
+                .Include(e => e.StatusEvent).ToList(),
+            };
+
+            return View(eovm);
         }
 
 
@@ -60,7 +75,7 @@ namespace TickeTac.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Home", null);
             }
-            
+
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
             ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
             ViewData["StateId"] = new SelectList(_context.States, "Id", "Id", @event.StateId);

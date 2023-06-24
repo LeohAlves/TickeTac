@@ -47,7 +47,7 @@
                   <li><a class=active asp-action="Index" asp-controller="User"><i class="lni lni-pencil-alt"></i> Editar
                       Perfil</a>
                   </li>
-                  <li><a asp-action="MeusEventos" asp-controller="User"><i class="lni lni-bolt-alt"></i> Meus
+                  <li><a asp-action="MeusEventos" asp-route-ownerId="@usuario.Id" asp-controller="User"><i class="lni lni-bolt-alt"></i> Meus
                       eventos</a>
                   </li>
                   <li><a asp-action="Publicar" asp-controller="User"><i class="lni lni-circle-plus"></i> Publicar

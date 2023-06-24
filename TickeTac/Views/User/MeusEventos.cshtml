@@ -1,4 +1,4 @@
-@model TickeTac.Models.AppUser
+@model TickeTac.ViewModels.EventOwnerViewModel
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
@@ -69,7 +69,7 @@
                     <div class="col-lg-9 col-md-12 col-12">
                         <div class=main-content>
                             <div class="dashboard-block mt-0">
-                                <h3 class=block-title>My Ads</h3>
+                                <h3 class=block-title>Meus eventos</h3>
                                 <nav class=list-nav>
                                     <ul>
                                         <li class=active><a href="javascript:void(0)">All Ads <span>42</span></a></li>
@@ -86,7 +86,7 @@
                                     <div class=item-list-title>
                                         <div class="row align-items-center">
                                             <div class="col-lg-5 col-md-5 col-12">
-                                                <p>Nome</p>
+                                                <p></p>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-12">
                                                 <p>Categoria</p>
@@ -101,34 +101,42 @@
                                     </div>
 
                                     @* fazer FOR para os eventos abaixo *@
-                                    <div class=single-item-list>
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-5 col-md-5 col-12">
-                                                <div class=item-image>
-                                                    <img src="~/assets/images/my-items/xmy-item1.png.pagespeed.ic.GEPOmScWLi.jpg"
-                                                alt="#">
-                                                    <div class=content>
-                                                        <h3 class=title><a href="javascript:void(0)">Brand New Iphone 11 Pro
-                                                                Max</a></h3>
-                                                        <span class=price>$800</span>
+                                    @if (@Model.Events != null){
+                                    @foreach (var events in Model.Events)
+                                    {
+                                        <div class=single-item-list>
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-5 col-md-5 col-12">
+                                                    <div class=item-image>
+                                                        <img src="@events.Image" alt="IMAGEM DO EVENTO">
+                                                        <div class=content>
+                                                            <h3 class=title><a href="javascript:void(0)">@events.Name</a></h3>
+                                                            <span class=price>R$ @events.Price</span>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-2 col-md-2 col-12">
+                                                    <p>@events.Category.Name</p>
+                                                </div>
+                                                <div class="col-lg-2 col-md-2 col-12">
+                                                    <p>@events.StatusEvent.Name</p>
+                                                </div>
+
                                             </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>Electronic</p>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-12">
-                                                <p>New</p>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-12 align-right">
-                                                <ul class=action-btn>
-                                                    <li><a href="javascript:void(0)"><i class="lni lni-pencil"></i></a></li>
-                                                    <li><a href="javascript:void(0)"><i class="lni lni-eye"></i></a></li>
-                                                    <li><a href="javascript:void(0)"><i class="lni lni-trash"></i></a></li>
-                                                </ul>
+
+                                        </div>
+                                    }} else {
+                                        <div class=single-item-list>
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-5 col-md-5 col-12">
+                                                    <div class=content>
+                                                            <h3 class=title><a href="javascript:void(0)">Aaaa</a></h3>
+                                                            <span class=price>Aaa</span>
+                                                        </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
 
                                 </div>
 
