@@ -148,13 +148,22 @@ public class HomeController : Controller
 
     public IActionResult Organizador(string ownerId)
     {
+        IQueryable<Event> events = null;
+        events = _context.Events;
+
+        if (!string.IsNullOrEmpty(ownerId))
+        {
+            events = events.Where(e => e.UserId == ownerId);
+        }
+
         EventOwnerViewModel eovm = new(){
-            Categories = _context.Categories.ToList(),
-            Events = _context.Events.Where(e => e.UserId == ownerId).ToList(),
-            Cities = _context.Cities.ToList(),
-            StatusEvents = _context.StatusEvents.ToList(),
-            Users = _context.AppUsers.ToList()
-        }; 
+            Events = events
+            .Include(e => e.Category)
+            .Include(e => e.StatusEvent)
+            
+            .ToList(),
+            Owner = _context.Users.Where(u => u.Id == ownerId).FirstOrDefault()
+        };
         
         return View(eovm);
     }

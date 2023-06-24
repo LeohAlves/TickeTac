@@ -16353,8 +16353,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Organizador.cshtml",
+      "TargetPath": "Views\\Home\\Organizador.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\Eventos.cshtml",
       "TargetPath": "Views\\Home\\Eventos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Home\\AboutUs.cshtml",
+      "TargetPath": "Views\\Home\\AboutUs.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16383,8 +16393,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReviewt\\Index.cshtml",
+      "TargetPath": "Views\\EventReviewt\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReviewt\\Delete.cshtml",
+      "TargetPath": "Views\\EventReviewt\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Create.cshtml",
       "TargetPath": "Views\\Event\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReviewt\\Details.cshtml",
+      "TargetPath": "Views\\EventReviewt\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16463,6 +16488,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReviewt\\Edit.cshtml",
+      "TargetPath": "Views\\EventReviewt\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\State\\Edit.cshtml",
       "TargetPath": "Views\\State\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16535,6 +16565,11 @@
     {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\Event\\Edit.cshtml",
       "TargetPath": "Views\\Event\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\EventReviewt\\Create.cshtml",
+      "TargetPath": "Views\\EventReviewt\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

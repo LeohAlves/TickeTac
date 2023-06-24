@@ -144,7 +144,7 @@
               <div class=content>
                 <img src="@Model.User.ProfilePicture" alt="#">
                 <h4>@Model.User.Name</h4>
-                <a asp-action="Organizador" asp-route-id="@Model.User.Id" class=see-all>Ver outros eventos</a>
+                <a asp-action="Organizador" asp-route-ownerId="@Model.User.Id" class=see-all>Ver outros eventos</a>
               </div>
             </div>
 
