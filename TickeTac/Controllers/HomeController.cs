@@ -146,9 +146,17 @@ public class HomeController : Controller
         return RedirectToAction("Details", "Home", Id);
     }
 
-    public IActionResult Organizador(UInt16 Id)
+    public IActionResult Organizador(string ownerId)
     {
-        return View();
+        EventOwnerViewModel eovm = new(){
+            Categories = _context.Categories.ToList(),
+            Events = _context.Events.Where(e => e.UserId == ownerId).ToList(),
+            Cities = _context.Cities.ToList(),
+            StatusEvents = _context.StatusEvents.ToList(),
+            Users = _context.AppUsers.ToList()
+        }; 
+        
+        return View(eovm);
     }
 
     public IActionResult AboutUs()
