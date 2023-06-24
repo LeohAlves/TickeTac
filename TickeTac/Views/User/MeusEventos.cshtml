@@ -101,9 +101,11 @@
                                     </div>
 
                                     @* fazer FOR para os eventos abaixo *@
-                                    @if (@Model.Events != null){
+                                    
                                     @foreach (var events in Model.Events)
                                     {
+                                        @if (@usuario.EhOwner == true)
+                                        {
                                         <div class=single-item-list>
                                             <div class="row align-items-center">
                                                 <div class="col-lg-5 col-md-5 col-12">
@@ -125,19 +127,19 @@
                                             </div>
 
                                         </div>
-                                    }} else {
-                                        <div class=single-item-list>
+                                        } else {
+                                            <div class=single-item-list>
                                             <div class="row align-items-center">
                                                 <div class="col-lg-5 col-md-5 col-12">
                                                     <div class=content>
-                                                            <h3 class=title><a href="javascript:void(0)">Aaaa</a></h3>
-                                                            <span class=price>Aaa</span>
+                                                            
+                                                            <span class=price>Nenhum evento encontrado. <a href="javascript:void(0)">Publique agora!</a></span>
                                                         </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        }
                                     }
-
                                 </div>
 
                             </div>
