@@ -58,7 +58,7 @@ namespace TickeTac.Controllers
             {
                 _context.Add(@event);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home", null);
             }
             
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);

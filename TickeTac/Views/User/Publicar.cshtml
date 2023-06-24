@@ -24,7 +24,9 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <ul class=breadcrumb-nav>
                             <li><a href=index.html>Home</a></li>
-                            <li>Publicar Evento</li>
+                            <li>Publicar Evento
+
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -75,9 +77,8 @@
                                         <form class=default-form-style method=post asp-action="Publicar">
                                             <div class=row>
                                                 <div class="col-md-6">
-                                                    <label asp-for="UserId"></label>
                                                     <div class="input-group input-group-static">
-                                                      <input asp-for="UserId" value="@usuario.Id" hidden> 
+                                                        <input asp-for="UserId" value="@usuario.Id" hidden>
                                                     </div>
                                                 </div>
                                                 <div class=col-12>
@@ -216,8 +217,7 @@
                                                     <div class=col-6>
                                                         <div class=form-group>
                                                             <label>Logradouro</label>
-                                                            <input asp-for="District"
-                                                        placeholder="Ex: Rio Lindo ||">
+                                                            <input asp-for="District" placeholder="Ex: Rio Lindo ||">
                                                         </div>
                                                     </div>
 
