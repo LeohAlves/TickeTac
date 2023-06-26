@@ -47,12 +47,14 @@ namespace TickeTac.Controllers
             {
                 Events = events
                 .Include(e => e.Category)
-                .Include(e => e.StatusEvent).ToList(),
+                .Include(e => e.StatusEvent).ToList()
+
+                .ToList(),
+                Owner = _context.Users.Where(u => u.Id == ownerId).FirstOrDefault()
             };
 
             return View(eovm);
         }
-
 
         public IActionResult Publicar()
         {
