@@ -44,14 +44,16 @@
                             </div>
                             <div class=dashboard-menu>
                                 <ul>
-                                    <li><a asp-action="Index" asp-route-ownerId="@usuario.Id" asp-controller="User"><i class="lni lni-pencil-alt"></i> Editar
+                                    <li><a asp-action="Index" asp-route-ownerId="@usuario.Id" asp-controller="User"><i
+                                            class="lni lni-pencil-alt"></i> Editar
                                             Perfil</a>
                                     </li>
-                                    <li><a asp-action="MeusEventos"  asp-route-ownerId="@usuario.Id" asp-controller="User"><i class="lni lni-bolt-alt"></i> Meus
+                                    <li><a asp-action="MeusEventos" asp-route-ownerId="@usuario.Id" asp-controller="User"><i
+                                            class="lni lni-bolt-alt"></i> Meus
                                             eventos</a>
                                     </li>
-                                    <li><a class=active asp-action="Publicar" asp-route-ownerId="@usuario.Id" asp-controller="User"><i
-                                            class="lni lni-circle-plus"></i>Publicar evento</a>
+                                    <li><a class=active asp-action="Publicar" asp-route-ownerId="@usuario.Id"
+                                    asp-controller="User"><i class="lni lni-circle-plus"></i>Publicar evento</a>
                                     </li>
                                 </ul>
                                 <div class=button>
@@ -136,6 +138,8 @@
                                                         <div class=form-group>
                                                             <label>Imagem</label>
                                                             <input asp-for="Image" placeholder="Digite o caminho da imagem">
+                                                            <span asp-validation-for="Image"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-12>
@@ -143,24 +147,32 @@
                                                             <label>E-mail para contato*</label>
                                                             <input asp-for="ContactEmail" type=email
                                                         placeholder="exemplo@hotmail.com">
+                                                            <span asp-validation-for="ContactEmail"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-12>
                                                         <div class=form-group>
                                                             <label>Telefone para contato*</label>
-                                                            <input asp-for="ContactPhone" placeholder="Digite um telefone">
+                                                            <input asp-for="ContactPhone" placeholder="Digite um telefone"><span
+                                                        asp-validation-for="ContactPhone"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Início*</label>
                                                             <input asp-for="EventDateBegin" placeholder="Hora de início">
+                                                            <span asp-validation-for="EventDateBegin"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-12">
                                                         <div class=form-group>
                                                             <label>Fim*</label>
                                                             <input asp-for="EventDateEnd" placeholder="Hora de fim">
+                                                            <span asp-validation-for="EventDateEnd"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
 
@@ -212,26 +224,34 @@
                                                             <label>Logradouro</label>
                                                             <input asp-for="PublicSpace"
                                                         placeholder="Ex: Rua José dos campos...">
+                                                        <span asp-validation-for="PublicSpace"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-6>
                                                         <div class=form-group>
                                                             <label>Bairro</label>
                                                             <input asp-for="District" placeholder="Ex: Rio Lindo ||">
+                                                            <span asp-validation-for="District"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
+                                                        
                                                     </div>
 
                                                     <div class=col-6>
                                                         <div class=form-group>
                                                             <label asp-for="Cep"></label>
                                                             <input asp-for="Cep">
+                                                            <span asp-validation-for="Cep"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-12>
                                                         <div class="form-group mt-30">
                                                             <label asp-for="MoreInfo">Complemento</label>
-                                                            <textarea asp-for="MoreInfo" 
-                                                        placeholder="Escreva aqui"></textarea>
+                                                            <textarea asp-for="MoreInfo" placeholder="Escreva aqui"></textarea>
+                                                            <span asp-validation-for="MoreInfo"
+                                                        class="text-danger col-12 text-xs pt-1"></span>
                                                         </div>
                                                     </div>
                                                     <div class=col-12>

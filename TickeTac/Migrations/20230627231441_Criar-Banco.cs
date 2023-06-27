@@ -373,8 +373,8 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "134b18b8-95bc-4996-b263-fd97d50d59b0", "3d10663b-4069-4ee4-ac38-54ca48b6302a", "Administrador", "ADMINISTRADOR" },
-                    { "c6e44836-71d3-49f3-a4d3-22650460ceaa", "abb0a09a-ff32-4ffb-aa48-f178cc58cac7", "Usuário", "USUÁRIO" }
+                    { "138bc253-5ad2-4bf1-b874-810f92276dcb", "9c8eb362-b9b8-45d3-a882-4c7c46e18b7a", "Usuário", "USUÁRIO" },
+                    { "bae5200e-c786-43e7-a68c-e8aecc5698b6", "437e10f4-bc68-4b2e-b074-98598099716d", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -382,10 +382,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePicture", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "7ce90d6e-0eae-4140-872f-b381775c7da4", 0, "5fd4d2d7-0ade-4e5d-a5d9-23d64b4ba854", "Gallo@gmail.com", true, false, null, "José Gallo", "GALLO@GMAIL.COM", "GALLO@GMAIL.COM", "AQAAAAEAACcQAAAAEEefP3W9DrwkRCHurnDEUlhS/5OsPqNemPody+Y7mQrl9XvnBeLlCqiCsEcNksuFPA==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "46232835", false, "Gallo@gmail.com" },
-                    { "bb796b60-62f7-4908-9273-1483b1cd0377", 0, "b3491c7e-cdf7-4706-b615-7997ff43add6", "Kai@hotmail.com", true, false, null, "Kaique", "KAI@HOTMAIL.COM", "KAI@HOTMAIL.COM", "AQAAAAEAACcQAAAAEH7md7ME8TtjOynkyWInUB1eM1a5t+zdHHbrc5WL0gkLJkMrFuvoNYia9+7pVhMX2w==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "46232835", false, "Kai@hotmail.com" },
-                    { "c74408e2-2ef4-4a70-8b43-c6f1e706d30f", 0, "e2329baa-85b4-4bb4-ba96-3ada31ebbb6b", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAELtMEOadXpwmZDrYrJogx0t2F8URGwQiNyYeCwuQ9v7KFJG838tBGmAXMGviuEw0yA==", null, false, "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png", "46232835", false, "Admin@TickeTac.com" },
-                    { "d3c08568-9096-439d-a88a-fadc82e0c271", 0, "23dc0840-4aa0-4680-86d7-00f40cf1cc03", "Leo@hotmail.com", true, false, null, "Leonardo", "LEO@HOTMAIL.COM", "LEO@HOTMAIL.COM", "AQAAAAEAACcQAAAAEFQuI3/4a2xbcW6VgSpye8/+Ka07srDNIWGOpfK2xZ7G67uXpGDi9kTXhPnxy8PaSQ==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "46232835", false, "Leo@hotmail.com" }
+                    { "0dacbd1b-8a1b-4f3b-8dd8-647c40759d08", 0, "e2ccc7e2-fc61-403d-86fb-89c98f41d513", "Leo@hotmail.com", true, false, null, "Leonardo", "LEO@HOTMAIL.COM", "LEO@HOTMAIL.COM", "AQAAAAEAACcQAAAAEExFpyemvX/FjP4Hc+K6+3nn2tT3egguCDHjGKOXidGzhEYriV1B7Shm2xujoiB9Bw==", null, false, "https://avatars.githubusercontent.com/u/99449193?v=4", "46232835", false, "Leo@hotmail.com" },
+                    { "3de8fa74-cb63-4ae7-9390-18f680cb4d88", 0, "fb2c864e-093a-496d-8193-1bbf168ada79", "Admin@TickeTac.com", true, false, null, "Admin", "ADMIN@TICKETAC.COM", "ADMIN@TICKETAC.COM", "AQAAAAEAACcQAAAAEEJZHftDk5Zg/f42LyEl2H2Wu/upqfF+Xt6yItpD4AvCVb3KjnMJtk8SJe+dQ+fyzA==", null, false, "https://www.pngmart.com/files/21/Admin-Profile-Vector-PNG-Clipart.png", "46232835", false, "Admin@TickeTac.com" },
+                    { "96b83381-fb79-49e6-b0df-d983bfdc9134", 0, "5a5ad54b-8e71-42ff-9976-bb4fe5b99d0e", "Gallo@gmail.com", true, false, null, "José Gallo", "GALLO@GMAIL.COM", "GALLO@GMAIL.COM", "AQAAAAEAACcQAAAAENPGiHwuwdiSXIVScmLPnzkmwpU3FZPPHGEWpNbccrlO6lyFlfEx0eclxjaD2fYibA==", null, false, "https://avatars.githubusercontent.com/u/12284966?v=4", "46232835", false, "Gallo@gmail.com" },
+                    { "eb79f690-e72e-45a3-8bc1-8e0bd6e167a4", 0, "36f6852b-f029-4bee-9345-7599c85d1371", "Kai@hotmail.com", true, false, null, "Kaique", "KAI@HOTMAIL.COM", "KAI@HOTMAIL.COM", "AQAAAAEAACcQAAAAELTgWf5V1D9477Ygh4Y2D+0v+u5UaMiG2y98LejpIbOW5ilh9cx/d6zcNYPjOFXgqQ==", null, false, "https://avatars.githubusercontent.com/u/99449012?v=4", "46232835", false, "Kai@hotmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -453,10 +453,10 @@ namespace TickeTac.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "c6e44836-71d3-49f3-a4d3-22650460ceaa", "7ce90d6e-0eae-4140-872f-b381775c7da4" },
-                    { "c6e44836-71d3-49f3-a4d3-22650460ceaa", "bb796b60-62f7-4908-9273-1483b1cd0377" },
-                    { "134b18b8-95bc-4996-b263-fd97d50d59b0", "c74408e2-2ef4-4a70-8b43-c6f1e706d30f" },
-                    { "c6e44836-71d3-49f3-a4d3-22650460ceaa", "d3c08568-9096-439d-a88a-fadc82e0c271" }
+                    { "138bc253-5ad2-4bf1-b874-810f92276dcb", "0dacbd1b-8a1b-4f3b-8dd8-647c40759d08" },
+                    { "bae5200e-c786-43e7-a68c-e8aecc5698b6", "3de8fa74-cb63-4ae7-9390-18f680cb4d88" },
+                    { "138bc253-5ad2-4bf1-b874-810f92276dcb", "96b83381-fb79-49e6-b0df-d983bfdc9134" },
+                    { "138bc253-5ad2-4bf1-b874-810f92276dcb", "eb79f690-e72e-45a3-8bc1-8e0bd6e167a4" }
                 });
 
             migrationBuilder.InsertData(
@@ -474,17 +474,17 @@ namespace TickeTac.Migrations
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)1, (ushort)4, "17340970", 1, "showdogallo@hotmail.com", "1328535834", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Centro", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Rua Winifrida 270", 25, (ushort)3, "7ce90d6e-0eae-4140-872f-b381775c7da4" });
+                values: new object[] { (ushort)1, (ushort)4, "17340970", 1, "showdogallo@hotmail.com", "1328535834", "Evento de rock que será realizado em Barra Bonita, com grandes artistas musicais como Gallo e Edriano", "Centro", new DateTime(2023, 12, 28, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 1, 1, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://conteudo.solutudo.com.br/wp-content/uploads/2019/10/rock-nacional.jpg", "", "Show de Rock do Gallo", 150.99m, "Rua Winifrida 270", 25, (ushort)3, "96b83381-fb79-49e6-b0df-d983bfdc9134" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)2, (ushort)2, "17013421", 5, "leiloaveiculos@hotmail.com", "1928064158", "Leilão de veículos antigos e únicos, com modalidades exclusivas.", "Vila Cardia", new DateTime(2023, 10, 2, 16, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 10, 2, 20, 0, 0, 0, DateTimeKind.Unspecified), "https://static.s4bdigital.net/logos_empresas/09aba452-1ed3-4b2d-98d3-3c53eda43418.jpg", "", "Leilão de veículos", 0m, "Rua Almeida Brandão", 25, (ushort)2, "bb796b60-62f7-4908-9273-1483b1cd0377" });
+                values: new object[] { (ushort)2, (ushort)2, "17013421", 5, "leiloaveiculos@hotmail.com", "1928064158", "Leilão de veículos antigos e únicos, com modalidades exclusivas.", "Vila Cardia", new DateTime(2023, 10, 2, 16, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 10, 2, 20, 0, 0, 0, DateTimeKind.Unspecified), "https://static.s4bdigital.net/logos_empresas/09aba452-1ed3-4b2d-98d3-3c53eda43418.jpg", "", "Leilão de veículos", 0m, "Rua Almeida Brandão", 25, (ushort)2, "eb79f690-e72e-45a3-8bc1-8e0bd6e167a4" });
 
             migrationBuilder.InsertData(
                 table: "Event",
                 columns: new[] { "Id", "CategoryId", "Cep", "CityId", "ContactEmail", "ContactPhone", "Description", "District", "EventDateBegin", "EventDateEnd", "Image", "MoreInfo", "Name", "Price", "PublicSpace", "StateId", "StatusEventId", "UserId" },
-                values: new object[] { (ushort)3, (ushort)3, "17220260", 3, "mundialdobasquete@hotmail.com", "14991548292", "Campeonato mundial de basquete! ", "Jardim Frei Galvão", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Rua Manoel Gonçalves", 25, (ushort)1, "d3c08568-9096-439d-a88a-fadc82e0c271" });
+                values: new object[] { (ushort)3, (ushort)3, "17220260", 3, "mundialdobasquete@hotmail.com", "14991548292", "Campeonato mundial de basquete! ", "Jardim Frei Galvão", new DateTime(2023, 1, 10, 12, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2023, 1, 10, 18, 0, 0, 0, DateTimeKind.Unspecified), "https://www.montealtoagora.com.br/upload/not-20220427185909basquete-22.jpg", "", "Campeonato de Basquete", 50.00m, "Rua Manoel Gonçalves", 25, (ushort)1, "0dacbd1b-8a1b-4f3b-8dd8-647c40759d08" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

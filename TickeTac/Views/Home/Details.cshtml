@@ -91,7 +91,9 @@
             <p>Cidade: @Model.City.Name</p>
             <p>Bairro: @Model.District</p>
             <p>Logradouro: @Model.PublicSpace</p>
+            @if (@Model.MoreInfo != ""){
             <p>Informações adicionais: @Model.MoreInfo</p>
+            }
           </div>
 
           @if (@Model.StatusEvent.Id == 1)
