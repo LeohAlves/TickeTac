@@ -16498,6 +16498,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\User\\Editar.cshtml",
+      "TargetPath": "Views\\User\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\etec\\Desktop\\TickeTac\\TickeTac\\Views\\State\\Details.cshtml",
       "TargetPath": "Views\\State\\Details.cshtml",
       "FileKind": "mvc"

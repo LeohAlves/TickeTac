@@ -5,29 +5,9 @@
 }
 
 <form hidden id="formSearch" method="post" class="search-form wow fadeInUp" data-wow-delay=".7s">
-  <div class="row">
-    <div class="col-lg-4 col-md-4 col-12 p-0">
-      <div class="search-input">
-        <label><i class="lni lni-search-alt theme-color"></i></label>
         <input type="text" asp-for="SearchWords" placeholder="Procurar">
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-12 p-0">
-      <div class="search-input">
-        <label><i class="lni lni-grid-alt theme-color"></i></label>
         <select asp-for="SearchCategory" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
-          <option value="" selected>Categorias</option>
         </select>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-2 col-12 p-0">
-      <div class="search-btn button">
-        @* <button asp-controller="Home" asp-action="FiltrarPorCategoria" method="get" class="btn"><i class="lni
-          lni-search-alt"></i> Pesquisar </button> *@
-        <button type="submit" class="btn"><i class="lni lni-search-alt"></i> Pesquisar </button>
-      </div>
-    </div>
-  </div>
 </form>
 
 <div class=preloader>
