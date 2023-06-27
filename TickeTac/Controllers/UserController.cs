@@ -55,7 +55,65 @@ namespace TickeTac.Controllers
 
             return View(eovm);
         }
+        // Edit GET
+        public async Task<IActionResult> Editar(ushort? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var @event = await _context.Events.FindAsync(id);
+            if (@event == null)
+            {
+                return NotFound();
+            }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Name", @event.CityId);
+            ViewData["StateId"] = new SelectList(_context.States, "Id", "Name", @event.StateId);
+            ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Name", @event.UserId);
+            return View(@event);
+        }
+        // Edit Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Editar(ushort id, [Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,CityId,District,PublicSpace,Cep,CategoryId,StatusEventId,StateId,UserId")] Event @event)
+        {
+            if (id != @event.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(@event);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!EventExists(@event.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Details", "Home", new {id = @event.Id});
+            }
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", @event.CategoryId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "Id", "Id", @event.CityId);
+            ViewData["StateId"] = new SelectList(_context.States, "Id", "Id", @event.StateId);
+            ViewData["StatusEventId"] = new SelectList(_context.StatusEvents, "Id", "Name", @event.StatusEventId);
+            ViewData["UserId"] = new SelectList(_context.AppUsers, "Id", "Name", @event.UserId);
+            return View(@event);
+        }
+
+        // Publicar Get
         public IActionResult Publicar()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
@@ -66,7 +124,7 @@ namespace TickeTac.Controllers
             return View();
         }
 
-
+        //  Publicar Post
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Publicar([Bind("Id,Name,ContactPhone,Price,EventDateBegin,EventDateEnd,Description,Image,ContactEmail,MoreInfo,CityId,District,PublicSpace,Cep,CategoryId,StatusEventId,StateId,UserId")] Event @event)
@@ -90,6 +148,10 @@ namespace TickeTac.Controllers
         public IActionResult Error()
         {
             return View("Error!");
+        }
+         private bool EventExists(ushort id)
+        {
+            return _context.Events.Any(e => e.Id == id);
         }
     }
 }

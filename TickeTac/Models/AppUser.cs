@@ -14,7 +14,6 @@ namespace TickeTac.Models
 
         [StringLength(400)]
         public string ProfilePicture { get; set; }
-        public bool EhOwner { get; set; }
         public ICollection<EventReview> UserMadeReview { get; set; }
     }
 }

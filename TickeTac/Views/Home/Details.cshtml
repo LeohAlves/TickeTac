@@ -4,9 +4,10 @@
 
 @{
   ViewData["Title"] = "Detalhes";
+
 }
 
-  
+
 <div class=breadcrumbs>
   <div class=container>
     <div class="row align-items-center">
@@ -57,7 +58,8 @@
                 <li>
                   <a href="tel:+002562352589" class=call>
                     <i class="lni lni-phone-set"></i>
-                    @Model.ContactPhone
+
+                    @Html.DisplayFor(e => e.ContactPhone)
                     <span>Ligue para mais detalhes</span>
                   </a>
                 </li>
@@ -81,7 +83,7 @@
             <p>
               @Model.Description
             </p>
-            <p>@Model.MoreInfo</p>
+
           </div>
 
           <div class="single-block ">
@@ -89,10 +91,12 @@
             <p>Cidade: @Model.City.Name</p>
             <p>Bairro: @Model.District</p>
             <p>Logradouro: @Model.PublicSpace</p>
+            <p>Informações adicionais: @Model.MoreInfo</p>
           </div>
 
-          @if (@Model.StatusEvent.Id == 1){
-          @foreach (var review in Model.ReviewReceived.OrderByDescending(rr => rr.Id).Take(1))
+          @if (@Model.StatusEvent.Id == 1)
+          {
+            @foreach (var review in Model.ReviewReceived.OrderByDescending(rr => rr.Id).Take(1))
             {
               <div class="single-block comments">
                 <h3></h3>
@@ -135,7 +139,7 @@
             }
           }
         </div>
-        
+
         <div class="col-lg-4 col-md-5 col-12">
           <div class=item-details-sidebar>
 
@@ -155,7 +159,8 @@
                 <div class=row>
                   <div class=col-12>
                     <div class="form-box form-group">
-                      <textarea name="comentario" class="form-control form-control-custom" placeholder="Digite aqui"></textarea>
+                      <textarea name="comentario" class="form-control form-control-custom"
+                        placeholder="Digite aqui"></textarea>
                     </div>
                   </div>
                   <div class=col-12>
@@ -172,3 +177,4 @@
     </div>
   </div>
 </section>
+
