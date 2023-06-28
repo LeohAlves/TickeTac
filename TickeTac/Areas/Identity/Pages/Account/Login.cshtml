@@ -76,6 +76,7 @@
           <h4 class=title>Login</h4>
           <form role="form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="ReturnUrl" type="hidden">
             <div class=form-group>
               <label asp-for="Input.Email">E-mail</label>
               <input asp-for="Input.Email">
