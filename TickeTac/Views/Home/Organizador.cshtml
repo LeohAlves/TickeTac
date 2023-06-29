@@ -86,7 +86,7 @@
 
                             @* fazer FOR para os eventos abaixo *@
 
-                            @foreach (var events in Model.Events)
+                            @foreach (var events in Model.Events.OrderByDescending(e => e.Id))
                         {
                             <div class=single-item-list>
                                 <div class="row align-items-center">
@@ -95,7 +95,7 @@
                                             <img src="@events.Image"
                                                 alt="IMAGEM DO EVENTO">
                                             <div class=content>
-                                                <h3 class=title><a href="javascript:void(0)">@events.Name</a></h3>
+                                                <h3 class=title><a asp-action="Details" asp-controller="Home" asp-route-id="@events.Id">@events.Name</a></h3>
                                                 <span class=price>R$ @events.Price</span>
                                             </div>
                                         </div>
