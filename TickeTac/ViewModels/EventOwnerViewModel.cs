@@ -9,6 +9,7 @@ namespace TickeTac.ViewModels
     public class EventOwnerViewModel
     {
         public List<Event> Events { get; set; }
+        public List<EventReview> ReviewReceived { get; set; }
         public AppUser Owner { get; set; }
 
     }

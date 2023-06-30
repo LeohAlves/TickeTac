@@ -168,6 +168,29 @@ public class HomeController : Controller
         return View(eovm);
     }
 
+    public IActionResult Avaliacoes(string eventId)
+    {
+        IQueryable<EventReview> reviews = null;
+        reviews = _context.EventReviews;
+
+        if (!string.IsNullOrEmpty(eventId))
+        {
+            reviews = reviews.Where(e => e.UserId == eventId);
+        }
+
+        EventOwnerViewModel eovm = new(){
+
+            ReviewReceived = reviews
+            .Include(r => r.EventId)
+            .Include(r => r.ReviewDate)
+            .Include(r => r.ReviewText)
+
+            .ToList(),
+        };
+        
+        return View(eovm);
+    }
+
     public IActionResult AboutUs()
     {
         return View();

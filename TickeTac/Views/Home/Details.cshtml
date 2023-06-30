@@ -51,8 +51,8 @@
               <ul>
                 <li><span>Status:</span>@Model.StatusEvent.Name </li>
                 <li><span>Categoria:</span>@Model.Category.Name </li>
-                <li><span>Data inicio:</span>@Model.EventDateBegin </li>
-                <li><span>Data Fim:</span>@Model.EventDateEnd </li>
+                <li><span>Data inicio:</span>@Model.EventDateBegin.ToString("dd/MM/yyyy HH:mm") </li>
+                <li><span>Data Fim:</span>@Model.EventDateEnd.ToString("dd/MM/yyyy HH:mm")</li>
               </ul>
             </div>
             <div class=contact-info>
@@ -95,6 +95,8 @@
             <p>Logradouro: @Model.PublicSpace</p>
             @if (@Model.MoreInfo != ""){
             <p>Informações adicionais: @Model.MoreInfo</p>
+            } else {
+              <p></p>
             }
           </div>
 
@@ -113,6 +115,7 @@
                       @review.ReviewText
                     </p>
                   </div>
+                  <a asp-action="Avaliacoes" asp-route-ownerId="@Model.User.Id" class=see-all>Ver todas avaliações</a>
                 </div>
               </div>
             }
